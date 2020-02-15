@@ -1,0 +1,344 @@
+#N canvas 266 133 1407 890 12;
+#X declare -path filters/;
+#X obj 172 651 cnv 15 67 25 empty empty empty 20 12 0 14 -118780 -66577
+0;
+#X obj 357 812 cnv 15 328 40 empty empty empty 20 12 0 14 -262123 -66577
+0;
+#X obj 357 767 cnv 15 242 40 empty empty empty 20 12 0 14 -262123 -66577
+0;
+#X obj 111 414 cnv 15 43 30 empty empty empty 20 12 0 14 -118780 -66577
+0;
+#X obj 172 577 cnv 15 67 25 empty empty empty 20 12 0 14 -118780 -66577
+0;
+#X obj 130 528 cnv 15 48 40 empty empty empty 20 12 0 14 -118780 -66577
+0;
+#X obj 740 516 cnv 15 74 66 empty empty empty 20 12 0 14 -118780 -66577
+0;
+#X obj 96 797 dac~;
+#X obj 96 836 declare -path filters/;
+#X obj 96 447 *~;
+#X obj 752 138 osc~;
+#X floatatom 752 103 5 0 0 0 LFO - -, f 5;
+#X obj 752 72 hsl 128 15 0 1 0 1 empty empty 0\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 2100 1;
+#X floatatom 96 69 5 0 0 0 - - -, f 5;
+#X obj 178 610 + 100;
+#X obj 178 632 dbtorms;
+#X msg 178 675 \$1 100;
+#X obj 178 697 line~;
+#X floatatom 178 654 5 0 0 0 - - -, f 5;
+#X obj 178 583 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
+-262144 -1 -1 4 256 0;
+#X obj 96 739 multiFilter_abs~ lowpass;
+#X obj 752 227 *~ 0.5;
+#X obj 752 316 +~ 0.5;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 0 1 0 0 empty empty 0\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 8551 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 827 177 pd rangeviewer;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 0 1 0 0 empty empty 0\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 4275 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 827 267 pd rangeviewer;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 0 1 0 0 empty empty 0\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 10625 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 827 357 pd rangeviewer;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 0 22000 0 0 empty empty 0\ to\ 22000\ range
+3 -10 0 10 -262144 -1 -1 10625 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 787 446 pd rangeviewer;
+#X obj 787 422 *~ 22000;
+#X text 996 193 Only the positive half of the sine shows.;
+#X text 995 283 Divide it in half (multiply by .5).;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 -1 1 0 0 empty empty -1\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 12494 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 167 158 pd rangeviewer;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 -1 1 0 0 empty empty -1\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 12700 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 167 248 pd rangeviewer;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 -1 1 0 0 empty empty -1\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 12287 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 167 328 pd rangeviewer;
+#X obj 96 205 *~ 2;
+#X obj 96 286 -~ 1;
+#X text 148 64 Let's bring this down to 1 or 2 \, so we can see what's
+going on., f 34;
+#X text 337 265 Make it go from 0 to 2 (multiply by 2).;
+#X text 338 175 Phasor goes from 0 to 1 as we know.;
+#X floatatom 137 501 7 0 0 0 - - -, f 7;
+#X obj 137 538 sig~;
+#X msg 137 458 2000;
+#X text 264 651 Don't ask :);
+#X text 264 582 This should stay between -3 and 5 or so...;
+#X text 832 641 Value scaling is handy for so much in PD., f 43;
+#X text 832 661 Another common use is to convert to and from MIDI ranges
+(0-127)., f 66;
+#X obj 752 523 *~ 2000;
+#X obj 752 554 +~ 200;
+#X text 735 586 This signal should vary from 200 to 2200 Hz.;
+#X text 995 363 Now 'move it up' by adding 0.5 to signal. This normalized
+signal is easier to handle., f 44;
+#X text 817 554 and move all of it up by 200Hz.;
+#X text 817 524 Maximum range of 2000Hz...;
+#X obj 137 482 hsl 249 15 220 22000 1 1 empty empty empty -2 -8 0 10
+-262144 -1 -1 11887 1;
+#X msg 114 367 0.3;
+#X obj 742 620 vsl 25 45 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 742 684 6 0 0 0 - - -, f 6;
+#X obj 772 720 / 127;
+#X floatatom 772 743 5 0 0 0 - - -, f 5;
+#X floatatom 772 819 5 0 0 0 - - -, f 5;
+#X obj 772 769 * 200;
+#X obj 772 794 - 100;
+#X text 832 720 If we divide the input by the maximum value expected
+(127)..., f 66;
+#X text 832 740 we'll always get a nuber between 0 and 1 \, and that's
+easy to manipulate., f 72;
+#X text 832 769 We can define the total dynamic range of the output
+- 200..., f 72;
+#X text 832 789 and move this 'window' with + or -., f 72;
+#X text 832 817 Our range is now from -100 to 100, f 72;
+#X obj 114 396 hsl 128 15 0 0.7 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 5443 1;
+#X floatatom 114 420 5 0 0 0 - - -, f 5;
+#N canvas 1233 244 604 555 bonus 0;
+#X obj 74 102 *~;
+#X obj 92 71 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 74 38 catch~ bonus;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 -1 1 0 0 empty empty -1\ to\ 1\ range 3 -10
+0 10 -262144 -1 -1 6350 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 127 139 pd rangeviewer;
+#X obj 74 221 *~ 0.5;
+#X obj 74 260 +~ 0.5;
+#X text 150 237 We do the same treatment to normalize the signal...
+;
+#X obj 74 355 *~;
+#X obj 74 423 +~;
+#X floatatom 117 326 8 0 0 0 - - -, f 8;
+#X floatatom 117 396 8 0 0 0 - - -, f 8;
+#X text 180 396 Same thing when moving the window up or down (just
+use negative numbers)., f 44;
+#N canvas 582 428 450 323 rangeviewer 0;
+#X obj 118 147 snapshot~;
+#X obj 118 114 metro 20;
+#X obj 118 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 118 200 hsl 128 15 -10000 10000 0 0 empty empty -10000\ to\ 10000\ range
+3 -10 0 10 -262144 -1 -1 9540 1;
+#X obj 43 52 inlet~;
+#X obj 118 53 loadbang;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 0;
+#X coords 0 -1 1 1 154 51 2 109 180;
+#X restore 127 461 pd rangeviewer;
+#X text 180 326 And the range can be made variable like this.;
+#X obj 160 302 hsl 128 15 0 22000 0 1 empty empty empty -2 -8 0 10
+-262144 -1 -1 5800 1;
+#X obj 160 372 hsl 128 15 -11000 11000 0 0 empty empty empty -2 -8
+0 10 -262144 -1 -1 0 1;
+#X text 249 50 We can control the 'depth' of the LFO by tapping the
+signal when it's still varying from -1 to 1 \, since multiplying it
+by fractions of 1 will allow this control., f 42;
+#X connect 0 0 3 0;
+#X connect 0 0 4 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 12 0;
+#X connect 9 0 7 1;
+#X connect 10 0 8 1;
+#X connect 14 0 9 0;
+#X connect 15 0 10 0;
+#X restore 370 777 pd bonus;
+#X text 442 777 There's more inside!;
+#X obj 650 172 throw~ bonus;
+#X text 955 462 An example \, sweeping the audible range.;
+#X obj 1015 65 cnv 15 273 63 empty empty empty 20 12 0 14 -118780 -66577
+0;
+#X text 1033 79 Some interesting routing can be done in the parts marked
+in blue., f 35;
+#N canvas 634 295 680 558 bonus2 0;
+#X obj 65 85 vsl 25 45 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 4400 1;
+#X floatatom 65 149 6 0 0 0 - - -, f 6;
+#X floatatom 359 466 5 0 0 0 - - -, f 5;
+#X obj 359 207 /;
+#X floatatom 377 184 5 0 0 0 - - -, f 5;
+#X obj 359 256 *;
+#X floatatom 377 233 5 0 0 0 - - -, f 5;
+#X obj 65 387 expr ($f1 / $f2) * $f3 + $f4;
+#X obj 359 304 +;
+#X floatatom 377 281 5 0 0 0 - - -, f 5;
+#X floatatom 65 466 5 0 0 0 - - -, f 5;
+#X text 272 32 For the math-minded:;
+#X text 130 466 Same result \, less clutter :);
+#X text 424 184 Pick the max value of input...;
+#X text 424 233 define the window of values...;
+#X text 424 281 and move the window to taste.;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 0 7 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;
+#X connect 4 0 7 1;
+#X connect 5 0 8 0;
+#X connect 6 0 5 1;
+#X connect 6 0 7 2;
+#X connect 7 0 10 0;
+#X connect 8 0 2 0;
+#X connect 9 0 8 1;
+#X connect 9 0 7 3;
+#X restore 370 820 pd bonus2;
+#X text 442 820 Just in case you're not bored yet;
+#X text 337 335 Then bring down so it spans -1 to 1 \, as sound signals
+should., f 37;
+#X obj 96 119 phasor~ 1;
+#X connect 9 0 20 0;
+#X connect 10 0 21 0;
+#X connect 10 0 23 0;
+#X connect 10 0 69 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 13 0 76 0;
+#X connect 14 0 15 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 17 0 20 2;
+#X connect 18 0 16 0;
+#X connect 19 0 14 0;
+#X connect 20 0 7 0;
+#X connect 20 0 7 1;
+#X connect 21 0 22 0;
+#X connect 21 0 24 0;
+#X connect 22 0 25 0;
+#X connect 22 0 27 0;
+#X connect 22 0 45 0;
+#X connect 27 0 26 0;
+#X connect 33 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 32 0;
+#X connect 34 0 9 0;
+#X connect 38 0 39 0;
+#X connect 39 0 20 1;
+#X connect 40 0 51 0;
+#X connect 45 0 46 0;
+#X connect 51 0 38 0;
+#X connect 52 0 65 0;
+#X connect 53 0 54 0;
+#X connect 54 0 55 0;
+#X connect 55 0 56 0;
+#X connect 56 0 58 0;
+#X connect 58 0 59 0;
+#X connect 59 0 57 0;
+#X connect 65 0 66 0;
+#X connect 66 0 9 1;
+#X connect 76 0 30 0;
+#X connect 76 0 33 0;

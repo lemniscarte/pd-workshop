@@ -1,0 +1,57 @@
+#N canvas 507 71 821 917 12;
+#X obj 90 815 dac~;
+#X obj 89 46 osc~ 440;
+#X obj 164 457 tabwrite~ osc;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array osc 110 float 0 black black;
+#X coords 0 1 109 -1 82 55 1;
+#X restore 164 551 graph;
+#X text 320 447 Writing to tables - and reading from them - is gonna
+come in handy many times \, so get used to these :), f 52;
+#X obj 164 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 320 316 This simple button is called 'bang' \, and it does
+just that - make the object it's connected to 'do its thing' \, whatever
+that is., f 52;
+#X text 320 368 In this case \, we're telling the table writer object
+below to - surprise! - write to the table., f 52;
+#X text 320 796 The Digital-to-Analog Converter is the last stop in
+your patch, f 62;
+#X obj 164 152 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 320 129 The toggle sends either a 0 when off or a non-zero
+value when on. Keep that in mind \, since it's not just a on/off switch.
+You can even select what this non-zero value will be on its properties.
+, f 52;
+#X text 146 568 0;
+#X text 146 542 1;
+#X text 139 596 -1;
+#X text 320 660 The signal multiplication object. It's gonna be in
+practically every single patch you'll ever make!;
+#X text 320 229 The metronome works by sending a 'bang' every X milliseconds
+\, which can be initialized or sent into its second inlet., f 52;
+#X text 320 82 It is a sinusoidal waveform \, check its shape below.
+;
+#X text 320 483 Note how it writes 'wirelessly' to the table below.
+, f 52;
+#X text 320 541 Arrays are just a list of values.;
+#X text 320 561 They can be used for many different applications. Here
+we're writing to it repeatedly - so many times a second \, in fact
+\, that it works like an oscilloscope!, f 53;
+#X text 320 696 This is one of its garden-variety uses: multiplying
+the signal by a fraction of 1 \, making it quieter., f 53;
+#X text 320 816 From here \, the signal is off to your speakers.,
+f 62;
+#X text 320 836 You can even use multiple outputs \, if you hardware
+allows., f 62;
+#X obj 89 683 *~ 0.2;
+#X text 320 46 The oscillator can take an initial argument to set its
+frequency \, or have it fed into its first inlet.;
+#X obj 164 249 metro 200;
+#X connect 1 0 2 0;
+#X connect 1 0 23 0;
+#X connect 5 0 2 0;
+#X connect 9 0 25 0;
+#X connect 23 0 0 0;
+#X connect 23 0 0 1;
+#X connect 25 0 5 0;

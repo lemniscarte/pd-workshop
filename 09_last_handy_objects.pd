@@ -1,0 +1,101 @@
+#N canvas 124 145 1633 778 12;
+#X obj 287 507 cnv 15 470 129 empty empty empty 20 12 0 14 -249015
+-66577 0;
+#X floatatom 72 74 5 0 0 0 - - -, f 5;
+#X floatatom 162 74 5 0 0 0 - - -, f 5;
+#X floatatom 72 237 5 0 0 0 - - -, f 5;
+#X obj 72 359 throw~ sum;
+#X obj 162 359 throw~ sum;
+#X obj 896 440 dac~;
+#X obj 72 308 osc~ 440;
+#X obj 162 308 osc~ 660;
+#X obj 896 121 clip~ -1 1;
+#X text 312 153 These two objects will always need an indentifier for
+the channel \, like the frequency in a walkie talkie., f 55;
+#X text 303 77 Sends control data wirelessly. Great when your patch
+is turning into spaghetti. It will impose a 64 sample delay \, though.
+;
+#X text 303 211 Receives control data wirelessly. You can have many-to-many
+when it comes to control data;
+#X text 303 347 Sends signal wirelessly. Works specially well for summing
+busses \, submixes \, etc.;
+#X obj 72 459 catch~ sum;
+#X text 303 447 Receives signal wirelessly. If you use the same identifier
+twice here \, PD will throw an error - you can throw many signals into
+a catch \, but not the other way around.;
+#X text 312 406 These also require an identifier., f 35;
+#X obj 896 355 mux~ . .;
+#X text 303 521 Note about this 'wireless' system: these channel names
+will work across different windows \, different patches - which might
+be confusing at first. You'll find this quirk is very powerful once
+harnessed: you can make modules that are agnostic when it comes to
+where it will be sending the signals \, allowing for very flexible
+routing that 'just works'., f 62;
+#X obj 72 661 throw~ toclip;
+#X obj 935 488 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 967 224 osc~;
+#X text 1127 344 The mux~ or multiplexer~ object will let you pick
+which of the inlets data or signal is propagated down its outlet by
+sending numbers into its LEFT inlet (unusual behavior here).;
+#X msg 961 292 0;
+#X msg 999 292 1;
+#X obj 1040 294 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 896 67 catch~ toclip;
+#X obj 949 258 *~;
+#X floatatom 967 194 5 0 0 0 - - -, f 5;
+#X floatatom 1068 292 5 0 0 0 - - -, f 5;
+#X obj 1120 294 hradio 15 0 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 1159 291 So many ways to send 0's and 1's!;
+#X obj 896 531 spigot;
+#X floatatom 896 486 4 0 0 0 - - -, f 4;
+#X floatatom 896 568 5 0 0 0 - - -, f 5;
+#X text 1127 494 Spigot will let data (or signal \, if of the ~ variety)
+when it receives a non-zero on its right inlet. Super helpful when
+it comes to routing things around.;
+#X obj 72 109 send value;
+#X obj 162 109 send value;
+#X obj 72 204 receive value;
+#X obj 896 396 *~ 0.2;
+#X obj 72 558 *~ 0.5;
+#X text 1127 204 This fork of the signal path could be some other processing:
+a delay \, some reverb \, distortion \, filters \, etc. We're doing
+some very simple amplitude modulation (AM) here.;
+#X text 1127 104 Clip will lop off the signal at the given points.
+Good for guaranteeing it won't hurt your ears \, but will cause the
+signal to sound distorted. Can be used creatively \, too!;
+#X text 1127 624 Moses will 'part the waters' by the value given it
+as argument or into the right inlet. Under that value \, goes to left
+output \, otherwise goes out the right one.;
+#X obj 896 626 moses 13;
+#X floatatom 896 675 5 0 0 0 - - -, f 5;
+#X floatatom 949 675 5 0 0 0 - - -, f 5;
+#X connect 1 0 36 0;
+#X connect 2 0 37 0;
+#X connect 7 0 4 0;
+#X connect 8 0 5 0;
+#X connect 9 0 17 0;
+#X connect 9 0 27 0;
+#X connect 14 0 40 0;
+#X connect 17 0 39 0;
+#X connect 20 0 32 1;
+#X connect 21 0 27 1;
+#X connect 23 0 17 0;
+#X connect 24 0 17 0;
+#X connect 25 0 17 0;
+#X connect 26 0 9 0;
+#X connect 27 0 17 1;
+#X connect 28 0 21 0;
+#X connect 29 0 17 0;
+#X connect 30 0 17 0;
+#X connect 32 0 34 0;
+#X connect 33 0 32 0;
+#X connect 34 0 44 0;
+#X connect 38 0 3 0;
+#X connect 39 0 6 0;
+#X connect 39 0 6 1;
+#X connect 40 0 19 0;
+#X connect 44 0 45 0;
+#X connect 44 1 46 0;

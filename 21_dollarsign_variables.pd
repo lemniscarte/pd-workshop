@@ -1,0 +1,206 @@
+#N canvas 172 70 1606 913 12;
+#X obj 865 771 cnv 10 15 15 empty empty empty 20 12 0 14 -234869 -66577
+0;
+#X msg 193 302 \$3;
+#X msg 193 271 5 8 7 4 6;
+#X floatatom 193 332 5 0 0 0 - - -, f 5;
+#X obj 446 644 print;
+#X text 204 28 Ok \, a few things I have to come clean about:;
+#X text 204 58 1 - PD is a programming language \, after all.;
+#X text 204 118 4 - Actually \, pretty much everything in PD is a...
+message?, f 65;
+#X text 275 332 Cool \, that works!, f 67;
+#X obj 103 492 *;
+#X floatatom 103 521 5 0 0 0 - - -, f 5;
+#X obj 73 395 t b b;
+#X obj 446 617 pack \$1 \$2 \$3, f 16;
+#X floatatom 555 532 5 0 127 1 note - -, f 5;
+#X floatatom 555 557 5 0 127 1 velocity - -, f 5;
+#X floatatom 555 582 5 0 16 1 channel - -, f 5;
+#X obj 446 595 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 190 610 Super useful when used in 'pack'.;
+#X obj 169 793 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 169 848 print;
+#X obj 169 819 abs/backwards 100 200 30 1000;
+#X obj 73 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 137 396 \$1;
+#X msg 169 396 \$4;
+#X obj 73 443 float;
+#X obj 137 443 float;
+#X text 209 391 If these values are picked out of the list (remember
+using 'floats' for storage?)..., f 47;
+#X text 152 521 ...what is the result?, f 23;
+#X text 204 98 3 - Messages can be lists. In fact \, lists are super
+important!, f 65;
+#X obj 185 61 cnv 10 15 15 empty empty empty 20 12 0 14 -247191 -66577
+0;
+#X obj 185 81 cnv 10 15 15 empty empty empty 20 12 0 14 -261650 -66577
+0;
+#X obj 185 101 cnv 10 15 15 empty empty empty 20 12 0 14 -65005 -66577
+0;
+#X obj 185 121 cnv 10 15 15 empty empty empty 20 12 0 14 -234869 -66577
+0;
+#X obj 75 191 cnv 10 15 15 empty empty empty 20 12 0 14 -247191 -66577
+0;
+#X obj 85 723 cnv 10 15 15 empty empty empty 20 12 0 14 -261650 -66577
+0;
+#X text 106 720 2 - When you give an abstraction some initial arguments
+\, these will be available inside the abstraction \, a lot like the
+native PD objects., f 88;
+#X text 275 271 Related to 3 - messages with values separated by spaces
+are lists., f 67;
+#X obj 865 81 cnv 10 15 15 empty empty empty 20 12 0 14 -65005 -66577
+0;
+#X text 904 134 First \, a neat little hack. By sending lists of values
+into ONE inlet \, many math objects will 'spread' the contents as operators.
+Again \, seeing it in action is more descriptive:, f 89;
+#X obj 986 231 +;
+#X floatatom 986 260 5 0 0 0 - - -, f 5;
+#X msg 986 202 2 3;
+#X floatatom 1046 260 5 0 0 0 - - -, f 5;
+#X msg 1046 202 2 3;
+#X obj 1046 231 *;
+#X floatatom 1106 260 5 0 0 0 - - -, f 5;
+#X msg 1106 202 2 3;
+#X obj 1106 231 /;
+#X floatatom 1166 260 5 0 0 0 - - -, f 5;
+#X msg 1166 202 2 3;
+#X obj 1166 231 pow;
+#X floatatom 1226 260 5 0 0 0 - - -, f 5;
+#X obj 1226 231 <;
+#X msg 1226 202 20 30;
+#X text 1268 231 Is 'a' smaller than 'b'?;
+#X text 1268 260 1 for yes or 0 for no.;
+#X text 94 188 1 - PD uses variables too! When used with messages \,
+they start with a dollarsign ($) and are followed by a number. We will
+normally use \$1 \, \$2 \, etc. while the \$0 is a special variable
+\, one that is defined by PD itself. Seeing how they work is best:
+, f 90;
+#X text 884 78 3 - Messages that have several values separated by spaces
+are lists. While this looks simple enough \, PD has a few quirks when
+handling lists., f 93;
+#X msg 1014 401 milk eggs honey;
+#X msg 1014 430 \$1;
+#X obj 1014 459 print;
+#X text 1066 458 Wait \, what? Why is 'eggs' printed out????;
+#X msg 1014 597 \$1;
+#X obj 1014 626 print;
+#X msg 1014 568 list milk eggs honey;
+#X text 1171 567 By explicitly using the 'list' selector \, we can
+avoid the mixup., f 41;
+#X text 884 768 4 - Dude \, turns out ALL things PD are messages with
+different selectors preceding them. That's how it tells one value from
+another. Whoa., f 89;
+#X text 904 509 Because PD sees 'milk' as the selector. It's like the
+object above is a milk object :), f 88;
+#N canvas 623 216 720 703 bonus 0;
+#X floatatom 223 104 5 0 0 0 - - -, f 5;
+#X obj 223 132 value myVariable;
+#X obj 363 132 value myVariable;
+#X floatatom 223 161 5 0 0 0 - - -, f 5;
+#X obj 363 104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 363 161 5 0 0 0 - - -, f 5;
+#X floatatom 93 316 5 0 0 0 - - -, f 5;
+#X obj 93 344 value myVariable2;
+#X obj 263 344 expr ($f1 + $f2) * myVariable / myVariable2;
+#X floatatom 263 316 5 0 0 0 - - -, f 5;
+#X floatatom 561 316 5 0 0 0 - - -, f 5;
+#X floatatom 263 373 5 0 0 0 - - -, f 5;
+#X text 305 315 this is the hot inlet;
+#X floatatom 93 492 5 0 0 1 BPM - -, f 5;
+#X text 105 61 Bonus 1) The value object is a holder of a globally
+available value:, f 68;
+#X obj 93 527 t b f, f 9;
+#X obj 93 579 /;
+#X obj 176 553 /;
+#X floatatom 176 579 5 0 0 0 - - -, f 5;
+#X floatatom 93 605 5 0 0 0 - - -, f 5;
+#X text 129 432 Some calculations can be made much more concise using
+expr \, like this BPM to millisecond converter:, f 60;
+#X text 256 527 A little cleaner with 'swap'.;
+#X floatatom 499 556 5 0 0 0 - - -, f 5;
+#X obj 176 527 swap 15000;
+#X msg 93 553 15000;
+#X obj 499 527 expr (15000 / $f1);
+#X text 310 607 But I must admit this will decrease readability!;
+#X text 85 215 Bonus 2) We have seen the expr object briefly on module
+17 \, tucked inside bonus2. The expr object allows for more complex
+mathematical expressions \, and make use of $-variables and global
+variables as well. It will create inlets according to how many $f-variables
+we write in our expression:, f 75;
+#X text 499 587 This is more elegant.;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 8 0 11 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 1;
+#X connect 13 0 15 0;
+#X connect 13 0 23 0;
+#X connect 13 0 25 0;
+#X connect 15 0 24 0;
+#X connect 15 1 16 1;
+#X connect 16 0 19 0;
+#X connect 17 0 18 0;
+#X connect 23 0 17 0;
+#X connect 23 1 17 1;
+#X connect 24 0 16 0;
+#X connect 25 0 22 0;
+#X restore 1170 842 pd bonus;
+#X text 204 78 2 - I've avoided mentioning a certain feature of abstractions.
+, f 63;
+#X text 275 302 Pick the value in the third position on the list.,
+f 67;
+#X text 190 630 Here \, I mock a MIDI note message.;
+#X text 190 650 MIDI is coming up next.;
+#X obj 450 819 utils/adsr;
+#X text 199 776 Contrived example:;
+#X text 429 776 Real life example:;
+#X text 904 679 There's no need to put 'list' on a list that is made
+up of numbers only. But it is there \, invisible so to speak \, as
+well., f 88;
+#X text 904 314 Now the weird quirk: messages always have a 'selector'
+in front of them \, the word 'list'. If you want to do the same variable
+extraction we did at item 1 \, but your list is made up of words \,
+this might surprise you., f 91;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 0 23 0;
+#X connect 2 0 22 0;
+#X connect 9 0 10 0;
+#X connect 11 0 24 0;
+#X connect 11 1 25 0;
+#X connect 12 0 4 0;
+#X connect 13 0 12 0;
+#X connect 14 0 12 1;
+#X connect 14 0 16 0;
+#X connect 15 0 12 2;
+#X connect 15 0 16 0;
+#X connect 16 0 12 0;
+#X connect 18 0 20 0;
+#X connect 20 0 19 0;
+#X connect 21 0 11 0;
+#X connect 22 0 24 1;
+#X connect 23 0 25 1;
+#X connect 24 0 9 0;
+#X connect 25 0 9 1;
+#X connect 39 0 40 0;
+#X connect 41 0 39 0;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
+#X connect 46 0 47 0;
+#X connect 47 0 45 0;
+#X connect 49 0 50 0;
+#X connect 50 0 48 0;
+#X connect 52 0 51 0;
+#X connect 53 0 52 0;
+#X connect 58 0 59 0;
+#X connect 59 0 60 0;
+#X connect 62 0 63 0;
+#X connect 64 0 62 0;

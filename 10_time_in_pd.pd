@@ -1,0 +1,87 @@
+#N canvas 167 209 1512 625 12;
+#X obj 889 479 cnv 15 396 43 empty empty empty 20 12 0 14 -192064 -66577
+0;
+#X obj 944 119 cnv 15 441 44 empty empty empty 20 12 0 14 -192510 -66577
+0;
+#X obj 779 138 cnv 15 153 219 empty empty empty 20 12 0 14 -184313
+-66577 0;
+#X obj 374 230 delay 500;
+#X text 118 49 We'll be dealing with time in millisecods \, mostly.
+Occasionally \, we'll need to get 'closer to the metal' and use samples
+as a measure of time.;
+#X obj 374 159 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 374 312 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 119 159 5 0 0 0 - - -, f 5;
+#X floatatom 119 312 5 0 0 0 - - -, f 5;
+#X floatatom 462 159 5 0 0 0 - - -, f 5;
+#X floatatom 462 312 5 0 0 0 - - -, f 5;
+#X obj 462 230 delay 250;
+#X obj 520 312 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 508 159 10;
+#X msg 542 159 1000;
+#X obj 119 230 pipe 500;
+#X text 365 397 The delay object is a little less flexible \, but simpler
+in many ways. It will delay the data by a given amount in milliseconds
+\, but will only output bangs. Unlike pipe \, it will have its fresher
+data override its last input., f 32;
+#X text 46 465 As you might have expected \, the right inlet allows
+you to change the 'length' of the pipe in milliseconds., f 32;
+#X obj 821 117 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 821 147 metro 200;
+#X floatatom 894 328 0 0 0 0 - - -;
+#X obj 893 286 + 1;
+#X obj 821 232 float;
+#X floatatom 859 190 5 0 0 0 - - -, f 5;
+#X obj 791 192 bng 15 60 10 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 978 252 Banging it sends a 0 down its outlet \,;
+#X text 978 328 This just goes on and on.;
+#X obj 894 407 mod 16;
+#X floatatom 894 446 5 0 0 0 - - -, f 5;
+#X text 978 407 But if we use a modulo object...;
+#X text 978 446 cycling within a range is a piece of cake.;
+#X text 958 180 Note that bang is not translated as a 1 or 0 \, like
+the toggle. The bang has no related object in other languages (AFAIK).
+, f 63;
+#X text 958 232 <- There's 0 stored in the float \, for starters.;
+#X obj 894 488 hradio 24 0 0 16 empty empty empty 0 -8 0 10 -262144
+-261569 -1 6;
+#X floatatom 933 378 5 0 0 0 - - -, f 5;
+#X text 978 282 which gets a 1 added to it and is output right away.
+It is also stored in the float object \, awaiting another bang., f
+64;
+#X text 958 130 (You'll see this particular structure over and over
+in PD), f 59;
+#X text 853 49 We've seen metro and it's use as an emitter of evenly
+timed bangs. We can use the bangs and a counter if we increase a number
+(float) with every bang:, f 68;
+#X text 46 397 Like water flowing down a pipe \, if you measure at
+its entry and at its outlet \, you'll get the same \, consistent variations.
+, f 32;
+#X text 823 539 Do you see the begginings of a simple sequencer here?
+Changing the value on the modulo's right inlet will change the sequence
+length to taste \, on the fly., f 79;
+#X connect 3 0 6 0;
+#X connect 5 0 3 0;
+#X connect 7 0 15 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 11 0 12 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 0;
+#X connect 15 0 8 0;
+#X connect 18 0 19 0;
+#X connect 19 0 24 0;
+#X connect 19 0 23 0;
+#X connect 20 0 27 0;
+#X connect 21 0 20 0;
+#X connect 21 0 22 1;
+#X connect 22 0 21 0;
+#X connect 24 0 22 0;
+#X connect 27 0 28 0;
+#X connect 28 0 33 0;
+#X connect 34 0 27 1;

@@ -1,0 +1,244 @@
+#N canvas 381 103 1118 921 12;
+#X obj 509 299 cnv 15 93 63 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 133 212 cnv 15 152 97 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 150 678 delwrite~ test 2000;
+#X obj 519 380 delread4~ test 2000;
+#X floatatom 519 264 5 0 0 0 - - -, f 5;
+#X obj 519 307 pack 0 30;
+#X obj 519 336 line~;
+#X obj 519 611 dac~;
+#X obj 700 641 *~;
+#X obj 519 220 hsl 128 15 0 7 0 0 empty empty 0\ to\ 7\ range 8 -10
+0 10 -262144 -1 -1 5200 1;
+#X obj 148 380 +~;
+#X obj 679 220 hsl 128 15 0 2000 0 0 empty empty 0\ to\ 2000\ range
+8 -10 0 10 -262144 -1 -1 7850 1;
+#X obj 748 598 hsl 79 20 0 0.9 0 1 empty empty feedback -2 -8 0 10
+-262144 -1 -1 7800 1;
+#X obj 519 519 *~;
+#X obj 667 455 hsl 79 20 0 0.9 0 0 empty empty delay\ mix -2 -8 0 10
+-262144 -1 -1 4300 1;
+#N canvas 684 395 714 477 sample_player 0;
+#X obj 305 143 soundfiler;
+#X obj 305 67 loadbang;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array sample 682840 float 18 black black;
+#X coords 0 1 682840 -1 99 59 1;
+#X restore 305 196 graph;
+#X msg 305 105 read -resize samples/124_bpm_bass_loop.wav sample;
+#X obj 185 89 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 44 131 tabplay~ sample;
+#X obj 44 260 outlet~;
+#X obj 44 43 inlet;
+#X obj 185 43 inlet;
+#X obj 146 175 spigot;
+#X obj 146 217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 305 321 openpanel;
+#X obj 305 297 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 305 379 soundfiler;
+#X msg 305 350 read -resize \$1 sample;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 9 1;
+#X connect 5 0 6 0;
+#X connect 5 1 9 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 11 0 14 0;
+#X connect 12 0 11 0;
+#X connect 14 0 13 0;
+#X restore 148 272 pd sample_player;
+#X obj 148 227 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 257 227 tgl 15 1 empty empty loop -22 7 0 8 -262144 -1 -1 1
+1;
+#X msg 179 227 stop;
+#X text 169 611 Normally \, you send it straight to the dac...;
+#X text 318 678 as well as into the 'delay line'.;
+#X obj 92 180 cnv 15 24 24 empty empty 1 8 10 0 12 -261735 -66577 0
+;
+#X obj 487 608 cnv 15 24 24 empty empty 2 8 10 0 12 -261735 -66577
+0;
+#X obj 291 677 cnv 15 24 24 empty empty 3 8 10 0 12 -261735 -66577
+0;
+#X obj 665 378 cnv 15 24 24 empty empty 4 8 10 0 12 -261735 -66577
+0;
+#X obj 665 512 cnv 15 24 24 empty empty 5 8 10 0 12 -261735 -66577
+0;
+#X text 692 513 The delayed signal is finally mixed to taste.;
+#X text 124 183 Start with your signal.;
+#X obj 745 639 cnv 15 24 24 empty empty 6 8 10 0 12 -261735 -66577
+0;
+#X text 692 379 Here the delay line \, or buffer \, is read.;
+#X text 772 633 What if you feed this delayed signal into the delay
+line?, f 30;
+#X obj 805 839 lop~;
+#X obj 830 782 hsl 79 20 200 20000 1 1 empty empty lowpass\ frequency
+-2 -8 0 10 -262144 -1 -1 4000 1;
+#X floatatom 830 811 5 0 0 0 - - -, f 5;
+#X obj 519 449 +~;
+#X text 135 765 Another common characteristic of delays is the filtering
+of the delayed signal. Try a quick and dirty version with a lop~ or
+hip~ object (or both!) right before the 'delay mix' point in the signal
+flow., f 82;
+#X obj 950 782 hsl 79 20 200 20000 1 1 empty empty hipass\ frequency
+-2 -8 0 10 -262144 -1 -1 3300 1;
+#X floatatom 950 811 5 0 0 0 - - -, f 5;
+#X obj 925 839 hip~;
+#X obj 507 416 cnv 15 31 15 empty empty empty 20 12 0 14 -122849 -66577
+0;
+#X obj 766 841 cnv 15 31 15 empty empty empty 20 12 0 14 -122849 -66577
+0;
+#X text 135 827 Note: I've used the +~ object twice as a simple way
+to route signals - it can be convenient to put these 'joints' in places
+where you might want to experiment \, or where you expect to add stuff
+to later., f 82;
+#X obj 519 579 *~;
+#X obj 562 539 vsl 13 29 0 0.8 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 2800 1;
+#X text 243 114 These buffers are written to and read from with the
+delwrite~ and delread~ (or delread4~) objects., f 99;
+#X text 273 48 Several effects use delay lines as their basis - echo
+\, chorus \, flanger \, and (with some more complex processing) reverbs.
+This delay is sometimes referred to as a 'buffer'., f 88;
+#N canvas 410 206 1057 755 chorus 0;
+#X obj 459 452 vd~ test;
+#X obj 459 294 osc~ 0.53;
+#X obj 529 452 vd~ test;
+#X obj 599 452 vd~ test;
+#X obj 529 294 osc~ 0.47;
+#X obj 599 294 osc~ 0.6;
+#X obj 500 513 +~;
+#X obj 459 353 *~;
+#X obj 529 353 *~;
+#X obj 599 353 *~;
+#X obj 459 403 +~;
+#X obj 529 403 +~;
+#X obj 599 403 +~;
+#X obj 104 585 outlet~;
+#X obj 500 542 *~;
+#X obj 500 585 dac~;
+#X obj 894 496 vsl 13 29 0 0.8 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 389 215 5 0 0 0 - - -, f 5;
+#X floatatom 459 215 5 0 0 0 - - -, f 5;
+#X floatatom 529 215 5 0 0 0 - - -, f 5;
+#X obj 389 452 vd~ test;
+#X obj 389 353 *~;
+#X obj 389 403 +~;
+#X obj 389 294 osc~ 0.3;
+#X floatatom 599 215 5 0 0 0 - - -, f 5;
+#X obj 599 177 * 1.07;
+#X obj 459 177 * 0.8;
+#X obj 529 177 * 0.11;
+#X obj 764 225 vsl 15 128 0 40 0 1 empty empty range -36 7 0 10 -262144
+-1 -1 4500 1;
+#X obj 244 185 vsl 15 128 0 10 0 1 empty empty depth -37 2 0 10 -262144
+-1 -1 3050 1;
+#X obj 454 112 hsl 128 15 0.2 5 0 1 empty empty speed -40 4 0 10 -262144
+-1 -1 450 1;
+#X obj 104 56 inlet~ thru;
+#X obj 244 56 inlet depth;
+#X obj 454 56 inlet speed;
+#X obj 764 56 inlet range;
+#X obj 894 56 inlet volume;
+#X msg 615 258 0;
+#X msg 420 258 0.35;
+#X msg 550 258 0.75;
+#X msg 485 258 0.65;
+#X obj 294 212 loadbang;
+#X obj 104 475 +~;
+#X text 670 450 If you open the help for vd~ \, you'll see it's the
+same object as the delread4~., f 29;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 14 0;
+#X connect 6 0 13 0;
+#X connect 7 0 10 0;
+#X connect 8 0 11 0;
+#X connect 9 0 12 0;
+#X connect 10 0 0 0;
+#X connect 11 0 2 0;
+#X connect 12 0 3 0;
+#X connect 14 0 15 0;
+#X connect 14 0 15 1;
+#X connect 16 0 14 1;
+#X connect 17 0 23 0;
+#X connect 18 0 1 0;
+#X connect 19 0 4 0;
+#X connect 20 0 6 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 0;
+#X connect 23 0 21 0;
+#X connect 24 0 5 0;
+#X connect 25 0 24 0;
+#X connect 26 0 18 0;
+#X connect 27 0 19 0;
+#X connect 28 0 12 1;
+#X connect 28 0 22 1;
+#X connect 28 0 11 1;
+#X connect 28 0 10 1;
+#X connect 29 0 21 1;
+#X connect 29 0 9 1;
+#X connect 29 0 8 1;
+#X connect 29 0 7 1;
+#X connect 30 0 17 0;
+#X connect 30 0 27 0;
+#X connect 30 0 26 0;
+#X connect 30 0 25 0;
+#X connect 31 0 41 0;
+#X connect 32 0 29 0;
+#X connect 33 0 30 0;
+#X connect 34 0 28 0;
+#X connect 35 0 16 0;
+#X connect 36 0 5 1;
+#X connect 37 0 23 1;
+#X connect 38 0 4 1;
+#X connect 39 0 1 1;
+#X connect 40 0 37 0;
+#X connect 40 0 36 0;
+#X connect 40 0 38 0;
+#X connect 40 0 39 0;
+#X connect 41 0 13 0;
+#X connect 41 0 15 0;
+#X connect 41 0 15 1;
+#X restore 241 380 pd chorus;
+#X obj 301 336 vsl 13 29 0 0.8 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X connect 3 0 34 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 2 0;
+#X connect 10 0 42 0;
+#X connect 11 0 4 0;
+#X connect 12 0 8 1;
+#X connect 13 0 42 0;
+#X connect 14 0 13 1;
+#X connect 15 0 10 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 1;
+#X connect 18 0 15 0;
+#X connect 31 0 38 0;
+#X connect 32 0 33 0;
+#X connect 33 0 31 1;
+#X connect 34 0 8 0;
+#X connect 34 0 13 0;
+#X connect 36 0 37 0;
+#X connect 37 0 38 1;
+#X connect 42 0 7 0;
+#X connect 42 0 7 1;
+#X connect 43 0 42 1;
+#X connect 47 0 46 4;

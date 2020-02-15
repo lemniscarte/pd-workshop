@@ -1,0 +1,22 @@
+#N canvas 735 459 649 375 12;
+#X obj 72 108 cnv 15 69 29 empty empty empty 20 12 0 14 -261869 -66577
+0;
+#X obj 169 147 mux~;
+#X obj 84 112 hradio 22 0 1 2 \$0-dud \$0-sdud empty 0 -8 0 10 -260993
+-119745 -1 0;
+#X obj 359 147 mux~;
+#X obj 169 69 inlet~ A-L;
+#X obj 369 69 inlet~ B-L;
+#X obj 269 69 inlet~ A-R;
+#X obj 469 69 inlet~ B-R;
+#X obj 169 238 outlet~ L;
+#X obj 359 238 outlet~ R;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 9 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 1;
+#X connect 6 0 3 0;
+#X connect 7 0 3 1;
+#X coords 0 -1 1 1 75 54 1 69 86;

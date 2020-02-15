@@ -1,0 +1,53 @@
+#N canvas 385 166 1070 792 12;
+#X obj 346 712 dac~;
+#X obj 345 325 *~;
+#X floatatom 363 152 5 0 0 0 - - -, f 5;
+#X obj 363 261 osc~;
+#X obj 345 66 osc~ 440;
+#X text 386 192 <-;
+#X text 69 192 SIGNAL or audio connection cables ->;
+#X text 413 192 CONTROL connection cables;
+#X obj 345 664 *~;
+#X floatatom 363 453 5 0 10 0 - - -, f 5;
+#X floatatom 415 453 5 0 10 0 - - -, f 5;
+#X floatatom 363 524 5 0 0 0 - - -, f 5;
+#X text 503 487 Most objects \, like the + object \, will have a 'hot'
+inlet and other \, 'cold' inlets:, f 45;
+#X text 513 523 Data passed into the cold inlet will not forward the
+data along to the next place. Instead \, it will wait until something
+happens to the hot inlet.;
+#X text 476 453 <-;
+#X text 503 453 (Change these values and see what happens);
+#X text 504 55 Objects may have none \, one or many inputs/outputs.
+These inputs and outputs can be of two kinds:, f 51;
+#X text 503 702 Right-click any object and select 'help' \, it is the
+most important thing to remember :), f 44;
+#X text 505 325 The division between kinds of inputs/outputs or cables
+goes further: objects themselves are grouped into CONTROL or SIGNAL.
+, f 68;
+#X text 513 575 Save for rare exceptions \, you can expect the hot
+inlet to be always the leftmost inlet of an object.;
+#X text 513 361 If the object ends with a tilde (~) it's a SIGNAL object
+\, Otherwise \, it's a CONTROL object.;
+#X text 62 323 This object multiplies SIGNAL data ->;
+#X obj 363 491 /;
+#X text 116 490 This object divides CONTROL data ->;
+#X obj 363 632 * 0.2;
+#X text 523 91 CONTROL - thin cables \, 'hollow' ports \, and, f 49
+;
+#X text 523 111 SIGNAL (or AUDIO) - thick cables \, 'filled' ports.
+;
+#X text 504 252 Up above \, the osc~ object was given an 'initial argument'
+of 440 Down here \, we are 'passing' this argument from a number box.
+, f 67;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 0;
+#X connect 8 0 0 0;
+#X connect 8 0 0 1;
+#X connect 9 0 22 0;
+#X connect 10 0 22 1;
+#X connect 11 0 24 0;
+#X connect 22 0 11 0;
+#X connect 24 0 8 1;

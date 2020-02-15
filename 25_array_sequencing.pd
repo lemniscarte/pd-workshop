@@ -1,0 +1,292 @@
+#N canvas 404 133 936 867 12;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array seq 16 float 23 #9bffc4 #00b134;
+#A 0 71.25 65.625 53.125 60 70.625 60 53.75 63.75 45.625 46.25 47.5
+47.5 56.875 47.5 46.875 48.75;
+#X coords 0 100 16 30 426 112 1;
+#X restore 235 239 graph;
+#X floatatom 72 438 5 0 15 0 - - -, f 5;
+#X obj 72 466 tabread seq;
+#X floatatom 72 495 5 0 0 0 - - -, f 5;
+#N canvas 360 411 375 446 seqdriver 0;
+#X obj 138 112 tgl 25 0 empty empty empty 17 7 0 10 -93971 -1 -1 0
+1;
+#X obj 170 177 expr (15000 / $f1);
+#X obj 170 47 loadbang;
+#X obj 138 214 metro;
+#X obj 138 326 outlet;
+#X floatatom 170 114 5 30 200 1 BPM - -, f 5;
+#X obj 138 254 f;
+#X obj 210 254 + 1;
+#X floatatom 138 283 5 0 0 0 - - -, f 5;
+#X msg 78 216 0;
+#X obj 78 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 78 158 sel 1, f 7;
+#X obj 210 283 mod 16;
+#X msg 170 76 60;
+#X connect 0 0 3 0;
+#X connect 0 0 11 0;
+#X connect 1 0 3 1;
+#X connect 2 0 13 0;
+#X connect 3 0 6 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 12 0;
+#X connect 8 0 4 0;
+#X connect 9 0 6 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 6 1;
+#X connect 13 0 5 0;
+#X coords 0 -1 1 1 102 34 2 134 107;
+#X restore 72 159 pd seqdriver;
+#X text 239 205 Then we create an array \, making changes to its properties:
+;
+#X text 239 41 I think using arrays for sequencing is more handy than
+a bunch of sliders and a little easier to reason about than having
+maths do the work \, good surprises notwithstanding :);
+#X text 239 103 Maybe the best approach is a mix of all techniques
+\, so let's visit one more way of sequencing events in PD.;
+#X text 239 531 Connecting the counter to the tabread will allow us
+to read values from a table (array) in sequence \, and we can use the
+values to our hearts' content.;
+#X obj 726 742 dac~;
+#N canvas 1146 241 589 407 scaler 0;
+#X obj 82 33 inlet;
+#X obj 197 33 loadbang;
+#X obj 82 308 outlet;
+#X msg 268 84 0 2 4 5 7 9 11;
+#X msg 268 105 0 2 3 5 7 8 10;
+#X msg 268 126 0 4 7;
+#X msg 268 147 0 3 7;
+#X floatatom 115 134 5 0 11 0 - - -, f 5;
+#X text 159 133 Root;
+#X text 375 84 Major scale;
+#X text 375 105 Minor scale;
+#X text 375 126 Major triad;
+#X text 375 147 Minor triad;
+#X msg 268 168 0 2 4 7 9;
+#X text 375 168 Major pentatonic scale;
+#X msg 268 189 0 3 5 7 10;
+#X text 375 189 Minor pentatonic scale;
+#X obj 82 228 abs/mscale;
+#X msg 115 102 10;
+#X floatatom 82 257 5 0 0 0 - - -, f 5;
+#X connect 0 0 17 0;
+#X connect 1 0 15 0;
+#X connect 1 0 18 0;
+#X connect 3 0 17 2;
+#X connect 4 0 17 2;
+#X connect 5 0 17 2;
+#X connect 6 0 17 2;
+#X connect 7 0 17 1;
+#X connect 13 0 17 2;
+#X connect 15 0 17 2;
+#X connect 17 0 19 0;
+#X connect 18 0 7 0;
+#X connect 19 0 2 0;
+#X restore 726 528 pd scaler;
+#X text 239 593 Thought it'd be fun to throw in this super handy abstraction:
+mscale will lock your MIDI pitches to a given scale. Happy accidents
+abound!;
+#X obj 726 712 *~;
+#X obj 744 686 hsl 65 17 0 1 0 1 empty empty empty -2 -8 0 10 -3344
+-1 -1 1000 1;
+#X text 313 680 (A dash of delay never hurt nobody);
+#X obj 687 798 delwrite~ seq 1000;
+#X obj 742 638 catch~ delline;
+#N canvas 533 211 616 359 delay 0;
+#X obj 72 79 pack 0 30;
+#X obj 72 105 line~;
+#X obj 72 131 delread4~ seq 1000;
+#X obj 303 58 hsl 79 15 0 1000 0 1 empty empty delay\ time 8 -10 0
+10 -208879 -1 -1 2900 1;
+#X obj 169 349 *~;
+#X obj 303 122 hsl 79 20 0 0.9 0 1 empty empty feedback 14 -8 0 10
+-135145 -1 -1 5600 1;
+#X obj 72 349 *~;
+#X obj 303 88 hsl 79 20 0 0.9 0 1 empty empty delay\ mix 10 -8 0 10
+-159730 -1 -1 4200 1;
+#X obj 72 305 +~;
+#X obj 72 379 throw~ delline;
+#X obj 222 404 outlet~;
+#X obj 72 231 lop~;
+#X obj 97 184 hsl 75 10 200 20000 1 1 empty empty lowpass 16 -8 0 10
+-262144 -1 -1 5900 1;
+#X floatatom 97 203 5 0 0 0 - - -, f 5;
+#X obj 187 184 hsl 75 10 200 20000 1 1 empty empty hipass 17 -8 0 10
+-262144 -1 -1 3000 1;
+#X floatatom 187 203 5 0 0 0 - - -, f 5;
+#X obj 72 268 hip~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 3 0 0 0;
+#X connect 4 0 10 0;
+#X connect 5 0 4 1;
+#X connect 6 0 9 0;
+#X connect 7 0 6 1;
+#X connect 8 0 4 0;
+#X connect 8 0 6 0;
+#X connect 11 0 16 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 1;
+#X connect 14 0 15 0;
+#X connect 15 0 16 1;
+#X connect 16 0 8 0;
+#X coords 0 -1 1 1 92 106 2 299 41;
+#X restore 574 664 pd delay;
+#N canvas 260 64 849 721 synth 0;
+#X obj 293 393 phasor~;
+#X obj 223 393 phasor~;
+#X obj 223 360 +~ 0.1;
+#X obj 152 394 osc~;
+#X obj 372 392 pwm~;
+#X msg 372 358 0.5;
+#X obj 372 315 loadbang;
+#X obj 152 493 *~;
+#X obj 223 492 *~;
+#X obj 293 492 *~;
+#X obj 372 491 *~;
+#X obj 433 491 *~;
+#X obj 170 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 300 1;
+#X obj 241 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1700 1;
+#X floatatom 177 315 5 0 0 0 - - -, f 5;
+#X obj 152 352 *~ 2;
+#X obj 311 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1400 1;
+#X obj 390 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 850 1;
+#X obj 451 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 293 360 *~ -1;
+#X floatatom 325 315 5 0 0 0 - - -, f 5;
+#X obj 453 315 vsl 17 22 0.1 0.9 0 1 empty empty pulse\ width 0 -9
+0 8 -262144 -1 -1 750 1;
+#X obj 433 392 pink~;
+#X obj 262 315 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
+-1 -1 350 1;
+#X obj 223 43 inlet;
+#X obj 521 389 vsl 15 24 0 0.7 0 1 empty empty sine 0 -9 0 10 -262144
+-1 -1 300 1;
+#X obj 571 389 vsl 15 24 0 0.7 0 1 empty empty saw 0 -9 0 10 -262144
+-1 -1 1700 1;
+#X obj 621 389 vsl 15 24 0 0.7 0 1 empty empty saw 0 -9 0 10 -262144
+-1 -1 1400 1;
+#X obj 671 389 vsl 15 24 0 0.7 0 1 empty empty square 0 -9 0 10 -262144
+-1 -1 850 1;
+#X obj 721 389 vsl 15 24 0 0.7 0 1 empty empty noise 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 696 212 vsl 17 22 0.1 0.9 0 1 empty empty pwm 0 -9 0 8 -262144
+-1 -1 750 1;
+#X obj 596 212 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
+-1 -1 350 1;
+#X obj 646 212 vsl 17 22 0.5 16 0 1 empty empty mult 0 -9 0 8 -262144
+-1 -1 0 1;
+#X floatatom 596 248 3 0 0 0 - - -, f 3;
+#X floatatom 646 248 3 0 0 0 - - -, f 3;
+#X floatatom 696 248 3 0 0 0 - - -, f 3;
+#X obj 546 212 vsl 17 22 0.5 16 0 1 empty empty mult 0 -9 0 8 -262144
+-1 -1 0 1;
+#X floatatom 546 248 3 0 0 0 - - -, f 3;
+#X obj 322 619 *~;
+#X obj 617 540 vsl 15 24 0 1 0 1 empty empty gain 0 -9 0 10 -262144
+-1 -1 2300 1;
+#X obj 322 648 outlet~;
+#X floatatom 223 72 5 0 0 0 MIDI - -, f 5;
+#X obj 223 100 mtof;
+#X obj 397 179 line;
+#X obj 567 58 hsl 128 15 0 250 0 1 empty empty portamento -56 6 1 10
+-262144 -1 -1 650 1;
+#X floatatom 325 98 4 0 0 0 - - -, f 4;
+#X obj 397 150 pack 0 0;
+#X obj 223 150 pack 0 0;
+#X obj 223 179 line~;
+#X obj 526 453 bng 15 50 20 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 526 506 vline~;
+#X msg 526 477 0 1 0 \, 1 1 1 \, 0 120 90;
+#X connect 0 0 9 0;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 10 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 38 0;
+#X connect 8 0 38 0;
+#X connect 9 0 38 0;
+#X connect 10 0 38 0;
+#X connect 11 0 38 0;
+#X connect 12 0 7 1;
+#X connect 13 0 8 1;
+#X connect 14 0 15 1;
+#X connect 15 0 3 0;
+#X connect 16 0 9 1;
+#X connect 17 0 10 1;
+#X connect 18 0 11 1;
+#X connect 19 0 0 0;
+#X connect 20 0 19 1;
+#X connect 21 0 4 0;
+#X connect 22 0 11 0;
+#X connect 23 0 2 1;
+#X connect 24 0 41 0;
+#X connect 25 0 12 0;
+#X connect 26 0 13 0;
+#X connect 27 0 16 0;
+#X connect 28 0 17 0;
+#X connect 29 0 18 0;
+#X connect 30 0 35 0;
+#X connect 31 0 33 0;
+#X connect 32 0 34 0;
+#X connect 33 0 23 0;
+#X connect 34 0 20 0;
+#X connect 35 0 21 0;
+#X connect 36 0 37 0;
+#X connect 37 0 14 0;
+#X connect 38 0 40 0;
+#X connect 39 0 38 1;
+#X connect 41 0 42 0;
+#X connect 41 0 49 0;
+#X connect 42 0 46 0;
+#X connect 42 0 47 0;
+#X connect 43 0 4 1;
+#X connect 44 0 45 0;
+#X connect 45 0 46 1;
+#X connect 45 0 47 1;
+#X connect 46 0 43 0;
+#X connect 47 0 48 0;
+#X connect 48 0 15 0;
+#X connect 48 0 2 0;
+#X connect 48 0 19 0;
+#X connect 49 0 51 0;
+#X connect 50 0 38 1;
+#X connect 51 0 50 0;
+#X restore 726 594 pd synth;
+#X obj 726 561 - 12;
+#X text 239 159 We start with a subpatch containing a bpm-to-ms calculator
+and counter as before.;
+#X text 239 365 Colors aside \, what we need to do is set the length
+of the array \, but also make sure that the range of values is something
+sensible. I picked a narrower range of values this time - 30 to 100
+\, instead of the 0 to 127 we used before.;
+#X text 239 443 If we input numbers into a tabread object \, we're
+giving it indexes from which to pull a value. Just mouse the number
+box up and down for now and see it spew out the values we have on the
+array above.;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 1 0;
+#X connect 10 0 19 0;
+#X connect 12 0 9 0;
+#X connect 12 0 9 1;
+#X connect 13 0 12 1;
+#X connect 16 0 12 0;
+#X connect 17 0 15 0;
+#X connect 18 0 12 0;
+#X connect 18 0 15 0;
+#X connect 19 0 18 0;

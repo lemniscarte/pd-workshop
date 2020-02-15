@@ -1,0 +1,231 @@
+#N canvas 265 89 1019 904 12;
+#X obj 667 627 cnv 15 164 99 empty empty empty 20 12 0 14 -192502 -66577
+0;
+#X obj 719 351 cnv 15 122 119 empty empty empty 20 12 0 14 -192192
+-66577 0;
+#X obj 641 184 cnv 15 294 120 empty empty empty 20 12 0 14 -262125
+-66577 0;
+#N canvas 1309 96 611 738 playkeys 0;
+#X obj 64 274 mtof;
+#X floatatom 64 222 5 20 127 0 - - -, f 5;
+#X obj 384 270 bng 15 50 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 64 577 *~;
+#N canvas 132 205 1011 700 qwerty 0;
+#X obj 152 162 cnv 15 72 270 empty empty empty 20 12 0 14 -260454 -66577
+0;
+#X obj 662 474 cnv 15 230 69 empty empty empty 20 12 0 14 -260454 -66577
+0;
+#X obj 522 172 cnv 15 90 152 empty empty empty 20 12 0 14 -253932 -66577
+0;
+#X obj 52 172 cnv 15 90 152 empty empty empty 20 12 0 14 -253932 -66577
+0;
+#X obj 622 213 cnv 15 72 228 empty empty empty 20 12 0 14 -260454 -66577
+0;
+#X obj 63 183 list-find;
+#X obj 63 121 key;
+#X obj 123 90 loadbang;
+#X obj 483 206 * 12;
+#X obj 63 251 +;
+#X obj 63 294 + 60;
+#X obj 63 490 outlet;
+#X floatatom 168 294 5 0 0 0 - - -, f 5;
+#X floatatom 168 340 5 0 0 0 - - -, f 5;
+#X floatatom 168 225 5 0 0 0 - - -, f 5;
+#X floatatom 168 176 5 0 0 0 - - -, f 5;
+#X msg 123 114 122 115 120 100 99 118 103 98 104 110 106 109 44, f
+50;
+#X obj 168 369 mtof;
+#X floatatom 168 398 5 0 0 0 - - -, f 5;
+#X obj 610 90 loadbang;
+#X obj 532 183 list-find;
+#X obj 532 251 +;
+#X floatatom 637 294 5 0 0 0 - - -, f 5;
+#X floatatom 637 340 5 0 0 0 - - -, f 5;
+#X floatatom 637 225 5 0 0 0 - - -, f 5;
+#X obj 637 369 mtof;
+#X floatatom 637 398 5 0 0 0 - - -, f 5;
+#X obj 532 294 + 72;
+#X msg 610 114 113 50 119 51 101 114 53 116 54 121 55 117 105, f 49
+;
+#X text 671 481 Uglier stuff left behind from testing - no biggie if
+it's under the hood like this!, f 31;
+#X obj 234 480 cnv 15 242 62 empty empty empty 20 12 0 14 -253932 -66577
+0;
+#X text 243 491 Good candidates for refactoring into an abstraction!
+, f 31;
+#X obj 483 39 inlet octave;
+#X text 581 39 Inlets can be named for sanity's sake \, even though
+it doesn't affect anything., f 41;
+#X text 280 594 The 'key' object is really handy for controlling your
+patch \, we can explore it further. Now try and click into the'list-find'
+object and see how it's a bunch of nested sub-patches., f 65;
+#X floatatom 454 276 5 0 0 0 - - -, f 5;
+#X connect 5 0 9 0;
+#X connect 5 0 14 0;
+#X connect 6 0 5 0;
+#X connect 6 0 15 0;
+#X connect 6 0 20 0;
+#X connect 7 0 16 0;
+#X connect 8 0 9 1;
+#X connect 8 0 21 1;
+#X connect 8 0 35 0;
+#X connect 9 0 10 0;
+#X connect 9 0 12 0;
+#X connect 10 0 11 0;
+#X connect 10 0 13 0;
+#X connect 13 0 17 0;
+#X connect 16 0 5 1;
+#X connect 17 0 18 0;
+#X connect 19 0 28 0;
+#X connect 20 0 21 0;
+#X connect 20 0 24 0;
+#X connect 21 0 22 0;
+#X connect 21 0 27 0;
+#X connect 23 0 25 0;
+#X connect 25 0 26 0;
+#X connect 27 0 23 0;
+#X connect 27 0 11 0;
+#X connect 28 0 20 1;
+#X connect 32 0 8 0;
+#X restore 64 191 pd qwerty;
+#X msg 340 506 0.7;
+#X floatatom 64 161 5 0 0 0 - - -, f 5;
+#X obj 384 536 vline~;
+#X obj 64 441 pack 0 12;
+#X obj 64 470 vline~;
+#X obj 64 83 hradio 15 0 1 5 empty empty select\ octave 83 6 0 10 -262144
+-1 -1 2;
+#X obj 64 115 - 2;
+#X obj 124 385 vsl 11 38 1 50 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 64 617 outlet~;
+#X obj 124 355 inlet;
+#X obj 64 45 inlet;
+#X text 150 191 Yes \, a sub-patch inside a sub-patch!;
+#X text 121 45 A CONTROL inlet.;
+#X text 172 355 Another CONTROL inlet.;
+#X text 172 375 (Try adding more);
+#X text 128 617 A SIGNAL outlet.;
+#X obj 64 510 osc~;
+#X msg 384 506 0 12 0 \, 0.3 12 0 \, 0 600 100;
+#X text 110 274 We'll look into this object very soon., f 21;
+#X connect 0 0 8 0;
+#X connect 1 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 22 0;
+#X connect 3 0 13 0;
+#X connect 4 0 1 0;
+#X connect 5 0 3 1;
+#X connect 6 0 4 0;
+#X connect 7 0 3 1;
+#X connect 8 0 9 0;
+#X connect 9 0 21 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X connect 12 0 8 1;
+#X connect 14 0 12 0;
+#X connect 15 0 10 0;
+#X connect 21 0 3 0;
+#X connect 22 0 7 0;
+#X restore 738 402 pd playkeys;
+#X text 219 97 We have a couple of options when attempting to either
+clean up our patch or solve the repetition of code (or both!): Sub-patches
+and Abstractions., f 73;
+#X obj 738 374 hradio 15 0 1 5 empty empty select\ octave 0 -9 0 10
+-262144 -1 -1 2;
+#X obj 816 220 s intoSubPatch;
+#X obj 816 247 r fromSubPatch;
+#X floatatom 816 194 5 0 0 0 - - -, f 5;
+#X floatatom 816 274 5 0 0 0 - - -, f 5;
+#N canvas 7 67 271 256 times42 0;
+#X obj 79 77 * 42;
+#X floatatom 79 106 5 0 0 0 - - -, f 5;
+#X obj 79 48 r intoSubPatch;
+#X obj 79 134 s fromSubPatch;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X restore 726 233 pd times42;
+#X text 49 493 While abstractions mostly serve the same purpose \,
+they have an extra feature. This feature is not necessarily always
+desirable., f 73;
+#N canvas 27 375 236 269 times42 0;
+#X obj 67 83 * 42;
+#X floatatom 67 112 5 0 0 0 - - -, f 5;
+#X obj 67 54 r intoSubPatch;
+#X obj 68 140 s fromSubPatch;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X restore 648 522 pd times42;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X text 141 122 Nothing to see here :);
+#X restore 650 233 pd;
+#X text 49 529 If you have several copies of the same sub-patch and
+would like to make a change that affects all of them at once \, using
+an abstraction is the way to go., f 73;
+#X text 49 695 In order to do that \, we must save the contents of
+this abstraction as its own patch first. Then \, from a parent patch
+that is ON THE SAME FOLDER \, we can make an object that is just the
+name of the abstraction., f 73;
+#X floatatom 780 639 5 0 0 0 - - -, f 5;
+#X obj 678 696 dac~;
+#X text 219 45 Once our instruments get a little more complex \, things
+may start to look a lot like spaghetti. Or even more annoyingly \,
+some of the culprits of this mess are certain repeated structures.
+, f 73;
+#X text 49 219 If you make an object called 'pd' \, a new window will
+appear. Whatever you create in there will be part of the 'parent' patch.
+While these don't need a name \, the comvention is to name subpatches.
+Click to open., f 73;
+#X text 601 234 ->;
+#X floatatom 678 639 5 0 0 0 - - -, f 5;
+#X floatatom 729 639 5 0 0 0 - - -, f 5;
+#X obj 780 696 print;
+#X obj 667 737 cnv 15 164 99 empty empty empty 20 12 0 14 -192502 -66577
+0;
+#X floatatom 780 749 5 0 0 0 - - -, f 5;
+#X obj 678 806 dac~;
+#X floatatom 678 749 5 0 0 0 - - -, f 5;
+#X floatatom 729 749 5 0 0 0 - - -, f 5;
+#X obj 780 806 print;
+#X text 49 747 Let's make changes to one in order to affect all instances.
+, f 73;
+#X text 49 167 A sub-patch is basically a way to tuck away a bunch
+of cables into a new window. All the contents \, computations \, sound
+processing \, etc done in there are always on - just out of sight.
+, f 73;
+#X text 49 383 I did use some of these previously \, but let's click
+on one and peek inside. We can right-click and select 'Open' as well.
+, f 75;
+#X text 601 391 ->;
+#X text 601 521 ->;
+#X text 734 514 If you make changes to a sub-patch \, it won't affect
+other instances., f 35;
+#X text 845 711 Changes to abstractions will!, f 18;
+#X text 601 721 ->;
+#X obj 678 667 14_b_abstraction;
+#X obj 678 777 14_b_abstraction;
+#X text 49 271 This subpatch can communicate with the outside world
+via send and receive objects \, but it also throught another very neat
+feature: the inlet \, outlet \, inlet~ and outlet~ objects., f 73
+;
+#X obj 738 441 dac~;
+#X connect 3 0 41 0;
+#X connect 3 0 41 1;
+#X connect 5 0 3 0;
+#X connect 7 0 9 0;
+#X connect 8 0 6 0;
+#X connect 16 0 38 2;
+#X connect 21 0 38 0;
+#X connect 22 0 38 1;
+#X connect 25 0 39 2;
+#X connect 27 0 39 0;
+#X connect 28 0 39 1;
+#X connect 38 0 17 0;
+#X connect 38 0 17 1;
+#X connect 38 1 23 0;
+#X connect 39 0 26 0;
+#X connect 39 0 26 1;
+#X connect 39 1 29 0;

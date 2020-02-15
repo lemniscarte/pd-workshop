@@ -1,0 +1,125 @@
+#N canvas 636 425 654 339 12;
+#X text 67 44 When using sub-patches or abstractions \, one more feature
+must be explored: by right clicking on the canvas and selecting the
+'graph on parent' option \, we can control what shows up on the parent
+patch., f 75;
+#N canvas 358 80 1251 898 control 0;
+#X obj 960 39 cnv 15 211 48 empty empty empty 20 12 0 14 -261675 -66577
+0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array viz 882 float 0 black #ff8a00;
+#X coords 0 1 881 -1 200 130 1;
+#X restore 987 722 graph;
+#X text 968 44 Right-click anywhere on the blank canvas to get started.
+, f 28;
+#X obj 68 675 cos~;
+#X floatatom 68 123 5 0 0 1 - - -, f 5;
+#X obj 68 648 +~;
+#X obj 133 569 cos~;
+#X obj 133 537 +~;
+#X obj 68 762 *~;
+#X obj 187 673 vline~;
+#X obj 133 611 *~;
+#X obj 361 514 vline~;
+#X obj 361 458 bng 15 250 50 0 empty empty fire! 17 7 0 10 -261121
+-262142 -1;
+#X obj 361 577 *~ 1;
+#X obj 68 70 hsl 128 15 0 127 0 1 empty empty Carrier 2 -8 0 10 -262144
+-1 -1 3000 1;
+#X obj 402 652 hsl 128 15 0 0.7 0 1 empty empty Volume 2 -8 0 10 -262144
+-1 -1 3361 1;
+#X floatatom 402 677 5 0 0 0 - - -, f 5;
+#X obj 68 813 *~;
+#X obj 68 849 outlet~;
+#X obj 169 147 hsl 128 15 0 127 0 1 empty empty Modulator 2 -8 0 10
+-262144 -1 -1 6000 1;
+#X floatatom 169 173 5 0 0 0 - - -, f 5;
+#X obj 461 528 hsl 128 15 0 16 0 1 empty empty Depth 2 -8 0 10 -262144
+-1 -1 1191 1;
+#X floatatom 461 551 5 0 0 0 - - -, f 5;
+#X obj 211 785 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 211 809 metro 100;
+#X obj 133 403 mtof;
+#X obj 133 435 phasor~;
+#X obj 68 194 phasor~;
+#X obj 361 401 key;
+#X obj 361 430 sel 32;
+#X obj 214 341 cos~;
+#X obj 214 309 +~;
+#X obj 271 192 hsl 128 15 0 127 0 1 empty empty Modulator2 2 -8 0 10
+-262144 -1 -1 12700 1;
+#X floatatom 271 218 5 0 0 0 - - -, f 5;
+#X obj 214 245 mtof;
+#X obj 214 277 phasor~;
+#X obj 214 420 *~;
+#X obj 257 367 hsl 128 15 0 16 0 1 empty empty Depth 2 -8 0 10 -262144
+-1 -1 397 1;
+#X floatatom 257 390 5 0 0 0 - - -, f 5;
+#X obj 68 151 mtof;
+#X msg 361 484 0 0 0 \, 1 500 0 \, 0 1500 5006;
+#X msg 188 640 0 0 0 \, 1 250 \, 0 1000 250;
+#X obj 195 849 tabwrite~ viz;
+#X connect 3 0 8 0;
+#X connect 4 0 39 0;
+#X connect 5 0 3 0;
+#X connect 6 0 10 0;
+#X connect 7 0 6 0;
+#X connect 8 0 17 0;
+#X connect 8 0 42 0;
+#X connect 9 0 8 1;
+#X connect 10 0 5 1;
+#X connect 11 0 13 0;
+#X connect 12 0 40 0;
+#X connect 12 0 41 0;
+#X connect 13 0 10 1;
+#X connect 14 0 4 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 1;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 25 0;
+#X connect 21 0 22 0;
+#X connect 22 0 13 1;
+#X connect 23 0 24 0;
+#X connect 24 0 42 0;
+#X connect 25 0 26 0;
+#X connect 26 0 7 0;
+#X connect 27 0 5 0;
+#X connect 28 0 29 0;
+#X connect 29 0 12 0;
+#X connect 30 0 36 0;
+#X connect 31 0 30 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 31 0;
+#X connect 36 0 7 1;
+#X connect 37 0 38 0;
+#X connect 38 0 36 1;
+#X connect 39 0 27 0;
+#X connect 40 0 11 0;
+#X connect 41 0 9 0;
+#X restore 417 185 pd control;
+#X text 167 106 Let's edit the simple sub-pacth below together \, and
+turn it into something more usable., f 49;
+#X obj 417 251 dac~;
+#N canvas 0 0 450 300 test 0;
+#X obj 125 103 cnv 15 179 66 empty empty empty 20 12 0 14 -260064 -66577
+0;
+#X obj 127 108 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-258049 -1 0 1;
+#X obj 127 128 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-258049 -1 0 1;
+#X obj 127 148 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-258049 -1 0 1;
+#X floatatom 263 147 5 0 0 0 - - -, f 5;
+#X floatatom 263 127 5 0 0 0 - - -, f 5;
+#X floatatom 263 107 5 0 0 0 - - -, f 5;
+#X connect 1 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X coords 0 -1 1 1 183 70 2 123 101;
+#X restore 142 189 pd test;
+#X connect 1 0 3 0;
+#X connect 1 0 3 1;

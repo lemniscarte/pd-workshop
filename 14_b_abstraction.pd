@@ -1,0 +1,28 @@
+#N canvas 607 252 550 332 12;
+#X obj 69 276 outlet~;
+#X obj 426 276 outlet;
+#X obj 179 104 osc~;
+#X obj 179 144 *~;
+#X obj 69 243 *~ 0.3;
+#X floatatom 289 104 5 0 0 0 - - -, f 5;
+#X obj 69 184 +~;
+#X obj 179 44 inlet modFreq;
+#X obj 289 44 inlet modIndex;
+#X obj 69 213 osc~;
+#X obj 69 44 inlet carrier;
+#X obj 426 104 pack f f f;
+#X text 160 212 For example \, try and delete me and save this patch.
+, f 31;
+#X connect 2 0 3 0;
+#X connect 3 0 6 1;
+#X connect 4 0 0 0;
+#X connect 5 0 3 1;
+#X connect 6 0 9 0;
+#X connect 7 0 2 0;
+#X connect 7 0 11 1;
+#X connect 8 0 5 0;
+#X connect 8 0 11 2;
+#X connect 9 0 4 0;
+#X connect 10 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 1 0;

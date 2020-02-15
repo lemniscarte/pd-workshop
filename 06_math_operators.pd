@@ -1,0 +1,54 @@
+#N canvas 538 131 592 863 12;
+#X obj 139 125 +;
+#X obj 139 154 -;
+#X obj 139 183 *;
+#X obj 139 212 /;
+#X obj 279 125 ==;
+#X obj 279 154 >;
+#X obj 279 183 <;
+#X obj 279 212 >=;
+#X obj 279 239 <=;
+#X obj 417 125 mod;
+#X obj 417 154 cos;
+#X obj 417 183 sin;
+#X obj 417 212 max;
+#X obj 417 239 min;
+#X obj 139 239 pow;
+#X obj 149 451 int;
+#X obj 135 500 float;
+#X floatatom 322 606 8 0 0 0 - - -, f 8;
+#X floatatom 273 673 0 0 0 0 - - -;
+#X obj 273 639 float;
+#X obj 202 556 hsl 54 14 1 10 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1900 1;
+#X obj 255 707 int;
+#X floatatom 255 742 4 0 0 0 - - -, f 4;
+#X obj 202 609 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 202 663 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 96 553 Pick a float \,;
+#X text 96 606 bang float \,;
+#X obj 308 707 int;
+#X floatatom 308 742 5 0 0 0 - - -, f 5;
+#X text 96 660 bang integer \,;
+#X text 361 700 or send it down automatically., f 16;
+#X text 93 56 We might be using some of these right away (there's more).
+;
+#X text 104 303 Some of these will have a signal (~) variant as well.
+;
+#X text 78 405 These two deceptively simple objects are incredibly
+handy too!, f 63;
+#X text 178 789 Think of these objects as storage.;
+#X text 189 441 Holds whole numbers (integers).;
+#X text 189 461 Will convert fractional (1.7) to integer (1).;
+#X text 189 500 Holds fractional numbers (floating point).;
+#X connect 17 0 19 1;
+#X connect 18 0 21 1;
+#X connect 18 0 27 0;
+#X connect 19 0 18 0;
+#X connect 20 0 17 0;
+#X connect 21 0 22 0;
+#X connect 23 0 19 0;
+#X connect 24 0 21 0;
+#X connect 27 0 28 0;

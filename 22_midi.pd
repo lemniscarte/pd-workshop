@@ -1,0 +1,190 @@
+#N canvas 167 81 1514 887 12;
+#X obj 333 382 cnv 15 90 25 empty empty empty 20 12 0 14 -262125 -66577
+0;
+#X obj 333 291 cnv 15 90 25 empty empty empty 20 12 0 14 -262125 -66577
+0;
+#X obj 66 90 midiin;
+#X text 170 70 Using MIDI controllers and keyboards is pretty straightforward:
+midiin and midiout will allow for this communication., f 64;
+#X text 350 384 69 0 10;
+#X obj 66 120 midiout;
+#X text 169 414 It's just the same message \, but with velocity 0,
+f 64;
+#X floatatom 1021 170 5 0 127 0 - - -, f 5;
+#X obj 1021 198 mtof;
+#X floatatom 1021 227 5 0 0 1 - - -, f 5;
+#X obj 1021 255 ftom;
+#X floatatom 1021 284 5 0 0 0 - - -, f 5;
+#X text 1087 284 ...and back to MIDI.;
+#X obj 1062 644 makenote;
+#X text 344 293 69 100 10;
+#X obj 1062 716 print note;
+#X obj 1156 716 print velocity;
+#X floatatom 1028 610 5 0 0 0 - - -, f 5;
+#X floatatom 1108 610 5 0 0 0 - - -, f 5;
+#X floatatom 1168 610 5 0 0 0 - - -, f 5;
+#X obj 66 534 notein;
+#X obj 66 564 noteout;
+#X text 169 539 Other objects show similiar patterns \, like the inlets/outlets
+of the notein/noteout objects., f 64;
+#X obj 793 120 mtof;
+#X msg 1168 580 1000;
+#X obj 1108 551 loadbang;
+#X msg 932 551 60;
+#X msg 964 551 62;
+#X msg 996 551 64;
+#X msg 1028 551 69;
+#X text 171 116 PD uses the MIDI standard of naming pitches. MIDI notes
+range from 0 to 127 - the middle C in the piano is 60 \, for example.
+, f 64;
+#X text 1086 170 MIDI...;
+#X text 1086 227 ...to frequency...;
+#X text 896 451 The makenote object is great for turning your notes
+into messages that can be sent to outboard gear \, or other software.
+, f 64;
+#X text 169 619 Some other objects are more specific \, like the ctlin/ctlout
+objects \, which take care of continuous controller (CC) data., f
+64;
+#X obj 66 613 ctlin;
+#X obj 66 643 ctlout;
+#X text 169 709 There are objects for handling pitchbend information
+\, aftertouch and program changes via MIDI as well. Those are great
+for turning that old dusty MIDI controller into something more custom.
+, f 64;
+#X text 896 51 As mentioned before \, there's no need to own a piece
+of MIDI gear to make use of MIDI paradigms. Calculating scales \, creating
+chords \, discovering chord inversions: all can be done with MIDI.
+, f 64;
+#X text 896 343 How would you go about building a minor chord using
+the scaffolding above? The minor chord is made of a note \, a second
+note 3 halftones above the first \, and a third note 7 halftones above.
+, f 50;
+#N canvas 556 369 435 483 chord 0;
+#X obj 85 283 osc~;
+#X obj 145 283 osc~;
+#X obj 205 283 osc~;
+#X floatatom 145 191 5 0 127 0 - - -, f 5;
+#X obj 145 219 mtof;
+#X floatatom 145 248 5 0 0 1 - - -, f 5;
+#X floatatom 205 191 5 0 127 0 - - -, f 5;
+#X obj 205 219 mtof;
+#X floatatom 205 248 5 0 0 1 - - -, f 5;
+#X floatatom 265 191 5 0 127 0 - - -, f 5;
+#X obj 265 219 mtof;
+#X floatatom 265 248 5 0 0 1 - - -, f 5;
+#X obj 265 283 osc~;
+#X obj 265 165 + 12;
+#X obj 283 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 265 332 *~;
+#X obj 205 332 *~;
+#X obj 145 332 *~;
+#X obj 85 332 *~;
+#X obj 103 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 163 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 223 308 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 318 423 dac~;
+#X obj 318 398 *~ 0.25;
+#X obj 205 165 + 7, f 4;
+#X obj 145 165 + 3, f 4;
+#X floatatom 85 113 5 0 127 0 - - -, f 5;
+#X floatatom 85 248 5 0 0 0 - - -, f 5;
+#X obj 85 219 mtof;
+#X obj 340 285 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 85 93 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 170 40 5 0 0 0 - - -, f 5;
+#X floatatom 230 40 5 0 0 0 - - -, f 5;
+#X floatatom 290 40 5 0 0 0 - - -, f 5;
+#X connect 0 0 18 0;
+#X connect 1 0 17 0;
+#X connect 2 0 16 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 13 0 9 0;
+#X connect 14 0 15 1;
+#X connect 15 0 23 0;
+#X connect 16 0 23 0;
+#X connect 17 0 23 0;
+#X connect 18 0 23 0;
+#X connect 19 0 18 1;
+#X connect 20 0 17 1;
+#X connect 21 0 16 1;
+#X connect 23 0 22 0;
+#X connect 23 0 22 1;
+#X connect 24 0 6 0;
+#X connect 25 0 3 0;
+#X connect 26 0 28 0;
+#X connect 26 0 25 0;
+#X connect 26 0 24 0;
+#X connect 26 0 13 0;
+#X connect 27 0 0 0;
+#X connect 28 0 27 0;
+#X connect 29 0 14 0;
+#X connect 29 0 21 0;
+#X connect 29 0 20 0;
+#X connect 29 0 19 0;
+#X connect 30 0 26 0;
+#X connect 31 0 25 1;
+#X connect 31 0 30 0;
+#X connect 32 0 24 1;
+#X connect 32 0 30 0;
+#X connect 33 0 13 1;
+#X connect 33 0 30 0;
+#X restore 1256 365 pd chord;
+#X obj 793 459 makenote;
+#X obj 962 687 pack \$1 \$2;
+#X obj 962 716 print whole;
+#X msg 1108 580 80;
+#X text 896 497 It builds a note on message \, then a note off after
+the time given in the third inlet., f 64;
+#X obj 793 790 stripnote;
+#X text 169 182 One thing to keep in mind is that midi notes are always
+followed by their matching 'note-off' message. This is how midi works
+\, and is not a requirement coming from PD., f 64;
+#X text 169 244 For example \, if a A4 note is sent with loudness (velocity)
+of 100 in channel 10 \, the 'note-on' message looks like this:, f
+64;
+#X text 169 324 This note will be considered 'pressed down' until a
+message saying that the finger depressed the key arrives. This note-off
+message would look like this:, f 64;
+#X text 169 444 Note: You are free to build instruments that completely
+avoid this way of handling notes \, like if you don't expect to communicate
+with other software or hardware \, for instance., f 64;
+#X text 896 113 You'll most likely want to use the mtof object in order
+to convert midi notes to frequency:, f 64;
+#X text 896 771 The stripnote means strip the note-off messages only.
+While it may look useless \, it's great for making an instrument compatible
+with both you own controls in PD and \, say \, a keyboard., f 64;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 13 0 15 0;
+#X connect 13 0 42 0;
+#X connect 13 1 16 0;
+#X connect 13 1 42 1;
+#X connect 17 0 13 0;
+#X connect 18 0 13 1;
+#X connect 19 0 13 2;
+#X connect 24 0 19 0;
+#X connect 25 0 44 0;
+#X connect 25 0 24 0;
+#X connect 26 0 17 0;
+#X connect 27 0 17 0;
+#X connect 28 0 17 0;
+#X connect 29 0 17 0;
+#X connect 42 0 43 0;
+#X connect 44 0 18 0;

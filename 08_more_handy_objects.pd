@@ -1,0 +1,140 @@
+#N canvas 141 115 1527 851 12;
+#X floatatom 129 72 5 0 0 0 - - -, f 5;
+#X obj 129 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 163 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 197 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 231 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 129 107 select 1 2 3;
+#X obj 129 312 route a b c x;
+#X obj 151 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 129 218 a first outlet;
+#X obj 171 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 191 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 211 359 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 129 384 print match;
+#X obj 239 384 print no match;
+#X msg 149 248 b second outlet;
+#X msg 169 278 0 ???;
+#X floatatom 129 469 5 0 0 0 - - -, f 5;
+#X floatatom 180 469 5 0 0 0 - - -, f 5;
+#X floatatom 231 469 5 0 0 0 - - -, f 5;
+#X obj 129 544 print packed items;
+#X obj 129 508 pack f f f;
+#X obj 129 698 unpack s f f f;
+#X symbolatom 129 747 10 0 0 0 - - -, f 10;
+#X floatatom 207 747 5 0 0 0 - - -, f 5;
+#X floatatom 250 747 5 0 0 0 - - -, f 5;
+#X floatatom 293 747 5 0 0 0 - - -, f 5;
+#X msg 129 633 test 1 2 3;
+#X msg 149 663 hi 1000 2020 333;
+#X obj 859 107 line;
+#X msg 859 72 1 1000;
+#X msg 933 72 0 2000;
+#X obj 859 141 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 859 271 trigger float float bang;
+#X floatatom 859 233 5 0 0 0 - - -, f 5;
+#X obj 1024 320 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 859 320 5 0 0 0 - - -, f 5;
+#X floatatom 941 320 5 0 0 0 - - -, f 5;
+#X floatatom 859 436 5 0 0 0 - - -, f 5;
+#X obj 859 390 *;
+#X text 1090 389 Here \, the trigger's usefulness is made clear: because
+of Pure Data's hot/cold inlet system \, one must assure that a mathematical
+operator gets its first value on the cold inlet FIRST., f 45;
+#X floatatom 859 530 5 0 0 0 - - -, f 5;
+#X floatatom 911 530 5 0 0 0 - - -, f 5;
+#X floatatom 859 605 5 0 0 0 - - -, f 5;
+#X obj 859 572 *;
+#X floatatom 859 485 5 0 0 0 - - -, f 5;
+#X text 1090 479 Try the same here \, but without the trigger \, and
+note how this is a buggy multiplication!, f 45;
+#X text 1051 485 <-;
+#X text 360 95 Great for diverting stuff around.;
+#X text 360 115 Note the amount of outlets is defined by the user.
+;
+#X text 360 290 Similar \, but uses first item as an indicator \, and
+will strip that indicator as it passes the message along., f 45;
+#X text 360 487 More useful than you might think at first. Note the
+hot/cold inlet system at work here. The 'f' stands for float (number).
+, f 44;
+#X text 360 684 Pack's evil twin.;
+#X text 360 704 The 's' stands for symbol.;
+#X text 1090 81 Alters a value over time \, like drawing a line between
+two points., f 38;
+#X text 1090 244 It cannot be underestimated - the trigger object allows
+for essential logic flow in Pure Data., f 45;
+#X text 1090 296 It takes its input and send it out its oulets in a
+RIGHT-TO-LEFT order., f 45;
+#X text 1090 332 Also \, it will convert a number \, for example \,
+into a bang as it spews it out., f 45;
+#X floatatom 859 666 5 1 100 0 - - -, f 5;
+#X obj 859 694 swap 1;
+#X obj 859 723 /;
+#X floatatom 859 752 5 0 0 0 - - -, f 5;
+#X obj 929 723 /;
+#X floatatom 929 752 5 0 0 0 - - -, f 5;
+#X obj 929 694 swap 44100;
+#X text 1090 669 Sometimes \, if all you need is a simple enough calculation
+\, you can get away with using the 'swap' object., f 47;
+#X text 1090 117 There are signal (~) variations \, for a more seamless
+movement., f 40;
+#X text 1090 153 The line \, line~ and vline~ objects are the basis
+of envelope generators., f 40;
+#X connect 0 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 2 0;
+#X connect 5 2 3 0;
+#X connect 5 3 4 0;
+#X connect 6 0 7 0;
+#X connect 6 0 12 0;
+#X connect 6 1 9 0;
+#X connect 6 1 12 0;
+#X connect 6 2 10 0;
+#X connect 6 3 11 0;
+#X connect 6 4 13 0;
+#X connect 8 0 6 0;
+#X connect 14 0 6 0;
+#X connect 15 0 6 0;
+#X connect 16 0 20 0;
+#X connect 17 0 20 1;
+#X connect 18 0 20 2;
+#X connect 20 0 19 0;
+#X connect 21 0 22 0;
+#X connect 21 1 23 0;
+#X connect 21 2 24 0;
+#X connect 21 3 25 0;
+#X connect 26 0 21 0;
+#X connect 27 0 21 0;
+#X connect 28 0 31 0;
+#X connect 29 0 28 0;
+#X connect 30 0 28 0;
+#X connect 32 0 35 0;
+#X connect 32 1 36 0;
+#X connect 32 2 34 0;
+#X connect 33 0 32 0;
+#X connect 35 0 38 0;
+#X connect 36 0 38 1;
+#X connect 38 0 37 0;
+#X connect 40 0 43 0;
+#X connect 41 0 43 1;
+#X connect 43 0 42 0;
+#X connect 44 0 40 0;
+#X connect 44 0 41 0;
+#X connect 57 0 58 0;
+#X connect 57 0 63 0;
+#X connect 58 0 59 0;
+#X connect 58 1 59 1;
+#X connect 59 0 60 0;
+#X connect 61 0 62 0;
+#X connect 63 0 61 0;
+#X connect 63 1 61 1;

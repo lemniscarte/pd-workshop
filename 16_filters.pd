@@ -1,0 +1,34 @@
+#N canvas 566 66 804 950 12;
+#X declare -path filters/;
+#X obj 274 142 lop~;
+#X obj 274 182 hip~;
+#X obj 274 222 bp~;
+#X obj 274 262 vcf~;
+#X text 361 142 Low-pass filter;
+#X text 361 182 High-pass filter;
+#X text 361 222 Band-pass filter;
+#X text 361 262 Voltage-controlled filter;
+#X text 124 40 Similar to the 'vanilla' versions of the oscillators
+\, these simple filters \, while mathematically acurate \, are not
+very 'musical'. This opinion is highly subjective \, mind you., f
+76;
+#X text 280 345 I suggest using these instead:;
+#X obj 171 419 bob~;
+#X text 258 419 Low-pass resonant filter \, Moog style;
+#X obj 171 459 moog~;
+#X text 260 457 Another great sounding voltage controlled low-pass
+filter \, Moog style as well;
+#X text 210 545 I highly recommend the use of Alexandros Drymonitis's
+filter abstractions: omnifilter and multifilter., f 54;
+#X obj 307 615 filters/multiFilter_abs~;
+#X obj 307 645 filters/omniFilter_abs~;
+#X obj 313 808 declare -path filters/;
+#X obj 331 837 multiFilter_abs~;
+#X text 171 693 Note: using the path in the object namne \, we can
+use abstractions in a given folder. Great for organizing your projects.
+, f 67;
+#X text 171 743 Note II: attempting to see the help file for the above
+abstractions doesn't work unless you explicitly declare the path for
+them., f 67;
+#X obj 331 867 omniFilter_abs~;
+#X text 371 282 (band-pass);

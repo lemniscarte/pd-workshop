@@ -1,0 +1,532 @@
+#N canvas 198 67 1508 919 12;
+#X obj 819 232 cnv 15 67 185 empty empty empty 20 12 0 14 -260779 -66577
+0;
+#X obj 130 166 tgl 25 0 empty empty empty 17 7 0 10 -246606 -1 -1 0
+1;
+#X obj 196 320 mod 16;
+#X floatatom 162 201 5 0 0 1 BPM - -, f 5;
+#X obj 162 229 expr (15000 / $f1);
+#X text 306 276 There are MANY ways to do your sequencing \, really.
+It all depends on the kind of instruments you're driving with the sequencer.
+Let's do a slighlty naive approach \, for starters., f 61;
+#X text 339 176 Let's use some of the constructs we've already seen
+\, like the counter from module 10 and the BPM converter from module
+21 \, because why not., f 48;
+#X obj 641 640 bob~;
+#X obj 857 546 mtof;
+#X obj 857 571 pack 0 50;
+#X obj 857 596 line~;
+#X obj 917 553 hsl 44 10 1 100 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 2800 1;
+#X obj 641 739 *~;
+#X obj 706 664 hsl 44 10 0 1 0 1 empty empty empty -2 -8 0 10 -259544
+-1 -1 1600 1;
+#X obj 196 293 + 1;
+#X obj 641 560 int;
+#X obj 975 746 bng 15 50 20 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 975 799 vline~;
+#X floatatom 857 522 5 0 0 0 - - -, f 5;
+#N canvas 917 274 505 421 seqsimple 0;
+#X obj 85 104 cnv 15 319 173 empty empty empty 20 12 0 14 -235098 -66577
+0;
+#X obj 87 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 87 48 inlet;
+#X obj 87 321 outlet;
+#X obj 87 284 spigot;
+#X obj 87 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6000 1;
+#X obj 87 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 107 284 spigot;
+#X obj 107 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 107 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6400 1;
+#X obj 107 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 127 284 spigot;
+#X obj 127 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 127 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6700 1;
+#X obj 127 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 147 284 spigot;
+#X obj 147 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 147 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7100 1;
+#X obj 147 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 167 284 spigot;
+#X obj 167 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 167 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7200 1;
+#X obj 167 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 187 284 spigot;
+#X obj 187 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 187 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7100 1;
+#X obj 187 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 207 284 spigot;
+#X obj 207 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 207 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6700 1;
+#X obj 207 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 227 284 spigot;
+#X obj 227 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 227 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6400 1;
+#X obj 227 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 247 284 spigot;
+#X obj 247 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 247 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6000 1;
+#X obj 247 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 267 284 spigot;
+#X obj 267 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 267 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6400 1;
+#X obj 267 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 287 284 spigot;
+#X obj 287 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 287 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6700 1;
+#X obj 287 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 307 284 spigot;
+#X obj 307 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 307 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7100 1;
+#X obj 307 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 327 284 spigot;
+#X obj 327 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 327 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7200 1;
+#X obj 327 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 347 284 spigot;
+#X obj 347 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 347 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7100 1;
+#X obj 347 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 367 284 spigot;
+#X obj 367 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 367 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6700 1;
+#X obj 367 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 87 80 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15, f 46;
+#X obj 387 284 spigot;
+#X obj 387 105 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 387 143 vsl 15 128 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 6400 1;
+#X obj 387 124 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X connect 1 0 5 0;
+#X connect 2 0 63 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 1;
+#X connect 7 0 3 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 0;
+#X connect 10 0 7 1;
+#X connect 11 0 3 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 14 0 11 1;
+#X connect 15 0 3 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 18 0 15 1;
+#X connect 19 0 3 0;
+#X connect 20 0 21 0;
+#X connect 21 0 19 0;
+#X connect 22 0 19 1;
+#X connect 23 0 3 0;
+#X connect 24 0 25 0;
+#X connect 25 0 23 0;
+#X connect 26 0 23 1;
+#X connect 27 0 3 0;
+#X connect 28 0 29 0;
+#X connect 29 0 27 0;
+#X connect 30 0 27 1;
+#X connect 31 0 3 0;
+#X connect 32 0 33 0;
+#X connect 33 0 31 0;
+#X connect 34 0 31 1;
+#X connect 35 0 3 0;
+#X connect 36 0 37 0;
+#X connect 37 0 35 0;
+#X connect 38 0 35 1;
+#X connect 39 0 3 0;
+#X connect 40 0 41 0;
+#X connect 41 0 39 0;
+#X connect 42 0 39 1;
+#X connect 43 0 3 0;
+#X connect 44 0 45 0;
+#X connect 45 0 43 0;
+#X connect 46 0 43 1;
+#X connect 47 0 3 0;
+#X connect 48 0 49 0;
+#X connect 49 0 47 0;
+#X connect 50 0 47 1;
+#X connect 51 0 3 0;
+#X connect 52 0 53 0;
+#X connect 53 0 51 0;
+#X connect 54 0 51 1;
+#X connect 55 0 3 0;
+#X connect 56 0 57 0;
+#X connect 57 0 55 0;
+#X connect 58 0 55 1;
+#X connect 59 0 3 0;
+#X connect 60 0 61 0;
+#X connect 61 0 59 0;
+#X connect 62 0 59 1;
+#X connect 63 0 1 0;
+#X connect 63 1 8 0;
+#X connect 63 2 12 0;
+#X connect 63 3 16 0;
+#X connect 63 4 20 0;
+#X connect 63 5 24 0;
+#X connect 63 6 28 0;
+#X connect 63 7 32 0;
+#X connect 63 8 36 0;
+#X connect 63 9 40 0;
+#X connect 63 10 44 0;
+#X connect 63 11 48 0;
+#X connect 63 12 52 0;
+#X connect 63 13 56 0;
+#X connect 63 14 60 0;
+#X connect 63 15 65 0;
+#X connect 64 0 3 0;
+#X connect 65 0 66 0;
+#X connect 66 0 64 0;
+#X connect 67 0 64 1;
+#X coords 0 -1 1 1 323 177 2 83 102;
+#X restore 115 510 pd seqsimple;
+#X text 520 560 only integers ->;
+#X text 548 640 filter it ->;
+#X text 541 740 final gain ->;
+#X obj 130 354 send sequencer;
+#X obj 827 169 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15, f 46;
+#X obj 827 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-217089 -1;
+#X obj 846 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-217089 -1;
+#X obj 866 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-217089 -1;
+#X obj 886 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-217089 -1;
+#X obj 906 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-230677 -1;
+#X obj 926 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-230677 -1;
+#X obj 946 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-230677 -1;
+#X obj 966 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-230677 -1;
+#X obj 986 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-235228 -1;
+#X obj 1006 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-230677 -1;
+#X obj 1026 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-230677 -1;
+#X obj 1046 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-230677 -1;
+#X obj 1066 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-255968 -1;
+#X obj 1086 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-255968 -1;
+#X obj 1106 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-255968 -1;
+#X obj 1126 199 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-255968 -1;
+#X text 1073 696 We can piggyback the data coming from the sequencer
+and trigger a simple envelope \, so that each note is distinct., f
+50;
+#X text 118 789 The sliders' data range from 0 to 127 \, which is great
+for notes. But it takes a little transforming to make it do what we
+want., f 44;
+#X floatatom 115 696 5 0 0 0 - - -, f 5;
+#X obj 641 848 dac~;
+#X msg 975 770 0 1 0 \, 0.5 3 1 \, 0 200 100;
+#X obj 162 143 loadbang;
+#X obj 130 263 metro;
+#X obj 827 319 spigot;
+#X obj 827 238 vsl 15 64 0 127 0 1 empty empty empty 0 -9 0 10 -262144
+-258049 -1 5042 1;
+#X obj 866 258 tgl 15 0 empty empty empty 17 7 0 10 -262144 -258049
+-1 0 1;
+#X floatatom 827 350 5 0 0 0 - - -, f 5;
+#X text 907 314 A single step.;
+#X obj 827 378 bng 30 250 50 0 empty empty empty 17 7 0 10 -262144
+-258049 -1;
+#X obj 706 704 line~;
+#X obj 706 679 pack 0 30;
+#X floatatom 963 619 5 0 200 0 - - -, f 5;
+#X obj 963 643 / 25;
+#X obj 962 668 line~;
+#X obj 857 502 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 6700 1;
+#X obj 963 599 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 5600 1;
+#X text 1027 508 The same idea can be used for the filter cutoff or
+the resonance. We can tweak some things like pattern length \, for
+example \, and extrapolate the technique to automate any desired parameter.
+, f 50;
+#X obj 115 754 send notes;
+#X obj 607 503 receive notes;
+#X text 1040 257 A bang is connected to a vertical slider - the value
+on the slider will be allowed to keep flowing depending on whether
+the spigot is open or not. If we use the 'select' \, or 'sel' \, object
+\, we can route these bangs. We can make copies of this generic 'note'
+and bundle them neatly inside a subpatch. Let's do a typical 16-step
+sequencer., f 44;
+#X text 478 31 Sequencing is maybe my favorite thing to use PD for!
+It can be used for your notes \, as you'd expect \, but also for values
+on your synths \, for parameter modulation \, adjusting levels \, triggering
+other events... It's a big world out there :), f 78;
+#X obj 827 142 receive sequencer;
+#X text 1172 169 We'll probably want to have this uglyness inside a
+subpatch., f 32;
+#X obj 115 477 receive sequencer;
+#X obj 975 828 *~ 300;
+#N canvas 94 177 849 721 synth 0;
+#X obj 293 393 phasor~;
+#X obj 223 393 phasor~;
+#X obj 223 360 +~ 0.1;
+#X obj 152 394 osc~;
+#X obj 372 392 pwm~;
+#X msg 372 358 0.5;
+#X obj 372 315 loadbang;
+#X obj 152 493 *~;
+#X obj 223 492 *~;
+#X obj 293 492 *~;
+#X obj 372 491 *~;
+#X obj 433 491 *~;
+#X obj 170 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1200 1;
+#X obj 241 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1800 1;
+#X floatatom 177 315 5 0 0 0 - - -, f 5;
+#X obj 152 352 *~ 2;
+#X obj 311 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1400 1;
+#X obj 390 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1550 1;
+#X obj 451 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 450 1;
+#X obj 293 360 *~ -1;
+#X floatatom 325 315 5 0 0 0 - - -, f 5;
+#X obj 453 315 vsl 17 22 0.1 0.9 0 1 empty empty pulse\ width 0 -9
+0 8 -262144 -1 -1 750 1;
+#X obj 433 392 pink~;
+#X obj 262 315 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
+-1 -1 250 1;
+#X obj 222 43 inlet;
+#X obj 521 389 vsl 15 24 0 0.7 0 1 empty empty sine 0 -9 0 10 -262144
+-1 -1 1200 1;
+#X obj 571 389 vsl 15 24 0 0.7 0 1 empty empty saw 0 -9 0 10 -262144
+-1 -1 1800 1;
+#X obj 621 389 vsl 15 24 0 0.7 0 1 empty empty saw 0 -9 0 10 -262144
+-1 -1 1400 1;
+#X obj 671 389 vsl 15 24 0 0.7 0 1 empty empty square 0 -9 0 10 -262144
+-1 -1 1550 1;
+#X obj 721 389 vsl 15 24 0 0.7 0 1 empty empty noise 0 -9 0 10 -262144
+-1 -1 450 1;
+#X obj 696 212 vsl 17 22 0.1 0.9 0 1 empty empty pwm 0 -9 0 8 -262144
+-1 -1 750 1;
+#X obj 596 212 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
+-1 -1 250 1;
+#X obj 646 212 vsl 17 22 0.5 16 0 1 empty empty mult 0 -9 0 8 -262144
+-1 -1 0 1;
+#X floatatom 596 248 3 0 0 0 - - -, f 3;
+#X floatatom 646 248 3 0 0 0 - - -, f 3;
+#X floatatom 696 248 3 0 0 0 - - -, f 3;
+#X obj 546 212 vsl 17 22 0.5 16 0 1 empty empty mult 0 -9 0 8 -262144
+-1 -1 69 1;
+#X floatatom 546 248 3 0 0 0 - - -, f 3;
+#X obj 322 619 *~;
+#X obj 625 524 vsl 15 24 0 1 0 1 empty empty gain 0 -9 0 10 -262144
+-1 -1 2300 1;
+#X obj 322 648 outlet~;
+#X floatatom 222 72 5 0 0 0 MIDI - -, f 5;
+#X obj 222 100 mtof;
+#X obj 397 179 line;
+#X obj 567 58 hsl 128 15 0 250 0 1 empty empty portamento -56 6 1 10
+-262144 -1 -1 2100 1;
+#X floatatom 325 98 4 0 0 0 - - -, f 4;
+#X obj 397 150 pack 0 0;
+#X obj 223 150 pack 0 0;
+#X obj 223 179 line~;
+#X text 104 99 to frequency ->;
+#X text 294 152 turn to list;
+#X connect 0 0 9 0;
+#X connect 1 0 8 0;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 10 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 38 0;
+#X connect 8 0 38 0;
+#X connect 9 0 38 0;
+#X connect 10 0 38 0;
+#X connect 11 0 38 0;
+#X connect 12 0 7 1;
+#X connect 13 0 8 1;
+#X connect 14 0 15 1;
+#X connect 15 0 3 0;
+#X connect 16 0 9 1;
+#X connect 17 0 10 1;
+#X connect 18 0 11 1;
+#X connect 19 0 0 0;
+#X connect 20 0 19 1;
+#X connect 21 0 4 0;
+#X connect 22 0 11 0;
+#X connect 23 0 2 1;
+#X connect 24 0 41 0;
+#X connect 25 0 12 0;
+#X connect 26 0 13 0;
+#X connect 27 0 16 0;
+#X connect 28 0 17 0;
+#X connect 29 0 18 0;
+#X connect 30 0 35 0;
+#X connect 31 0 33 0;
+#X connect 32 0 34 0;
+#X connect 33 0 23 0;
+#X connect 34 0 20 0;
+#X connect 35 0 21 0;
+#X connect 36 0 37 0;
+#X connect 37 0 14 0;
+#X connect 38 0 40 0;
+#X connect 39 0 38 1;
+#X connect 41 0 42 0;
+#X connect 42 0 46 0;
+#X connect 42 0 47 0;
+#X connect 43 0 4 1;
+#X connect 44 0 45 0;
+#X connect 45 0 46 1;
+#X connect 45 0 47 1;
+#X connect 46 0 43 0;
+#X connect 47 0 48 0;
+#X connect 48 0 15 0;
+#X connect 48 0 2 0;
+#X connect 48 0 19 0;
+#X restore 641 598 pd synth;
+#X text 513 599 turn to sound! ->;
+#X obj 957 716 receive notes;
+#X msg 162 172 63;
+#X obj 756 724 pack 0 50;
+#X obj 756 749 line~;
+#X obj 756 708 hsl 44 10 0 1 0 1 empty empty empty -2 -8 0 10 -258083
+-1 -1 1800 1;
+#X obj 686 784 *~;
+#X obj 115 724 - 24;
+#X text 155 724 Lower two octaves \, for fun.;
+#X obj 686 810 rev2~ 85 90 3000 20;
+#X text 471 810 little bit of reverb ->;
+#X text 252 477 Strangely familiar tune...;
+#X floatatom 130 323 5 0 0 0 - - -, f 5;
+#X obj 130 294 f;
+#X msg 74 260 0;
+#X obj 74 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 74 207 sel 1, f 7;
+#X connect 1 0 47 0;
+#X connect 1 0 87 0;
+#X connect 2 0 84 1;
+#X connect 3 0 4 0;
+#X connect 4 0 47 1;
+#X connect 7 0 12 0;
+#X connect 7 0 77 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 1;
+#X connect 11 0 9 1;
+#X connect 12 0 44 0;
+#X connect 12 0 44 1;
+#X connect 13 0 55 0;
+#X connect 14 0 2 0;
+#X connect 15 0 70 0;
+#X connect 16 0 45 0;
+#X connect 17 0 69 0;
+#X connect 18 0 8 0;
+#X connect 19 0 43 0;
+#X connect 24 0 25 0;
+#X connect 24 1 26 0;
+#X connect 24 2 27 0;
+#X connect 24 3 28 0;
+#X connect 24 4 29 0;
+#X connect 24 5 30 0;
+#X connect 24 6 31 0;
+#X connect 24 7 32 0;
+#X connect 24 8 33 0;
+#X connect 24 9 34 0;
+#X connect 24 10 35 0;
+#X connect 24 11 36 0;
+#X connect 24 12 37 0;
+#X connect 24 13 38 0;
+#X connect 24 14 39 0;
+#X connect 24 15 40 0;
+#X connect 25 0 49 0;
+#X connect 43 0 78 0;
+#X connect 45 0 17 0;
+#X connect 46 0 73 0;
+#X connect 47 0 84 0;
+#X connect 48 0 51 0;
+#X connect 49 0 48 0;
+#X connect 50 0 48 1;
+#X connect 51 0 53 0;
+#X connect 54 0 12 1;
+#X connect 55 0 54 0;
+#X connect 56 0 57 0;
+#X connect 57 0 58 0;
+#X connect 58 0 7 2;
+#X connect 59 0 18 0;
+#X connect 60 0 56 0;
+#X connect 63 0 15 0;
+#X connect 66 0 24 0;
+#X connect 68 0 19 0;
+#X connect 70 0 7 0;
+#X connect 72 0 16 0;
+#X connect 73 0 3 0;
+#X connect 74 0 75 0;
+#X connect 75 0 77 1;
+#X connect 76 0 74 0;
+#X connect 77 0 80 0;
+#X connect 78 0 62 0;
+#X connect 80 0 44 0;
+#X connect 80 1 44 1;
+#X connect 80 2 44 0;
+#X connect 80 3 44 1;
+#X connect 83 0 23 0;
+#X connect 84 0 14 0;
+#X connect 84 0 83 0;
+#X connect 85 0 84 0;
+#X connect 86 0 85 0;
+#X connect 87 0 86 0;

@@ -1,0 +1,21 @@
+#N canvas 668 316 753 517 12;
+#X obj 114 150 osc~;
+#X floatatom 114 76 5 0 0 0 - - -, f 5;
+#X obj 114 406 dac~;
+#X obj 114 319 *~;
+#X floatatom 132 236 5 0 1 0 - - -, f 5;
+#X text 202 69 Number boxes - you'll use them ALL the time. In this
+case \, it changes the frequency of the oscillator below.;
+#X text 202 226 This time we're mutiplying the incoming signal. Holding
+shift while click-dragging will change values in small increments.
+, f 62;
+#X text 202 144 Vibrates (oscillates) from -1 to 1 in the given frequency.
+A very basic building block., f 58;
+#X text 202 406 The output to your speakers \, aka the Digital-to-Analog
+Converter., f 65;
+#X text 202 309 A mathematical operator \, multiplication. Another
+basic building block., f 41;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;

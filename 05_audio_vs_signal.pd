@@ -1,0 +1,104 @@
+#N canvas 155 120 1272 824 12;
+#X obj 795 419 cnv 15 323 59 empty empty empty 20 12 0 14 -260129 -66577
+0;
+#X obj 119 430 cnv 15 365 42 empty empty empty 20 12 0 14 -191296 -66577
+0;
+#X obj 1022 235 cnv 15 78 59 empty empty empty 20 12 0 14 -260129 -66577
+0;
+#X obj 176 92 samplerate~;
+#X obj 176 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 176 142 11 0 0 0 - - -, f 11;
+#X obj 98 179 /;
+#X floatatom 98 228 9 0 0 0 - - -, f 9;
+#X obj 98 286 * 64;
+#X floatatom 98 339 5 0 0 1 ms - -, f 5;
+#X obj 98 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 743 37 A simple example of the conflicting rates \, and a solution:
+;
+#X obj 902 383 dac~;
+#X obj 819 147 osc~ 440;
+#X obj 819 317 *~;
+#X obj 837 184 vsl 16 34 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 1009 147 osc~ 440;
+#X obj 1009 320 *~;
+#X obj 1027 184 vsl 16 34 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 1027 267 line~;
+#X obj 1027 243 pack 0 12;
+#X msg 98 142 1000;
+#X text 171 339 This is what we can expect the reponse time to be.
+;
+#X text 171 218 Length of a sample in ms. Note it is a sub-millisecond
+value., f 30;
+#X text 171 279 There is by default a 64 samples 'block'. This value
+can be changed., f 42;
+#X obj 493 712 snapshot~;
+#X obj 768 679 sig~;
+#X obj 832 236 cnv 15 78 59 empty empty empty 20 12 0 14 -260129 -66577
+0;
+#X obj 837 244 pack 0 12;
+#X obj 837 268 line;
+#X text 802 422 We'll get to this black magic in a moment. The important
+part is the ~ object doing the converting from control to signal for
+us., f 44;
+#X obj 553 685 bng 15 50 10 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 493 751 5 0 0 0 - - -, f 5;
+#X obj 493 639 osc~ 1;
+#X obj 553 660 metro 100;
+#X obj 553 640 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 552 753 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 72 702 The snapshot~ object will convert signal to control
+\, taking 'snapshots' of the signal whenever it gets a bang., f 57
+;
+#X text 821 675 The sig~ object will do the opposite and turn numbers
+into signal instead., f 54;
+#X floatatom 768 651 5 0 0 0 - - -, f 5;
+#X obj 768 708 osc~;
+#X obj 768 737 dac~;
+#X text 786 73 On the left \, a crackling is apparent. On the right
+\, the control rate is converted to signal rate \, much faster - no
+crackling!, f 47;
+#X obj 569 569 snapshot~;
+#X obj 688 569 sig~;
+#X text 466 540 Conversion from signal to control and vice-versa using
+;
+#X text 649 569 and;
+#X text 127 439 Control data is much 'snappier' than signal data.,
+f 50;
+#X text 266 92 This reads your soundcard properties.;
+#X text 266 126 How many samples per second your soundcard is setup
+to work on. 44100 per second is a common rate., f 34;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 21 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 15 0 28 0;
+#X connect 16 0 17 0;
+#X connect 17 0 12 1;
+#X connect 18 0 20 0;
+#X connect 19 0 17 1;
+#X connect 20 0 19 0;
+#X connect 21 0 6 0;
+#X connect 25 0 32 0;
+#X connect 25 0 36 0;
+#X connect 26 0 40 0;
+#X connect 28 0 29 0;
+#X connect 29 0 14 1;
+#X connect 31 0 25 0;
+#X connect 33 0 25 0;
+#X connect 34 0 31 0;
+#X connect 35 0 34 0;
+#X connect 39 0 26 0;
+#X connect 40 0 41 0;
+#X connect 40 0 41 1;

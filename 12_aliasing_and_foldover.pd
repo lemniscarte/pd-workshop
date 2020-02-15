@@ -1,0 +1,44 @@
+#N canvas 579 161 687 759 12;
+#X text 89 44 Long story short - if a wave isn't a sinusoid \, it will
+have partials. If any of these partials (or fundamental \, of course)
+go over the Nyquist frequency (sample rate/2) \, digital audio will
+run into problems trying to recreate these frequencies - and that will
+sound bad., f 71;
+#X text 89 124 Make sure the previous patch (11) is open before testing
+this one., f 71;
+#X obj 209 252 osc~;
+#X obj 209 303 phasor~;
+#X obj 209 354 pwm~;
+#X obj 209 405 triangle~;
+#X obj 151 236 vradio 51 0 1 4 picker empty empty 0 -8 0 10 -262144
+-258049 -1 3;
+#X obj 403 308 hsl 128 23 60 24000 0 0 empty empty Frequency\ 60\ -\ 24000
+10 -10 0 10 -262144 -258049 -1 1300 1;
+#X floatatom 403 438 10 0 0 0 - - frequency, f 10;
+#X obj 403 350 pack 0 20;
+#X obj 403 379 line;
+#X msg 403 226 0 \, 5000 5000;
+#X obj 403 255 line;
+#X obj 146 550 samplerate~;
+#X obj 146 578 / 2;
+#X floatatom 146 606 5 0 0 0 - - -, f 5;
+#N canvas 0 0 450 300 oscoutput 0;
+#X obj 65 52 catch~ oscillators;
+#X obj 65 120 dac~;
+#X obj 65 86 *~ 0.04;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 1;
+#X restore 489 668 pd oscoutput;
+#X text 262 545 This should be the cap on frequencies this computer
+can handle before showing undesirable artifacts., f 39;
+#X obj 146 522 loadbang;
+#X text 402 202 Click for sweep:;
+#X connect 7 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 18 0 13 0;

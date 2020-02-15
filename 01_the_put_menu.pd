@@ -1,0 +1,70 @@
+#N canvas 218 121 1476 845 12;
+#X obj 255 691 cnv 15 265 58 empty empty empty 20 12 0 14 -261918 -66577
+0;
+#X obj 132 89 osc~;
+#X text 287 89 Control + 1;
+#X text 487 89 Object;
+#X text 287 129 Control + 2;
+#X msg 132 129 hello there!;
+#X text 487 129 Message;
+#X floatatom 132 169 5 0 0 0 - - -, f 5;
+#X text 287 169 Control + 3;
+#X text 488 168 Number box (type 1);
+#X symbolatom 132 209 10 0 0 0 - - -, f 10;
+#X text 287 209 Control + 4;
+#X text 488 208 Symbol box;
+#X text 132 249 comment;
+#X text 287 249 Control + 5;
+#X text 489 247 Comments like these;
+#X dropdown 132 289 6 1 0 0 - - -, f 6;
+#X text 287 289 Control + 6;
+#X text 489 287 Dropdown menu;
+#X text 997 89 Control + Shift + B;
+#X obj 843 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 843 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 842 169 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256 0;
+#X obj 842 204 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 842 349 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 842 389 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 842 531 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 842 577 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 835 733 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 997 129 Control + Shift + T;
+#X text 1197 89 Bang!;
+#X text 1197 129 Toggle;
+#X text 997 169 Control + Shift + N;
+#X text 1198 168 Number box (type 2);
+#X text 997 209 Control + Shift + V;
+#X text 1198 208 Vertical slider;
+#X text 997 349 Control + Shift + H;
+#X text 997 389 Control + Shift + D;
+#X text 1199 347 Horizontal slider;
+#X text 1199 387 Vertical radio buttons;
+#X text 998 529 Control + Shift + I;
+#X text 1199 527 Horizontal radio buttons;
+#X text 998 579 Control + Shift + U;
+#X text 1199 577 Volume meter;
+#X text 998 735 Control + Shift + C;
+#X text 1199 733 Canvas Rectangle;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 10 float 3 black black;
+#A 0 0 -0.362643 0 -0.0769243 0.0989027 0.274728 0.25275 0 -0.296708
+0;
+#X coords 0 1 10 -1 146 91 1;
+#X restore 132 378 graph;
+#X text 489 377 Array;
+#X obj 269 713 hradio 15 0 1 16 empty empty Selector 0 -8 0 10 -262144
+-258049 -1 6;
+#X text 176 581 Many of these will provide extra information/customization
+if you right-click and select 'properties'. Ranges can be defined for
+sliders and number boxes \, canvas can be made more interesting looking
+\, how many buttons will the radio buttons have \, how long is an array
+\, etc.;
