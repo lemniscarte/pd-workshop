@@ -36,7 +36,7 @@ of it as an even more generic 'send' object., f 94;
 array. Not only that \, but it provides a few special ways to transform
 the data in them. One we're gonna look at right now is the 'sinesum'
 message., f 94;
-#N canvas 377 285 745 646 playkeys 1;
+#N canvas 377 252 745 646 playkeys 1;
 #X obj 73 214 mtof;
 #X floatatom 73 162 5 20 127 0 - - -, f 5;
 #X obj 393 210 bng 15 50 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -113,6 +113,7 @@ message., f 94;
 #X obj 341 45 inlet;
 #X obj 153 364 inlet;
 #X msg 393 446 0 12 0 \, 0.5 12 0 \, 0 1300 100;
+#X obj 438 525 line~;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 1 0 0 0;
@@ -151,7 +152,7 @@ play notes., f 33;
 #X text 1343 121 Pick a waveform:;
 #X text 801 42 click here...;
 #X obj 1357 289 hradio 15 0 1 5 empty empty select\ octave -1 -9 0
-10 -262144 -1 -1 2;
+10 -262144 -1 -1 0;
 #X text 72 178 The maths behind the way sinesum works can be a little
 too much to go over right now \, but the short version is \, it adds
 a bunch of simple sinusoidal waves into it. We can create \, in theory

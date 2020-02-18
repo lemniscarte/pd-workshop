@@ -1,4 +1,4 @@
-#N canvas 141 115 1527 851 12;
+#N canvas 109 96 1527 851 12;
 #X floatatom 129 72 5 0 0 0 - - -, f 5;
 #X obj 129 151 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -88,8 +88,6 @@ into a bang as it spews it out., f 45;
 \, you can get away with using the 'swap' object., f 47;
 #X text 1090 117 There are signal (~) variations \, for a more seamless
 movement., f 40;
-#X text 1090 153 The line \, line~ and vline~ objects are the basis
-of envelope generators., f 40;
 #X connect 0 0 5 0;
 #X connect 5 0 1 0;
 #X connect 5 1 2 0;
