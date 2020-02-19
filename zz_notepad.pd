@@ -1,65 +1,0 @@
-#N canvas 1049 223 785 678 12;
-#X obj 81 94 osc~ 440;
-#X obj 81 182 dac~;
-#X obj 81 123 *~ 0.2;
-#X obj 101 228;
-#X obj 157 230 isc;
-#X floatatom 141 58 5 0 0 0 - - -, f 5;
-#X floatatom 184 122 5 0 0 0 - - -, f 5;
-#X obj 184 150 + 10;
-#X floatatom 184 179 5 0 0 0 - - -, f 5;
-#X text 366 50 create objects \; connect objects \; mouse over numbers
-\; fail to create objects \; CTRL+1 when selected for automatic connection
-, f 53;
-#X msg 98 299 20;
-#X floatatom 59 338 5 0 0 0 - - -, f 5;
-#X obj 59 366 + 10;
-#X floatatom 59 395 5 0 0 0 - - -, f 5;
-#X floatatom 158 90 5 0 0 0 - - -, f 5;
-#X msg 121 394 test test;
-#X obj 59 434 print tester;
-#X obj 111 342 print first value;
-#X floatatom 285 347 5 0 0 0 - - -, f 5;
-#X obj 285 445 print numbers;
-#X obj 301 393 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 236 139 *~ 0.2;
-#X obj 236 168 dac~;
-#X obj 236 110 osc~ 220;
-#X obj 294 193 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X text 513 400 tidy up \; ;
-#X floatatom 247 516 0 0 0 0 - - -;
-#X obj 229 550 int;
-#X obj 176 506 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 229 579 5 0 0 0 - - -, f 5;
-#X obj 37 218 print~;
-#X obj 26 138 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 380 528 ~ objects are like hoses that are always flowing \,
-if the DSP in on \; , f 36;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X connect 2 0 30 0;
-#X connect 5 0 0 0;
-#X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 10 0 11 0;
-#X connect 10 0 17 0;
-#X connect 11 0 12 0;
-#X connect 12 0 13 0;
-#X connect 13 0 16 0;
-#X connect 14 0 2 1;
-#X connect 15 0 16 0;
-#X connect 18 0 19 0;
-#X connect 18 0 26 0;
-#X connect 20 0 19 0;
-#X connect 21 0 22 0;
-#X connect 23 0 21 0;
-#X connect 24 0 18 0;
-#X connect 26 0 27 1;
-#X connect 27 0 29 0;
-#X connect 28 0 27 0;
-#X connect 31 0 30 0;
-#X coords 0 0 1 1 85 60 0;
