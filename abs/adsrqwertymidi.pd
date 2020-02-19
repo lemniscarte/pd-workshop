@@ -101,13 +101,13 @@
 #X obj 608 251 - 2;
 #X obj 725 396 s qwertymidi;
 #X msg 338 644 \$5 \$2 \, \$4 \$3 \$2;
-#X obj 820 195 vsl 15 64 0 300 0 1 empty empty A 3 -9 1 10 -262144
+#X obj 820 195 vsl 15 64 5 500 1 1 empty empty A 3 -9 1 10 -262144
 -1 -1 0 1;
-#X obj 847 195 vsl 15 64 0 500 0 1 empty empty D 3 -9 1 10 -262144
+#X obj 847 195 vsl 15 64 7.5 750 1 1 empty empty D 3 -9 1 10 -262144
 -1 -1 4050 1;
-#X obj 874 195 vsl 15 64 0 1 0 1 empty empty S 3 -9 1 10 -262144 -1
--1 4200 1;
-#X obj 901 195 vsl 15 64 0 1000 0 1 empty empty R 3 -9 1 10 -262144
+#X obj 874 195 vsl 15 64 0.01 1 1 1 empty empty S 3 -9 1 10 -262144
+-1 -1 4200 1;
+#X obj 901 195 vsl 15 64 1 1200 1 1 empty empty R 3 -9 1 10 -262144
 -1 -1 4550 1;
 #X obj 725 195 nbx 4 14 0 127 0 1 empty empty velocity 0 -8 1 10 -262144
 -1 -1 127 256 0;

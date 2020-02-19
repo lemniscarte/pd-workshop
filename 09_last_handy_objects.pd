@@ -1,4 +1,4 @@
-#N canvas 124 145 1633 778 12;
+#N canvas 283 282 1633 778 12;
 #X obj 287 507 cnv 15 470 129 empty empty empty 20 12 0 14 -249015
 -66577 0;
 #X floatatom 72 74 5 0 0 0 - - -, f 5;
@@ -32,7 +32,7 @@ harnessed: you can make modules that are agnostic when it comes to
 where it will be sending the signals \, allowing for very flexible
 routing that 'just works'., f 62;
 #X obj 72 661 throw~ toclip;
-#X obj 935 488 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 935 488 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 967 224 osc~;
 #X text 1127 344 The mux~ or multiplexer~ object will let you pick
@@ -63,15 +63,17 @@ it comes to routing things around.;
 #X text 1127 204 This fork of the signal path could be some other processing:
 a delay \, some reverb \, distortion \, filters \, etc. We're doing
 some very simple amplitude modulation (AM) here.;
-#X text 1127 104 Clip will lop off the signal at the given points.
-Good for guaranteeing it won't hurt your ears \, but will cause the
-signal to sound distorted. Can be used creatively \, too!;
+#X text 1127 84 Clip will lop off the signal at the given points. Good
+for guaranteeing it won't hurt your ears \, but will cause the signal
+to sound distorted. Can be used creatively \, too!;
 #X text 1127 624 Moses will 'part the waters' by the value given it
 as argument or into the right inlet. Under that value \, goes to left
 output \, otherwise goes out the right one.;
 #X obj 896 626 moses 13;
 #X floatatom 896 675 5 0 0 0 - - -, f 5;
 #X floatatom 949 675 5 0 0 0 - - -, f 5;
+#X text 1127 136 Distortion can be achieved with clip \, but using
+the tanh object might be more musical.;
 #X connect 1 0 36 0;
 #X connect 2 0 37 0;
 #X connect 7 0 4 0;
