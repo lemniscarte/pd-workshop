@@ -1,4 +1,4 @@
-#N canvas 89 142 1762 908.969 12;
+#N canvas 357 208 1762 891.969 12;
 #X obj 18 18 cnv 15 2073 1050 empty empty empty 20 12 0 14 -262075
 -66577 0;
 #X obj 673 912 *~;
@@ -12,11 +12,11 @@
 0;
 #X obj 350 340 osc~;
 #X obj 719 157 vsl 12 65 0 5000 0 0 empty empty left 0 -9 1 10 -262144
--1 -1 35 1;
+-1 -1 59 1;
 #X obj 332 376 *~;
 #X obj 479 340 osc~;
 #X obj 761 157 vsl 12 65 0 5000 0 0 empty empty right -3 -9 1 10 -262144
--1 -1 35 1;
+-1 -1 59 1;
 #X obj 461 376 *~;
 #X msg 375 293 0;
 #X obj 717 288 vsl 14 24 0 1 0 1 empty empty phase\ offset 26 -12 1
@@ -143,10 +143,10 @@
 #X obj 221 210 *~ -1;
 #X floatatom 238 179 5 0 0 0 - - -, f 5;
 #X obj 320 119 vsl 17 22 0.1 0.9 0 1 empty empty pulse\ width 0 -9
-0 8 -262144 -1 -1 750 1;
+0 8 -262144 -1 -1 450 1;
 #X obj 331 242 pink~;
 #X obj 188 170 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
--1 -1 300 1;
+-1 -1 250 1;
 #X obj 213 31 inlet;
 #X obj 450 106 vsl 15 24 0 0.7 0 1 empty empty sine 0 -9 0 10 -262144
 -1 -1 2300 1;
@@ -159,9 +159,9 @@
 #X obj 650 106 vsl 15 24 0 0.7 0 1 empty empty noise 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 600 162 vsl 17 22 0.1 0.9 0 1 empty empty pwm 0 -9 0 8 -262144
--1 -1 750 1;
+-1 -1 450 1;
 #X obj 500 162 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
--1 -1 300 1;
+-1 -1 250 1;
 #X obj 550 162 vsl 17 22 1 16 0 1 empty empty mult 0 -9 0 8 -262144
 -1 -1 420 1;
 #X floatatom 500 198 3 0 0 0 - - -, f 3;
@@ -172,7 +172,7 @@
 #X floatatom 450 198 3 0 0 0 - - -, f 3;
 #X obj 402 385 *~;
 #X obj 650 162 vsl 15 24 0 1 0 1 empty empty gain 0 -9 0 10 -262144
--1 -1 1100 1;
+-1 -1 300 1;
 #X obj 707 172 * 100;
 #X floatatom 650 198 4 0 0 0 - - -, f 4;
 #X obj 402 414 outlet~;
@@ -180,7 +180,7 @@
 #X obj 643 14 mtof;
 #X obj 715 45 line;
 #X obj 505 235 hsl 128 15 0 250 0 1 empty empty portamento -56 6 1
-10 -262144 -1 -1 1200 1;
+10 -262144 -1 -1 500 1;
 #X floatatom 650 233 4 0 0 0 - - -, f 4;
 #X obj 715 16 pack 0 0;
 #X obj 783 16 pack 0 0;
@@ -261,7 +261,7 @@
 #X obj 802 267 hsl 168 15 1 1000 0 1 empty empty time\ L -2 -8 1 10
 -262144 -1 -1 10431 1;
 #X obj 802 467 hsl 70 15 0 1 0 1 empty empty echo\ volume 0 -9 1 10
--262144 -1 -1 6900 1;
+-262144 -1 -1 0 1;
 #X obj 900 227 hsl 70 15 0 1 0 1 empty empty panning -2 -8 1 10 -262144
 -1 -1 3450 1;
 #X obj 204 707 *~ 0.5;
@@ -331,7 +331,7 @@
 #X obj 805 510 hsl 95 12 200 20000 1 1 empty empty lowpass\ frequency
 1 -8 1 10 -262144 -1 -1 9400 1;
 #X obj 921 510 hsl 95 12 200 20000 1 1 empty empty hipass\ frequency
-1 -8 1 10 -262144 -1 -1 1850 1;
+1 -8 1 10 -262144 -1 -1 2850 1;
 #X obj 805 572 line;
 #X obj 921 572 line;
 #X obj 921 543 pack 0 100;
@@ -413,16 +413,16 @@
 #X obj 92 59 inlet~;
 #X obj 92 375 outlet~;
 #X obj 276 156 hsl 29 20 0 100 0 1 empty empty q 0 -8 1 10 -262144
--1 -1 512 1;
+-1 -1 0 1;
 #X floatatom 314 157 5 0 0 0 - - -, f 5;
 #X obj 276 116 hsl 66 20 60 6000 1 1 empty empty frequency -2 -8 1
-10 -262144 -1 -1 3548 1;
+10 -262144 -1 -1 2513 1;
 #X floatatom 356 117 5 0 0 0 - - -, f 5;
 #X obj 108 219 line~;
 #X obj 176 59 inlet;
 #X obj 413 59 inlet;
 #X obj 363 157 hsl 29 20 0 200 0 1 empty empty porta 7 -7 1 8 -262144
--1 -1 200 1;
+-1 -1 1300 1;
 #X obj 92 336 moog~;
 #X obj 108 194 pack 0 0;
 #X connect 2 0 3 0;
@@ -596,9 +596,9 @@
 #X coords 0 50 64 20 512 114 1;
 #X restore 210 240 graph;
 #X obj 210 358 hradio 8 0 0 64 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 22;
 #X obj 52 383 tabread notes;
-#X obj 52 116 tgl 15 0 empty empty run 17 7 1 10 -262144 -1 -1 0 1
+#X obj 52 116 tgl 15 0 empty empty run 17 7 1 10 -262144 -1 -1 1 1
 ;
 #X obj 52 286 f;
 #X obj 109 312 + 1;
@@ -658,7 +658,7 @@
 #X floatatom 210 381 5 0 0 0 - - -, f 5;
 #X text 250 381 current value;
 #X floatatom 862 380 5 0 0 0 - - -, f 5;
-#X obj 695 378 tgl 23 0 empty empty run -24 10 1 10 -260436 -1 -1 0
+#X obj 695 378 tgl 23 0 empty empty run -24 10 1 10 -260436 -1 -1 1
 1;
 #X obj 767 413 *;
 #X floatatom 570 381 5 0 64 0 - - -, f 5;
@@ -747,7 +747,7 @@
 #X restore 245 102 pd sequencer;
 #X obj 1604 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 245 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 245 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 464 41 r ms;
 #X obj 1781 205 r stop;
@@ -870,8 +870,8 @@ Minor.Pentatonic, f 21;
 #X obj 36 1038 s scalednote;
 #X obj 158 1038 s scaledfreq;
 #X obj 1698 537 r scaledfreq;
-#X obj 872 818 r scaledfreq;
-#X obj 876 847 *;
+#X obj 872 810 r scaledfreq;
+#X obj 876 839 *;
 #X obj 1729 144 r stop;
 #X obj 1596 148 bng 15 50 20 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -962,11 +962,11 @@ Minor.Pentatonic, f 21;
 #X floatatom 117 318 5 0 0 0 - - -, f 5;
 #X floatatom 135 346 5 0 0 0 - - -, f 5;
 #X floatatom 154 318 5 0 0 0 - - -, f 5;
-#X obj 43 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 43 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 1579 473 s samplerms;
 #X obj 154 372 s ms;
-#X obj 43 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 43 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 590 377 s sequencerstop;
 #X obj 43 357 s run;
@@ -1101,7 +1101,7 @@ Minor.Pentatonic, f 21;
 #X obj 135 483 outlet~;
 #X obj 65 353 rev2~ 100 90 3000 20;
 #X obj 473 96 hsl 108 14 220 22000 1 1 empty empty hipass 3 -8 1 10
--262144 -1 -1 2100 1;
+-262144 -1 -1 3300 1;
 #X obj 473 137 vsl 20 93 0 1 0 1 empty empty level 0 -11 1 10 -262144
 -1 -1 8550 1;
 #X obj 228 222 * 100;
@@ -1260,7 +1260,7 @@ Minor.Pentatonic, f 21;
 #X connect 21 0 16 0;
 #X coords 0 -1 1 1 210 104 1 175 100;
 #X restore 974 279 pd envelope;
-#X obj 763 377 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 763 377 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 43 65 select 32;
 #X obj 43 39 key;
@@ -1309,9 +1309,9 @@ Minor.Pentatonic, f 21;
 #X msg 495 301 stop;
 #X obj 465 393 *~;
 #X obj 644 326 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 562 1;
+-1 -1 493 1;
 #X obj 644 114 vsl 19 134 0 0.7 0 1 empty empty empty 0 -9 0 10 -261347
--1 -1 3250 1;
+-1 -1 2850 1;
 #X obj 529 227 bng 15 250 50 0 empty empty stop 18 6 1 10 -262144 -1
 -1;
 #X obj 586 58 inlet;
@@ -1751,7 +1751,7 @@ Minor.Pentatonic, f 21;
 #X obj 59 264 outlet~;
 #X obj 59 27 inlet~;
 #X obj 242 77 hsl 64 12 0 64 0 1 empty empty overdive -2 -8 1 10 -262144
--1 -1 4750 1;
+-1 -1 750 1;
 #X obj 465 116 *~ 4;
 #X obj 465 145 expr~ atan($v1);
 #X obj 465 264 outlet~;
@@ -1759,7 +1759,7 @@ Minor.Pentatonic, f 21;
 #X floatatom 132 116 5 0 0 0 - - -, f 5;
 #X obj 59 234 *~;
 #X obj 242 104 hsl 64 12 0 1 0 1 empty empty gain -2 -8 1 10 -262144
--1 -1 400 1;
+-1 -1 1100 1;
 #X obj 465 234 *~;
 #X connect 1 0 2 0;
 #X connect 2 0 11 0;
@@ -1851,13 +1851,13 @@ Minor.Pentatonic, f 21;
 0;
 #X floatatom 78 217 4 0 0 0 - - -, f 4;
 #X obj 271 149 vsl 18 40 1.5 200 1 1 empty empty A 5 -9 1 10 -262144
--1 -1 2150 1;
+-1 -1 1300 1;
 #X obj 296 149 vsl 18 40 1 750 1 1 empty empty D 5 -9 1 10 -262144
--1 -1 900 1;
+-1 -1 1930 1;
 #X obj 321 149 vsl 18 40 1 100 1 1 empty empty S 5 -9 1 10 -262144
--1 -1 3900 1;
+-1 -1 3850 1;
 #X obj 346 149 vsl 18 40 10 1200 1 1 empty empty R 5 -9 1 10 -262144
--1 -1 3900 1;
+-1 -1 2500 1;
 #X obj 45 16 inlet control;
 #X obj 490 16 inlet release;
 #X obj 394 16 inlet sustain;
@@ -1878,7 +1878,7 @@ Minor.Pentatonic, f 21;
 #X obj 340 215 del \$1;
 #X floatatom 379 176 4 0 0 0 - - -, f 4;
 #X obj 387 139 vsl 13 26 1 1000 0 1 empty empty gate -1 -7 1 8 -262144
--1 -1 150 1;
+-1 -1 90 1;
 #X msg 75 179 0;
 #X obj 210 304 outlet;
 #X connect 3 0 21 1;
@@ -1928,7 +1928,7 @@ Minor.Pentatonic, f 21;
 -1 -1 4904 1;
 #X obj 1029 468 *~;
 #X obj 1053 437 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 600 1;
+-1 -1 1000 1;
 #X obj 38 445 abs/adsrqwertymidi;
 #X obj 590 72 nbx 5 14 1 64 0 1 empty empty empty 0 -8 0 10 -262144
 -1 -1 64 256 0;
@@ -3470,12 +3470,12 @@ Minor.Pentatonic, f 21;
 #X obj 121 31 inlet;
 #X floatatom 216 94 5 0 0 0 MIDI - -, f 5;
 #X obj 389 95 hsl 40 15 0 250 0 1 empty empty portamento -55 6 1 10
--262144 -1 -1 598 1;
+-262144 -1 -1 138 1;
 #X floatatom 443 94 4 0 0 0 - - -, f 4;
 #X obj 141 537 *~;
 #X obj 121 566 outlet~;
 #X obj 191 412 hsl 58 15 0 1 0 1 empty empty volume 32 20 1 10 -262144
--1 -1 1200 1;
+-1 -1 700 1;
 #X obj 79 498 *~;
 #X obj 79 469 pink~;
 #X obj 191 376 hsl 58 15 0 1 0 1 empty empty noise 40 20 1 10 -262144
@@ -3991,13 +3991,13 @@ Minor.Pentatonic, f 21;
 #X obj 83 446 vline~;
 #X obj 83 838 outlet~;
 #X obj 515 204 vsl 17 24 0 0.7 0 1 empty empty volume -4 -7 1 8 -262144
--1 -1 2300 1;
+-1 -1 950 1;
 #X obj 101 296 * 12;
 #X obj 83 323 +;
 #X floatatom 83 206 5 0 0 0 - - -, f 5;
 #X obj 83 405 pack 0 0, f 94;
 #X obj 437 204 hsl 58 11 -5 5 0 1 empty empty detune 19 -6 1 8 -262144
--1 -1 3150 1;
+-1 -1 3750 1;
 #X obj 461 219 bng 11 250 50 0 empty empty reset 12 4 1 8 -262144 -1
 -1;
 #X msg 461 265 0;
@@ -4254,8 +4254,8 @@ Minor.Pentatonic, f 21;
 #X restore 547 585 pd filter;
 #X obj 309 384 sel 20;
 #X obj 304 416 abs/dmux;
-#X obj 911 846 hsl 34 10 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 700 1;
+#X obj 911 838 hsl 34 10 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 200 1;
 #X connect 1 0 147 0;
 #X connect 1 0 147 1;
 #X connect 1 0 161 0;

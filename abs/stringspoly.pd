@@ -1,32 +1,50 @@
-#N canvas 2045 227 473 493 12;
-#X obj 248 255 cnv 15 107 32 empty empty empty 20 12 0 14 -261869 -66577
+#N canvas 1397 282 1009 516 12;
+#X obj 228 295 cnv 15 107 32 empty empty empty 20 12 0 14 -261869 -66577
 0;
-#X obj 254 268 hsl 90 12 0 1 0 1 empty empty volume -2 -8 1 10 -262144
--1 -1 8900 1;
+#X obj 234 308 hsl 90 12 0 1 0 1 empty empty volume -2 -8 1 10 -262144
+-1 -1 7800 1;
 #X obj 92 47 inlet note;
-#X obj 92 422 outlet~;
-#X obj 92 322 *~;
+#X obj 92 482 outlet~;
+#X obj 92 392 *~;
 #X obj 184 47 inlet velocity;
-#X obj 248 288 cnv 15 107 84 empty empty empty 20 12 0 14 -261400 -66577
+#X obj 228 328 cnv 15 107 84 empty empty empty 20 12 0 14 -261400 -66577
 0;
-#X obj 254 299 vsl 15 64 5 500 1 1 A empty A 3 -9 1 10 -262144 -1 -1
-1750 1;
-#X obj 281 299 vsl 15 64 1 750 0 1 D empty D 3 -9 1 10 -262144 -1 -1
-4300 1;
-#X obj 308 299 vsl 15 64 0.01 100 0 1 S empty S 3 -9 1 10 -262144 -1
--1 3200 1;
-#X obj 335 299 vsl 15 64 1 1200 0 1 R empty R 3 -9 1 10 -262144 -1
--1 3600 1;
+#X obj 234 339 vsl 15 64 5 500 1 1 A empty A 3 -9 1 10 -262144 -1 -1
+5250 1;
+#X obj 261 339 vsl 15 64 1 750 0 1 D empty D 3 -9 1 10 -262144 -1 -1
+6100 1;
+#X obj 288 339 vsl 15 64 0.01 100 0 1 S empty S 3 -9 1 10 -262144 -1
+-1 6300 1;
+#X obj 315 339 vsl 15 64 1 1200 0 1 R empty R 3 -9 1 10 -262144 -1
+-1 6300 1;
 #X floatatom 92 73 5 0 0 0 - - -, f 5;
 #X floatatom 184 73 5 0 0 0 - - -, f 5;
 #X obj 92 122 poly 6 1, f 10;
 #X obj 92 183 pack f f f;
 #X obj 92 257 clone strings 6;
 #X obj 92 151 - 1;
-#X obj 304 47 inlet midimsg;
-#X obj 304 76 unpack 0 0;
-#X floatatom 304 105 5 0 0 0 - - -, f 5;
-#X floatatom 371 105 5 0 0 0 - - -, f 5;
+#X obj 424 47 inlet midimsg;
+#X obj 424 76 unpack 0 0;
+#X floatatom 434 105 5 0 0 0 - - -, f 5;
+#X floatatom 501 105 5 0 0 0 - - -, f 5;
+#X obj 424 224 mscale;
+#X msg 668 117 0 2 4 5 7 9 11;
+#X msg 668 138 0 2 3 5 7 8 10;
+#X msg 668 159 0 4 7;
+#X msg 668 180 0 3 7;
+#X text 795 117 Major scale;
+#X text 795 138 Minor scale;
+#X text 795 159 Major triad;
+#X text 795 180 Minor triad;
+#X msg 668 201 0 2 4 7 9;
+#X text 795 201 Major pentatonic scale;
+#X msg 668 222 0 3 5 7 10;
+#X text 795 222 Minor pentatonic scale;
+#X obj 443 140 showkey;
+#X floatatom 443 190 5 0 0 0 - - -, f 5;
+#X floatatom 424 265 5 0 0 0 - - -, f 5;
+#X obj 424 293 pack 0 0, f 10;
+#X obj 601 91 loadbang;
 #X connect 1 0 4 1;
 #X connect 2 0 11 0;
 #X connect 4 0 3 0;
@@ -40,7 +58,21 @@
 #X connect 15 0 4 0;
 #X connect 16 0 14 0;
 #X connect 17 0 18 0;
-#X connect 17 0 13 0;
 #X connect 18 0 19 0;
+#X connect 18 0 21 0;
 #X connect 18 1 20 0;
-#X coords 0 -1 1 1 113 141 1 245 234;
+#X connect 18 1 37 1;
+#X connect 21 0 36 0;
+#X connect 22 0 21 2;
+#X connect 23 0 21 2;
+#X connect 24 0 21 2;
+#X connect 25 0 21 2;
+#X connect 30 0 21 2;
+#X connect 32 0 21 2;
+#X connect 34 0 35 0;
+#X connect 35 0 21 1;
+#X connect 36 0 37 0;
+#X connect 37 0 13 0;
+#X connect 38 0 34 0;
+#X connect 38 0 23 0;
+#X coords 0 -1 1 1 113 141 1 225 274;

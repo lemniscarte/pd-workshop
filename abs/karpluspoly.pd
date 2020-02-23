@@ -80,10 +80,10 @@
 #X obj 279 193 - 100;
 #X floatatom 279 222 5 0 0 0 - - -, f 5;
 #X obj 364 279 hsl 90 12 0 1 0 1 empty empty volume -2 -8 1 10 -262144
--1 -1 5614 1;
+-1 -1 0 1;
 #X obj 92 394 *~, f 24;
 #X obj 279 250 spigot;
-#X obj 447 253 tgl 12 0 empty empty KT -13 5 1 8 -262144 -1 -1 1 1
+#X obj 447 253 tgl 12 0 empty empty KT -13 5 1 8 -262144 -1 -1 0 1
 ;
 #X connect 1 0 4 6;
 #X connect 2 0 4 7;
