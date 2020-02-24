@@ -1,4 +1,4 @@
-#N canvas 562 147 965 933 12;
+#N canvas 722 110 965 956 12;
 #X obj 693 209 cnv 15 197 88 empty empty empty 20 12 0 14 -261869 -66577
 0;
 #X obj 787 213 cnv 15 103 84 empty empty empty 20 12 0 14 -261400 -66577
@@ -176,8 +176,6 @@
 #X text 365 867 midi msg, f 4;
 #X floatatom 493 331 5 0 0 0 - - -, f 5;
 #X obj 360 791 pack 0 0;
-#X obj 460 836 outlet;
-#X text 460 867 midi msg + hold note, f 10;
 #X connect 2 0 3 0;
 #X connect 2 0 12 0;
 #X connect 2 0 39 0;
@@ -202,10 +200,8 @@
 #X connect 14 0 23 0;
 #X connect 14 0 49 0;
 #X connect 15 0 3 0;
-#X connect 15 0 63 0;
 #X connect 15 1 3 1;
 #X connect 15 1 10 0;
-#X connect 15 1 63 1;
 #X connect 16 0 31 0;
 #X connect 17 0 37 0;
 #X connect 18 0 36 0;
@@ -218,7 +214,7 @@
 #X connect 26 0 27 0;
 #X connect 27 0 52 0;
 #X connect 28 0 53 0;
-#X connect 28 1 64 0;
+#X connect 28 1 60 0;
 #X connect 29 0 54 0;
 #X connect 29 0 28 0;
 #X connect 31 0 4 0;
@@ -250,4 +246,4 @@
 #X connect 57 0 58 0;
 #X connect 58 0 59 0;
 #X connect 63 0 60 0;
-#X coords 0 -1 1 1 203 113 1 690 187;
+#X coords 0 -1 1 1 203 113 1 691 187;
