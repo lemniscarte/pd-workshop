@@ -1,4 +1,4 @@
-#N canvas 95 134 1762 892.969 12;
+#N canvas 80 86 1787 927.969 12;
 #X obj 18 18 cnv 15 2073 1050 empty empty empty 20 12 0 14 -262075
 -66577 0;
 #X obj 673 912 *~;
@@ -12,11 +12,11 @@
 0;
 #X obj 350 340 osc~;
 #X obj 719 157 vsl 12 65 0 5000 0 0 empty empty left 0 -9 1 10 -262144
--1 -1 3691 1;
+-1 -1 35 1;
 #X obj 332 376 *~;
 #X obj 479 340 osc~;
 #X obj 761 157 vsl 12 65 0 5000 0 0 empty empty right -3 -9 1 10 -262144
--1 -1 3691 1;
+-1 -1 35 1;
 #X obj 461 376 *~;
 #X msg 375 293 0;
 #X obj 717 288 vsl 14 24 0 1 0 1 empty empty phase\ offset 26 -12 1
@@ -596,9 +596,9 @@
 #X coords 0 50 64 20 512 114 1;
 #X restore 210 240 graph;
 #X obj 210 358 hradio 8 0 0 64 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 37;
 #X obj 52 403 tabread notes;
-#X obj 52 116 tgl 15 0 empty empty run 17 7 1 10 -262144 -1 -1 0 1
+#X obj 52 116 tgl 15 0 empty empty run 17 7 1 10 -262144 -1 -1 1 1
 ;
 #X obj 52 306 f;
 #X obj 109 332 + 1;
@@ -623,7 +623,7 @@
 #X obj 862 350 t b f;
 #X floatatom 862 443 5 0 0 0 - - -, f 5;
 #X obj 345 204 hradio 20 0 1 15 empty empty divider/multiplier 117
-26 1 10 -262144 -1 -1 9;
+26 1 10 -262144 -1 -1 10;
 #X text 409 175 5;
 #X text 469 175 2;
 #X text 449 175 3;
@@ -658,7 +658,7 @@
 #X floatatom 210 381 5 0 0 0 - - -, f 5;
 #X text 250 381 current value;
 #X floatatom 862 380 5 0 0 0 - - -, f 5;
-#X obj 695 378 tgl 23 0 empty empty run -24 10 1 10 -260436 -1 -1 0
+#X obj 695 378 tgl 23 0 empty empty run -24 10 1 10 -260436 -1 -1 1
 1;
 #X obj 767 413 *;
 #X floatatom 570 381 5 0 64 0 - - -, f 5;
@@ -747,7 +747,7 @@
 #X restore 245 102 pd sequencer;
 #X obj 1604 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 245 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 245 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 464 41 r ms;
 #X obj 1781 205 r stop;
@@ -856,7 +856,7 @@
 #X coords 0 -1 1 1 53 56 2 94 85;
 #X restore 314 385 pd sigmux;
 #X obj 292 461 hsl 92 8 0 1 0 0 empty empty bounce\ viewer 17 -7 1
-10 -262144 -1 -1 9100 1;
+10 -262144 -1 -1 3770 1;
 #X obj 100 27 inlet~;
 #X obj 222 27 inlet~;
 #X obj 282 27 inlet~;
@@ -896,11 +896,11 @@
 #X floatatom 117 318 5 0 0 0 - - -, f 5;
 #X floatatom 135 346 5 0 0 0 - - -, f 5;
 #X floatatom 154 318 5 0 0 0 - - -, f 5;
-#X obj 43 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 43 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 1579 473 s samplerms;
 #X obj 154 372 s ms;
-#X obj 43 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 43 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 590 377 s sequencerstop;
 #X obj 43 357 s run;
@@ -962,7 +962,7 @@
 #X connect 16 0 12 0;
 #X coords 0 -1 1 1 177 58 1 193 29;
 #X restore 1596 168 pd clockdivider;
-#X obj 153 65 loadbang;
+#X obj 199 26 loadbang;
 #N canvas 735 426 460 383 octaveshifter 0;
 #X floatatom 107 218 5 0 0 1 octave - -, f 5;
 #X obj 107 247 * 12;
@@ -1199,7 +1199,7 @@
 #X connect 22 0 23 0;
 #X coords 0 -1 1 1 210 104 1 175 100;
 #X restore 974 279 pd envelope;
-#X obj 763 377 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 763 377 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 43 65 select 32;
 #X obj 43 39 key;
@@ -1506,7 +1506,7 @@
 -262144 -1 -1 8100 1;
 #X obj 974 466 lop~;
 #X obj 36 817 +;
-#X floatatom 237 793 5 0 36 0 - - -, f 5;
+#X floatatom 248 795 5 0 36 0 - - -, f 5;
 #N canvas 735 426 501 390 lfo 0;
 #X obj 241 104 cnv 15 129 117 empty empty empty 20 12 0 14 -261869
 -66577 0;
@@ -1556,7 +1556,7 @@
 #X connect 20 0 18 0;
 #X connect 21 0 20 0;
 #X coords 0 -1 1 1 135 142 1 238 82;
-#X restore 251 554 pd lfo;
+#X restore 264 548 pd lfo;
 #X obj 2028 76 r stop;
 #X obj 1893 106 r tick;
 #N canvas 616 453 450 323 clockdivider 0;
@@ -1706,7 +1706,7 @@
 #X coords 0 -1 1 1 135 142 1 238 82;
 #X restore 338 719 pd lfo;
 #X obj 36 750 abs/dmux;
-#X obj 238 728 abs/dmux;
+#X obj 249 734 abs/dmux;
 #X obj 43 118 abs/master-bpm;
 #X obj 878 328 abs/dmux;
 #X obj 1669 437 abs/smux;
@@ -4208,7 +4208,7 @@
 #X obj 208 49 inlet;
 #X obj 58 590 spigot;
 #X obj 97 568 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
-65;
+104;
 #X obj 144 447 loadbang;
 #X msg 144 472 1;
 #X obj 412 346 array set \$0-scale;
@@ -4296,14 +4296,14 @@
 #X connect 48 0 22 0;
 #X connect 48 0 27 0;
 #X coords 0 -1 1 1 165 92 1 134 103;
-#X restore 50 621 pd notescaler;
+#X restore 82 632 pd notescaler;
 #X obj 553 438 abs/stringspoly;
 #X obj 983 608 r scalednote;
-#X obj 102 723 s scaled2;
+#X obj 121 748 s scaled2;
 #X obj 408 430 r scaled2;
-#X obj 112 568 s velo;
+#X obj 123 570 s velo;
 #X obj 476 430 r velo;
-#X obj 175 567 s mm;
+#X obj 188 570 s mm;
 #X obj 309 384 sel 20;
 #X obj 304 416 abs/dmux;
 #X obj 900 842 hsl 34 10 0 100 0 1 empty empty empty -2 -8 0 10 -262144
@@ -4362,13 +4362,13 @@
 #X connect 20 0 0 0;
 #X coords 0 -1 1 1 60 41 1 371 183;
 #X restore 171 240 pd swing;
-#X obj 171 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 171 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 171 193 r run;
 #X obj 206 160 r ms;
 #X obj 188 137 r stop;
 #X obj 146 817 r mainRoot;
-#X obj 149 591 r mainRoot;
+#X obj 181 593 r mainRoot;
 #X obj 262 890 s mainRoot;
 #X floatatom 262 854 5 0 0 0 - - -, f 5;
 #N canvas 770 296 532 436 stereofilter 0;
@@ -4425,8 +4425,8 @@
 #X connect 22 0 21 0;
 #X coords 0 -1 1 1 138 104 1 266 81;
 #X restore 540 595 pd stereofilter;
-#X obj 61 591 unpack;
-#X obj 144 759 s scaled3;
+#X obj 82 594 unpack;
+#X obj 156 786 s scaled3;
 #N canvas 1170 271 1107 1033 notescaler 0;
 #X obj 137 125 cnv 15 179 67 empty empty empty 20 12 0 14 -261869 -66577
 0;
@@ -4602,6 +4602,9 @@ Spanish None, f 98;
 #X coords 0 -1 1 1 185 92 1 134 103;
 #X restore 35 847 pd notescaler;
 #X obj 601 407 r scaled3;
+#X obj 116 34 delay 500;
+#X msg 116 63 1;
+#X obj 280 25 zz_ableton_push;
 #X connect 1 0 142 0;
 #X connect 1 0 142 1;
 #X connect 1 0 156 0;
@@ -4662,6 +4665,7 @@ Spanish None, f 98;
 #X connect 61 0 31 0;
 #X connect 62 0 8 1;
 #X connect 63 0 66 0;
+#X connect 63 0 214 0;
 #X connect 64 0 25 0;
 #X connect 65 0 77 0;
 #X connect 65 1 78 0;
@@ -4819,4 +4823,6 @@ Spanish None, f 98;
 #X connect 212 0 64 0;
 #X connect 212 1 24 0;
 #X connect 213 0 190 2;
+#X connect 214 0 215 0;
+#X connect 215 0 48 0;
 #X coords 0 0 1 1 85 60 0;

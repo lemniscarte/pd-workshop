@@ -1,6 +1,6 @@
-#N canvas 1112 324 486 346 12;
-#X obj 74 38 cnv 15 94 15 empty \$0-scaleName Minor.Pentatonic 2 6
-1 10 -262005 -66577 0;
+#N canvas 1112 357 486 346 12;
+#X obj 74 38 cnv 15 94 15 empty \$0-scaleName Minor 2 6 1 10 -261526
+-144513 0;
 #N canvas 91 182 860 656.938 scales 0;
 #X msg 736 173 0 2 4 5 7 9 11;
 #X msg 736 194 0 2 3 5 7 8 10;
@@ -35,7 +35,7 @@
 #X obj 112 62 inlet;
 #X obj 112 895 outlet scale;
 #X obj 112 94 hradio 15 0 1 28 empty empty empty 0 -8 0 10 -262144
--1 -1 5;
+-1 -1 1;
 #X msg 996 173 Major;
 #X msg 996 194 Minor;
 #X msg 996 215 Major.Triad;
@@ -183,7 +183,7 @@
 #X obj 288 190 symbol;
 #X msg 288 215 \; \$0-scaleName label \$1;
 #X obj 228 136 nbx 3 12 0 27 0 1 empty empty empty 0 -8 1 10 -262144
--1 -1 5 256 0;
+-1 -1 1 256 0;
 #X obj 40 147 +;
 #X obj 40 38 bng 14 250 50 0 empty empty < 3 4 0 10 -240986 -260225
 -1;
