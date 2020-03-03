@@ -145,7 +145,7 @@
 #X obj 871 225 vsl 15 64 1 1200 1 1 empty empty R 3 -9 1 10 -262144
 -1 -1 0 1;
 #X obj 695 221 nbx 4 14 0 127 0 1 empty empty velocity 0 -8 1 10 -262144
--1 -1 122 256 0;
+-1 -1 65 256 0;
 #X obj 739 221 nbx 4 14 0 1000 0 1 empty empty gate 0 -8 1 10 -262144
 -1 -1 1000 256 0;
 #X obj 695 242 hradio 11 0 1 5 empty empty oct 66 4 0 10 -262144 -1
@@ -176,6 +176,8 @@
 #X text 365 867 midi msg, f 4;
 #X floatatom 493 331 5 0 0 0 - - -, f 5;
 #X obj 360 791 pack 0 0;
+#X obj 378 732 * 12;
+#X obj 360 760 +;
 #X connect 2 0 3 0;
 #X connect 2 0 12 0;
 #X connect 2 1 3 1;
@@ -195,7 +197,7 @@
 #X connect 10 0 62 0;
 #X connect 11 0 45 0;
 #X connect 11 0 63 1;
-#X connect 12 0 55 0;
+#X connect 12 0 65 0;
 #X connect 14 0 23 0;
 #X connect 14 0 49 0;
 #X connect 15 0 3 0;
@@ -226,6 +228,7 @@
 #X connect 36 0 28 1;
 #X connect 37 0 15 2;
 #X connect 38 0 29 0;
+#X connect 38 0 64 0;
 #X connect 41 0 16 0;
 #X connect 41 0 47 0;
 #X connect 42 0 41 1;
@@ -242,9 +245,10 @@
 #X connect 54 0 55 1;
 #X connect 55 0 56 0;
 #X connect 56 0 41 0;
-#X connect 56 0 63 0;
 #X connect 56 0 39 0;
 #X connect 57 0 58 0;
 #X connect 58 0 59 0;
 #X connect 63 0 60 0;
+#X connect 64 0 65 1;
+#X connect 65 0 63 0;
 #X coords 0 -1 1 1 203 113 1 691 187;
