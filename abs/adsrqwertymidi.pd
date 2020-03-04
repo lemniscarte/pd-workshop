@@ -1,4 +1,4 @@
-#N canvas 722 110 965 956 12;
+#N canvas 722 101 965 956 12;
 #X obj 693 209 cnv 15 197 88 empty empty empty 20 12 0 14 -261869 -66577
 0;
 #X obj 787 213 cnv 15 103 84 empty empty empty 20 12 0 14 -261400 -66577
@@ -29,7 +29,7 @@
 #X obj 558 836 outlet~;
 #X obj 260 93 r qwertymidi;
 #X floatatom 260 145 5 0 0 0 - - -, f 5;
-#N canvas 1726 432 741 559 qwerty 1;
+#N canvas 1726 432 741 559 qwerty 0;
 #X obj 103 226 list-find;
 #X obj 103 141 key;
 #X obj 163 80 loadbang;
@@ -55,7 +55,7 @@
 -1 -1;
 #X floatatom 349 406 5 0 0 0 - - -, f 5;
 #X obj 103 170 t f f b;
-#X obj 388 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 388 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 180 170 t f f b;
 #X obj 326 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -64,7 +64,7 @@
 #X obj 288 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 249 406 5 0 0 0 - - -, f 5;
-#X obj 288 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 288 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 288 303 1;
 #X msg 326 303 0;
@@ -145,11 +145,11 @@
 #X obj 871 225 vsl 15 64 1 1200 1 1 empty empty R 3 -9 1 10 -262144
 -1 -1 0 1;
 #X obj 695 221 nbx 4 14 0 127 0 1 empty empty velocity 0 -8 1 10 -262144
--1 -1 65 256 0;
+-1 -1 14 256 0;
 #X obj 739 221 nbx 4 14 0 1000 0 1 empty empty gate 0 -8 1 10 -262144
 -1 -1 1000 256 0;
 #X obj 700 281 hradio 11 0 1 5 empty empty oct 63 4 0 10 -262144 -1
--1 2;
+-1 1;
 #X obj 207 836 outlet;
 #X obj 175 621 spigot;
 #X obj 214 473 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -246,4 +246,5 @@
 #X connect 60 0 57 0;
 #X connect 61 0 62 1;
 #X connect 62 0 60 0;
+#X connect 62 0 52 0;
 #X coords 0 -1 1 1 203 113 1 691 187;
