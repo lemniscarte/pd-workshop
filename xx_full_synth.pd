@@ -1,4 +1,4 @@
-#N canvas 62 96 1787 927.969 12;
+#N canvas 200 201 1787 927.969 12;
 #X obj 18 18 cnv 15 2073 1050 empty empty empty 20 12 0 14 -262075
 -66577 0;
 #X obj 673 912 *~;
@@ -596,9 +596,9 @@
 #X coords 0 50 64 20 512 114 1;
 #X restore 210 240 graph;
 #X obj 210 358 hradio 8 0 0 64 empty empty empty 0 -8 0 10 -262144
--1 -1 7;
+-1 -1 25;
 #X obj 52 403 tabread notes;
-#X obj 52 116 tgl 15 0 empty empty run 17 7 1 10 -262144 -1 -1 1 1
+#X obj 52 116 tgl 15 0 empty empty run 17 7 1 10 -262144 -1 -1 0 1
 ;
 #X obj 52 306 f;
 #X obj 109 332 + 1;
@@ -658,7 +658,7 @@
 #X floatatom 210 381 5 0 0 0 - - -, f 5;
 #X text 250 381 current value;
 #X floatatom 862 380 5 0 0 0 - - -, f 5;
-#X obj 695 378 tgl 23 0 empty empty run -24 10 1 10 -260436 -1 -1 1
+#X obj 695 378 tgl 23 0 empty empty run -24 10 1 10 -260436 -1 -1 0
 1;
 #X obj 767 413 *;
 #X floatatom 570 381 5 0 64 0 - - -, f 5;
@@ -747,7 +747,7 @@
 #X restore 245 102 pd sequencer;
 #X obj 1604 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 245 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 245 77 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 464 41 r ms;
 #X obj 1781 205 r stop;
@@ -844,7 +844,7 @@
 #X obj 190 236 outlet~ L;
 #X obj 380 236 outlet~ R;
 #X obj 106 101 tgl 28 1 empty empty on/off 2 -8 1 10 -259777 -1 -1
-1 1;
+0 1;
 #X connect 0 0 6 0;
 #X connect 1 0 7 0;
 #X connect 2 0 0 0;
@@ -896,11 +896,11 @@
 #X floatatom 117 318 5 0 0 0 - - -, f 5;
 #X floatatom 135 346 5 0 0 0 - - -, f 5;
 #X floatatom 154 318 5 0 0 0 - - -, f 5;
-#X obj 43 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 43 91 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 1579 473 s samplerms;
 #X obj 154 372 s ms;
-#X obj 43 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 43 314 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 590 377 s sequencerstop;
 #X obj 43 357 s run;
@@ -1199,7 +1199,7 @@
 #X connect 22 0 23 0;
 #X coords 0 -1 1 1 210 104 1 175 100;
 #X restore 974 279 pd envelope;
-#X obj 763 377 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 763 377 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 43 65 select 32;
 #X obj 43 39 key;
@@ -4254,8 +4254,8 @@
 #X obj 155 590 pack f f;
 #X obj 208 49 inlet;
 #X obj 58 590 spigot;
-#X obj 97 568 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 0
-127;
+#X obj 97 568 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 2
+2;
 #X obj 144 447 loadbang;
 #X msg 144 472 1;
 #X obj 412 346 array set \$0-scale;
@@ -4409,7 +4409,7 @@
 #X connect 20 0 0 0;
 #X coords 0 -1 1 1 60 41 1 371 183;
 #X restore 171 240 pd swing;
-#X obj 171 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 171 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 171 193 r run;
 #X obj 206 160 r ms;
@@ -4428,10 +4428,10 @@
 #X obj 92 59 inlet~;
 #X obj 92 375 outlet~;
 #X obj 276 156 hsl 29 20 0 100 0 1 empty empty q 0 -8 1 10 -262144
--1 -1 1500 1;
+-1 -1 0 1;
 #X floatatom 314 157 5 0 0 0 - - -, f 5;
 #X obj 276 124 hsl 114 16 60 22000 1 1 empty empty frequency 2 -12
-1 10 -262144 -1 -1 7200 1;
+1 10 -262144 -1 -1 11300 1;
 #X obj 108 219 line~;
 #X obj 276 59 inlet;
 #X obj 413 59 inlet;
@@ -4447,7 +4447,7 @@
 #X obj 182 336 moog~;
 #X obj 198 194 pack 0 0;
 #X obj 330 108 nbx 7 12 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 9
--261536 -1 -1 2582.4 256 0;
+-261536 -1 -1 22000 256 0;
 #X connect 2 0 3 0;
 #X connect 3 0 13 2;
 #X connect 4 0 13 0;

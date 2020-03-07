@@ -1,34 +1,34 @@
-#N canvas 722 101 965 956 12;
-#X obj 693 209 cnv 15 197 88 empty empty empty 20 12 0 14 -261869 -66577
+#N canvas 695 139 1013 979 12;
+#X obj 733 229 cnv 15 197 88 empty empty empty 20 12 0 14 -261869 -66577
 0;
-#X obj 787 213 cnv 15 103 84 empty empty empty 20 12 0 14 -261400 -66577
+#X obj 827 233 cnv 15 103 84 empty empty empty 20 12 0 14 -261400 -66577
 0;
-#X obj 175 53 notein;
-#X obj 175 333 stripnote;
-#X obj 558 769 vline~;
-#X floatatom 601 606 5 0 0 0 - - -, f 5;
-#X floatatom 644 606 5 0 0 0 - - -, f 5;
-#X floatatom 687 606 5 0 0 0 - - -, f 5;
-#X floatatom 788 606 5 0 0 0 - - -, f 5;
-#X obj 713 694 pack f f;
-#X obj 493 302 sel 0;
-#X floatatom 98 135 5 0 0 0 - - -, f 5;
-#X floatatom 57 135 5 0 0 0 - - -, f 5;
-#X floatatom 57 407 5 0 0 0 - - -, f 5;
-#X floatatom 279 436 5 0 0 0 - - -, f 5;
-#X obj 360 275 makenote;
-#X obj 558 665 pack f f f f f, f 25;
-#X floatatom 808 88 5 0 0 0 - - -, f 5;
-#X floatatom 695 88 5 0 127 0 - - -, f 5;
-#X obj 360 53 inlet midinote;
-#X floatatom 360 228 5 0 0 0 - - -, f 5;
-#X obj 695 53 inlet velocity;
-#X obj 808 53 inlet gate;
-#X obj 730 577 / 127;
-#X floatatom 730 606 5 0 0 0 - - -, f 5;
-#X obj 558 836 outlet~;
-#X obj 260 93 r qwertymidi;
-#X floatatom 260 145 5 0 0 0 - - -, f 5;
+#X obj 215 73 notein;
+#X obj 215 353 stripnote;
+#X obj 598 789 vline~;
+#X floatatom 641 626 5 0 0 0 - - -, f 5;
+#X floatatom 684 626 5 0 0 0 - - -, f 5;
+#X floatatom 727 626 5 0 0 0 - - -, f 5;
+#X floatatom 828 626 5 0 0 0 - - -, f 5;
+#X obj 753 714 pack f f;
+#X obj 533 322 sel 0;
+#X floatatom 138 155 5 0 0 0 - - -, f 5;
+#X floatatom 97 155 5 0 0 0 - - -, f 5;
+#X floatatom 97 427 5 0 0 0 - - -, f 5;
+#X floatatom 319 456 5 0 0 0 - - -, f 5;
+#X obj 400 295 makenote;
+#X obj 598 685 pack f f f f f, f 25;
+#X floatatom 848 108 5 0 0 0 - - -, f 5;
+#X floatatom 735 108 5 0 127 0 - - -, f 5;
+#X obj 400 73 inlet midinote;
+#X floatatom 400 248 5 0 0 0 - - -, f 5;
+#X obj 735 73 inlet velocity;
+#X obj 848 73 inlet gate;
+#X obj 770 597 / 127;
+#X floatatom 770 626 5 0 0 0 - - -, f 5;
+#X obj 598 856 outlet~;
+#X obj 300 113 r qwertymidi;
+#X floatatom 300 165 5 0 0 0 - - -, f 5;
 #N canvas 1726 432 741 559 qwerty 0;
 #X obj 103 226 list-find;
 #X obj 103 141 key;
@@ -55,7 +55,7 @@
 -1 -1;
 #X floatatom 349 406 5 0 0 0 - - -, f 5;
 #X obj 103 170 t f f b;
-#X obj 388 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 388 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 180 170 t f f b;
 #X obj 326 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -64,7 +64,7 @@
 #X obj 288 275 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 249 406 5 0 0 0 - - -, f 5;
-#X obj 288 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 288 332 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 288 303 1;
 #X msg 326 303 0;
@@ -132,52 +132,52 @@
 #X connect 36 0 39 0;
 #X connect 38 0 6 0;
 #X connect 40 0 38 0;
-#X restore 578 358 pd qwerty;
-#X obj 578 331 - 2;
-#X obj 700 358 s qwertymidi;
-#X msg 558 694 \$5 \$2 \, \$4 \$3 \$2;
-#X obj 790 225 vsl 15 64 5 500 1 1 empty empty A 3 -9 1 10 -262144
+#X restore 618 378 pd qwerty;
+#X obj 618 351 - 2;
+#X obj 740 378 s qwertymidi;
+#X msg 598 714 \$5 \$2 \, \$4 \$3 \$2;
+#X obj 830 245 vsl 15 64 5 500 1 1 empty empty A 3 -9 1 10 -262144
 -1 -1 1700 1;
-#X obj 817 225 vsl 15 64 7.5 750 1 1 empty empty D 3 -9 1 10 -262144
+#X obj 857 245 vsl 15 64 7.5 750 1 1 empty empty D 3 -9 1 10 -262144
 -1 -1 6300 1;
-#X obj 844 225 vsl 15 64 0.01 1 1 1 empty empty S 3 -9 1 10 -262144
+#X obj 884 245 vsl 15 64 0.01 1 1 1 empty empty S 3 -9 1 10 -262144
 -1 -1 0 1;
-#X obj 871 225 vsl 15 64 1 1200 1 1 empty empty R 3 -9 1 10 -262144
+#X obj 911 245 vsl 15 64 1 1200 1 1 empty empty R 3 -9 1 10 -262144
 -1 -1 0 1;
-#X obj 695 221 nbx 4 14 0 127 0 1 empty empty velocity 0 -8 1 10 -262144
--1 -1 14 256 0;
-#X obj 739 221 nbx 4 14 0 1000 0 1 empty empty gate 0 -8 1 10 -262144
+#X obj 735 241 nbx 4 14 0 127 0 1 empty empty velocity 0 -8 1 10 -262144
+-1 -1 49 256 0;
+#X obj 779 241 nbx 4 14 0 1000 0 1 empty empty gate 0 -8 1 10 -262144
 -1 -1 1000 256 0;
-#X obj 700 281 hradio 11 0 1 5 empty empty oct 63 4 0 10 -262144 -1
+#X obj 740 301 hradio 11 0 1 5 empty empty oct 63 4 0 10 -262144 -1
 -1 1;
-#X obj 207 836 outlet;
-#X obj 175 621 spigot;
-#X obj 214 473 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 247 856 outlet;
+#X obj 215 641 spigot;
+#X obj 254 493 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 214 438 1;
-#X msg 183 438 0;
-#X obj 98 333 sel 0;
-#X obj 290 333 loadbang;
-#X obj 175 660 sel 0;
-#X floatatom 207 700 5 0 0 0 - - -, f 5;
-#X obj 279 836 outlet;
-#X text 212 867 note;
-#X text 283 867 velo;
-#X obj 260 173 t f b;
-#X floatatom 716 249 3 0 0 1 midi - -, f 3;
-#X floatatom 175 595 5 0 0 0 - - -, f 5;
-#X obj 713 769 line;
-#X floatatom 713 802 5 0 0 0 - - -, f 5;
-#X obj 713 836 outlet;
-#X obj 360 836 outlet;
-#X text 365 867 midi msg, f 4;
-#X floatatom 493 331 5 0 0 0 - - -, f 5;
-#X obj 360 791 pack 0 0;
-#X obj 378 732 * 12;
-#X obj 360 760 +;
-#X floatatom 327 593 5 0 0 0 - - -, f 5;
-#X connect 2 0 3 0;
-#X connect 2 0 12 0;
+#X msg 254 458 1;
+#X msg 223 458 0;
+#X obj 138 353 sel 0;
+#X obj 330 353 loadbang;
+#X obj 215 680 sel 0;
+#X floatatom 247 720 5 0 0 0 - - -, f 5;
+#X obj 319 856 outlet;
+#X text 252 887 note;
+#X text 323 887 velo;
+#X obj 300 193 t f b;
+#X floatatom 756 269 3 0 0 1 midi - -, f 3;
+#X floatatom 215 615 5 0 0 0 - - -, f 5;
+#X obj 753 789 line;
+#X floatatom 753 822 5 0 0 0 - - -, f 5;
+#X obj 753 856 outlet;
+#X obj 400 856 outlet;
+#X text 405 887 midi msg, f 4;
+#X floatatom 533 351 5 0 0 0 - - -, f 5;
+#X obj 400 811 pack 0 0;
+#X obj 418 752 * 12;
+#X obj 400 780 +;
+#X floatatom 367 613 5 0 0 0 - - -, f 5;
+#X obj 36 117 sel 0 1 2 3 4 5 6 7 8 9 10;
+#X connect 2 0 64 0;
 #X connect 2 1 3 1;
 #X connect 2 1 10 0;
 #X connect 2 1 11 0;
@@ -247,4 +247,6 @@
 #X connect 61 0 62 1;
 #X connect 62 0 60 0;
 #X connect 62 0 52 0;
-#X coords 0 -1 1 1 203 113 1 691 187;
+#X connect 64 11 12 0;
+#X connect 64 11 3 0;
+#X coords 0 -1 1 1 203 113 1 730 207;

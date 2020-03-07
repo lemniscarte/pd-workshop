@@ -1,8 +1,8 @@
-#N canvas 382 317 979 676 12;
+#N canvas 825 268 979 676 12;
 #X obj 163 352 hsl 139 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 6302 1;
+-1 -1 6555 1;
 #X obj 163 382 hsl 139 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 1087 1;
+-1 -1 2839 1;
 #X obj 163 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 163 238 f;
@@ -395,7 +395,7 @@
 -1 -1;
 #X floatatom 192 475 5 0 0 0 - - -, f 5;
 #X obj 163 412 hradio 9 0 1 16 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 6;
 #X obj 163 438 + 1;
 #X text 188 44 Lightshow!;
 #N canvas 1853 355 500 378 pushencoder 0;
@@ -746,6 +746,7 @@ and this is only sending out values. For persistance, f 27;
 #X obj 67 235 * 1;
 #X msg 292 183 0;
 #X obj 163 183 metro;
+#X floatatom 207 438 5 0 0 0 - - -, f 5;
 #X connect 0 0 14 0;
 #X connect 1 0 14 1;
 #X connect 2 0 6 0;
@@ -765,6 +766,7 @@ and this is only sending out values. For persistance, f 27;
 #X connect 16 0 14 4;
 #X connect 17 0 18 0;
 #X connect 18 0 14 2;
+#X connect 18 0 61 0;
 #X connect 20 0 8 0;
 #X connect 20 1 24 0;
 #X connect 21 0 20 0;
