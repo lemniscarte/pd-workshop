@@ -1,8 +1,8 @@
-#N canvas 754 671 609 502 12;
+#N canvas 717 371 576 546 12;
 #X obj 228 295 cnv 15 107 32 empty empty empty 20 12 0 14 -261869 -66577
 0;
-#X obj 234 308 hsl 57 12 0 1 0 1 empty empty volume -2 -8 1 10 -262144
--1 -1 3600 1;
+#X obj 234 308 hsl 40 12 0 1 0 1 empty empty volume -2 -8 1 10 -262144
+-1 -1 2526 1;
 #X obj 92 47 inlet note;
 #X obj 92 482 outlet~;
 #X obj 92 392 *~;
@@ -31,16 +31,18 @@
 #X msg 314 173 vis 5 1;
 #X msg 322 224 all 0 0;
 #X obj 92 122 poly 6 1, f 10;
-#X obj 318 308 tgl 12 1 octUp empty +oct -2 -8 1 8 -262144 -1 -1 0
+#X obj 318 308 tgl 12 1 octUp empty +oct -2 -8 1 8 -262144 -1 -1 1
 1;
 #X obj 302 308 tgl 12 1 octDown empty -oct -2 -8 1 8 -262144 -1 -1
-0 1;
+1 1;
 #X obj 104 302 clone strings 6;
 #X obj 152 482 outlet~;
 #X obj 152 392 *~;
 #X floatatom 369 384 5 0 20 0 - - lopKT, f 5;
 #X obj 369 350 hsl 40 9 0 20 0 1 empty empty LOPKT 1 -6 1 8 -262144
 -1 -1 3900 1;
+#X obj 284 308 bng 12 250 50 0 empty empty kill 1 -7 1 8 -258049 -1
+-1;
 #X connect 1 0 4 1;
 #X connect 1 0 29 1;
 #X connect 2 0 11 0;
@@ -67,4 +69,5 @@
 #X connect 27 0 29 0;
 #X connect 29 0 28 0;
 #X connect 31 0 30 0;
+#X connect 32 0 23 0;
 #X coords 0 -1 1 1 113 141 1 225 274;
