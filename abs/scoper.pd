@@ -1,8 +1,8 @@
-#N canvas 1204 424 503 360 12;
+#N canvas 1966 804 503 383 12;
 #X obj 70 71 catch~ scopeL;
 #X obj 180 71 catch~ scopeR;
 #X obj 70 120 tabwrite~ \$0-oscope;
-#N canvas 0 0 450 300 (subpatch) 0;
+#N canvas 0 22 450 300 (subpatch) 0;
 #X array \$0-oscope 4400 float 20 black #d00000;
 #X coords 0 1 4399 -1 200 140 1;
 #X restore 70 172 graph;
@@ -15,6 +15,7 @@
 -262144 -1 -1 12700 1;
 #X floatatom 376 42 5 0 0 0 - - -, f 5;
 #X connect 0 0 2 0;
+#X connect 1 0 2 0;
 #X connect 4 0 2 0;
 #X connect 5 0 4 0;
 #X connect 6 0 7 0;

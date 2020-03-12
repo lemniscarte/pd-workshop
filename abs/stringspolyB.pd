@@ -1,0 +1,53 @@
+#N canvas 1343 301 576 546 12;
+#X obj 228 295 cnv 15 107 32 empty empty empty 20 12 0 14 -261869 -66577
+0;
+#X obj 234 308 hsl 40 12 0 1 0 1 empty empty volume -2 -8 1 10 -262144
+-1 -1 2026 1;
+#X obj 92 47 inlet note;
+#X obj 92 482 outlet~;
+#X obj 92 392 *~;
+#X obj 184 47 inlet velocity;
+#X obj 228 328 cnv 15 107 84 empty empty empty 20 12 0 14 -261400 -66577
+0;
+#X obj 234 339 vsl 15 64 5 500 1 1 A empty A 3 -9 1 10 -262144 -1 -1
+4000 1;
+#X obj 261 339 vsl 15 64 1 750 0 1 D empty D 3 -9 1 10 -262144 -1 -1
+4600 1;
+#X obj 288 339 vsl 15 64 0.01 100 0 1 S empty S 3 -9 1 10 -262144 -1
+-1 4600 1;
+#X obj 315 339 vsl 15 64 1 3000 0 1 R empty R 3 -9 1 10 -262144 -1
+-1 4000 1;
+#X floatatom 92 73 5 0 0 0 - - -, f 5;
+#X floatatom 184 73 5 0 0 0 - - -, f 5;
+#X obj 92 183 pack f f f;
+#X obj 92 151 - 1;
+#X obj 424 47 inlet midimsg;
+#X msg 322 224 all 0 0;
+#X obj 92 122 poly 6 1, f 10;
+#X obj 318 308 tgl 12 1 octUp empty +oct -2 -8 1 8 -262144 -1 -1 0
+1;
+#X obj 302 308 tgl 12 1 octDown empty -oct -2 -8 1 8 -262144 -1 -1
+0 1;
+#X floatatom 369 384 5 0 20 0 - - lopKT, f 5;
+#X obj 369 350 hsl 40 9 0 20 0 1 empty empty LOPKT 1 -6 1 8 -262144
+-1 -1 3900 1;
+#X obj 284 308 bng 12 250 50 0 empty empty kill 1 -7 1 8 -258049 -1
+-1;
+#X obj 92 257 clone stringsB 6;
+#X connect 1 0 4 1;
+#X connect 2 0 11 0;
+#X connect 4 0 3 0;
+#X connect 5 0 12 0;
+#X connect 11 0 17 0;
+#X connect 12 0 17 1;
+#X connect 13 0 23 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 16 0 23 0;
+#X connect 17 0 14 0;
+#X connect 17 1 13 1;
+#X connect 17 2 13 2;
+#X connect 21 0 20 0;
+#X connect 22 0 16 0;
+#X connect 23 0 4 0;
+#X coords 0 -1 1 1 113 141 1 225 274;
