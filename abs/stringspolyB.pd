@@ -2,7 +2,7 @@
 #X obj 228 295 cnv 15 107 32 empty empty empty 20 12 0 14 -261869 -66577
 0;
 #X obj 234 308 hsl 40 12 0 1 0 1 empty empty volume -2 -8 1 10 -262144
--1 -1 2026 1;
+-1 -1 0 1;
 #X obj 92 47 inlet note;
 #X obj 92 482 outlet~;
 #X obj 92 392 *~;
@@ -24,10 +24,10 @@
 #X obj 424 47 inlet midimsg;
 #X msg 322 224 all 0 0;
 #X obj 92 122 poly 6 1, f 10;
-#X obj 318 308 tgl 12 1 octUp empty +oct -2 -8 1 8 -262144 -1 -1 0
+#X obj 318 308 tgl 12 1 octUp empty +oct -2 -8 1 8 -262144 -1 -1 1
 1;
 #X obj 302 308 tgl 12 1 octDown empty -oct -2 -8 1 8 -262144 -1 -1
-0 1;
+1 1;
 #X floatatom 369 384 5 0 20 0 - - lopKT, f 5;
 #X obj 369 350 hsl 40 9 0 20 0 1 empty empty LOPKT 1 -6 1 8 -262144
 -1 -1 3900 1;
@@ -50,4 +50,4 @@
 #X connect 21 0 20 0;
 #X connect 22 0 16 0;
 #X connect 23 0 4 0;
-#X coords 0 -1 1 1 113 141 1 225 274;
+#X coords 0 -1 1 1 116 141 1 225 274;
