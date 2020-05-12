@@ -1,16 +1,16 @@
-#N canvas 825 268 979 676 12;
+#N canvas 237 396 979 676 12;
 #X obj 163 352 hsl 139 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 6555 1;
+-1 -1 6520 1;
 #X obj 163 382 hsl 139 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 2839 1;
-#X obj 163 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+-1 -1 13365 1;
+#X obj 163 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 163 238 f;
 #X obj 201 238 + 1;
 #X obj 163 295 + 36;
 #X obj 292 155 sel 0;
 #X obj 163 267 mod 64;
-#X obj 610 146 t b f, f 12;
+#X obj 610 186 t b f, f 12;
 #N canvas 1104 153 1392 971.969 pushsysex 0;
 #X obj 299 71 inlet refresh;
 #X obj 737 71 inlet text value;
@@ -67,8 +67,8 @@
 #X msg 322 340 addcomma;
 #X obj 322 314 t b f;
 #X msg 299 143 240 71 127 21;
-#X msg 402 949 240 \, 71 \, 127 \, 21 \, 25 \, 0 \, 69 \, 0 \, 48 \,
-32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32
+#X msg 402 949 240 \, 71 \, 127 \, 21 \, 25 \, 0 \, 69 \, 0 \, 50 \,
+51 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32
 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \,
 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32
 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \,
@@ -138,7 +138,7 @@
 #X text 61 343 ???;
 #X msg 678 368 add2 \$1;
 #X msg 601 368 addcomma;
-#X msg 601 410 48 \,;
+#X msg 601 410 50 \, 51 \,;
 #X msg 748 368 set;
 #X obj 1071 366 f;
 #X floatatom 1071 420 5 0 0 0 - - -, f 5;
@@ -213,7 +213,7 @@
 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \,
 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32
 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \,
-32 \,, f 70;
+, f 70;
 #X msg 1210 763 set;
 #X obj 1039 597 float;
 #X obj 1039 571 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -249,7 +249,7 @@
 #X obj 402 1058 midiout;
 #X msg 179 340 addcomma;
 #X obj 216 305 t b b f;
-#X msg 601 250 0;
+#X msg 601 250 23;
 #X floatatom 896 127 5 0 0 0 - - -, f 5;
 #X msg 737 216 set \$1;
 #X symbolatom 817 127 10 0 0 0 - - -, f 10;
@@ -344,7 +344,7 @@
 #X connect 81 0 77 0;
 #X connect 82 0 10 0;
 #X restore 610 309 pd pushsysex;
-#X floatatom 646 186 5 0 0 0 - - -, f 5;
+#X floatatom 646 116 5 0 0 0 - - -, f 5;
 #X text 317 348 Note (Pad);
 #X text 317 378 Velocity (Color);
 #X text 317 408 Channel (Animation);
@@ -395,10 +395,10 @@
 -1 -1;
 #X floatatom 192 475 5 0 0 0 - - -, f 5;
 #X obj 163 412 hradio 9 0 1 16 empty empty empty 0 -8 0 10 -262144
--1 -1 6;
+-1 -1 5;
 #X obj 163 438 + 1;
 #X text 188 44 Lightshow!;
-#N canvas 1853 355 500 378 pushencoder 0;
+#N canvas 1853 355 500 378 pushencoder 1;
 #X obj 105 43 ctlin;
 #X msg 35 125 1;
 #X msg 70 125 2;
@@ -448,17 +448,17 @@
 #X connect 20 0 21 0;
 #X restore 610 89 pd pushencoder;
 #X obj 610 65 hradio 13 0 1 8 empty empty encoder\ bank 0 -8 1 8 -262144
--1 -1 3;
+-1 -1 6;
 #N canvas 1445 476 335 329 debounce 0;
 #X obj 49 72 inlet value;
-#X obj 195 72 inlet delay;
+#X obj 202 72 inlet delay;
 #X obj 49 267 outlet;
-#X floatatom 195 161 5 0 0 0 - - -, f 5;
+#X floatatom 202 161 5 0 0 0 - - -, f 5;
 #X obj 49 104 spigot 1;
 #X msg 141 167 0;
 #X msg 142 217 1;
 #X obj 49 130 t a b b;
-#X obj 142 192 delay 10;
+#X obj 142 192 delay 100;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 3 0 8 1;
@@ -469,7 +469,7 @@
 #X connect 7 1 8 0;
 #X connect 7 2 5 0;
 #X connect 8 0 6 0;
-#X restore 610 218 pd debounce;
+#X restore 610 148 pd debounce;
 #N canvas 710 338 1088 303 tests 0;
 #X obj 898 197 sysexin;
 #X obj 898 226 print;
@@ -542,7 +542,7 @@
 #X connect 35 0 22 0;
 #X connect 36 0 22 0;
 #X restore 764 472 pd tests;
-#X obj 705 186 pack f f;
+#X obj 705 226 pack f f;
 #X obj 650 253 vradio 11 0 1 4 empty empty line 0 -6 1 8 -262144 -1
 -1 1;
 #N canvas 0 22 450 300 pushencoderrouting 0;
@@ -619,7 +619,7 @@
 #X connect 36 0 35 0;
 #X connect 36 0 34 0;
 #X connect 36 0 33 0;
-#X restore 705 218 pd pushencoderrouting;
+#X restore 705 258 pd pushencoderrouting;
 #X text 410 60 fix it so that the clitin is attached to controls \,
 and this is only sending out values. For persistance, f 27;
 #X floatatom 656 418 3 0 0 0 - - -, f 3;
@@ -628,7 +628,7 @@ and this is only sending out values. For persistance, f 27;
 #X obj 626 439 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 686 418 3 0 0 0 - - -, f 3;
-#N canvas 353 150 1269 869 pushbuttonlights 0;
+#N canvas 353 150 1269 869 pushbuttonlights 1;
 #X obj 627 779 ctlout;
 #X msg 932 632 127 44 \, 127 45 \, 127 46 \, 127 47, f 9;
 #X obj 633 721 unpack f f;
@@ -696,11 +696,10 @@ and this is only sending out values. For persistance, f 27;
 #X connect 27 0 8 0;
 #X connect 27 0 4 0;
 #X connect 27 0 1 0;
-#X connect 27 0 30 0;
+#X connect 27 0 28 0;
 #X connect 28 0 29 0;
 #X connect 30 0 29 0;
 #X connect 33 0 26 0;
-#X connect 33 0 30 0;
 #X connect 33 0 23 0;
 #X connect 33 0 20 0;
 #X connect 33 0 17 0;
@@ -712,6 +711,7 @@ and this is only sending out values. For persistance, f 27;
 #X connect 33 0 4 0;
 #X connect 33 0 3 0;
 #X connect 33 0 1 0;
+#X connect 33 0 28 0;
 #X restore 731 417 pd pushbuttonlights;
 #X obj 90 295 f;
 #X obj 128 295 + 1;
@@ -747,6 +747,7 @@ and this is only sending out values. For persistance, f 27;
 #X msg 292 183 0;
 #X obj 163 183 metro;
 #X floatatom 207 438 5 0 0 0 - - -, f 5;
+#X obj 879 260 print;
 #X connect 0 0 14 0;
 #X connect 1 0 14 1;
 #X connect 2 0 6 0;
@@ -758,20 +759,21 @@ and this is only sending out values. For persistance, f 27;
 #X connect 6 0 59 0;
 #X connect 7 0 5 0;
 #X connect 7 0 40 0;
-#X connect 8 0 22 0;
+#X connect 8 0 9 0;
 #X connect 8 1 9 2;
-#X connect 8 1 24 1;
+#X connect 8 1 24 0;
 #X connect 10 0 22 1;
 #X connect 15 0 14 3;
 #X connect 16 0 14 4;
 #X connect 17 0 18 0;
 #X connect 18 0 14 2;
 #X connect 18 0 61 0;
-#X connect 20 0 8 0;
-#X connect 20 1 24 0;
+#X connect 20 0 22 0;
+#X connect 20 1 24 1;
 #X connect 21 0 20 0;
-#X connect 22 0 9 0;
+#X connect 22 0 8 0;
 #X connect 24 0 26 0;
+#X connect 24 0 62 0;
 #X connect 25 0 9 1;
 #X connect 28 0 43 0;
 #X connect 29 0 31 0;
