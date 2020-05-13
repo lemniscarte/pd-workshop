@@ -1,9 +1,9 @@
-#N canvas 237 396 979 676 12;
+#N canvas 1320 318 979 699 12;
 #X obj 163 352 hsl 139 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 6520 1;
+-1 -1 5650 1;
 #X obj 163 382 hsl 139 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 13365 1;
-#X obj 163 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+-1 -1 12713 1;
+#X obj 163 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 163 238 f;
 #X obj 201 238 + 1;
@@ -11,7 +11,7 @@
 #X obj 292 155 sel 0;
 #X obj 163 267 mod 64;
 #X obj 610 186 t b f, f 12;
-#N canvas 1104 153 1392 971.969 pushsysex 0;
+#N canvas 305 52 1436 1059.97 pushsysex 1;
 #X obj 299 71 inlet refresh;
 #X obj 737 71 inlet text value;
 #X obj 601 276 spell;
@@ -67,8 +67,8 @@
 #X msg 322 340 addcomma;
 #X obj 322 314 t b f;
 #X msg 299 143 240 71 127 21;
-#X msg 402 949 240 \, 71 \, 127 \, 21 \, 25 \, 0 \, 69 \, 0 \, 50 \,
-51 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32
+#X msg 402 949 240 \, 71 \, 127 \, 21 \, 24 \, 0 \, 69 \, 0 \, 51 \,
+53 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32
 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \,
 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32
 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \, 32 \,
@@ -138,7 +138,7 @@
 #X text 61 343 ???;
 #X msg 678 368 add2 \$1;
 #X msg 601 368 addcomma;
-#X msg 601 410 50 \, 51 \,;
+#X msg 601 410 51 \, 53 \,;
 #X msg 748 368 set;
 #X obj 1071 366 f;
 #X floatatom 1071 420 5 0 0 0 - - -, f 5;
@@ -249,7 +249,7 @@
 #X obj 402 1058 midiout;
 #X msg 179 340 addcomma;
 #X obj 216 305 t b b f;
-#X msg 601 250 23;
+#X msg 601 250 35;
 #X floatatom 896 127 5 0 0 0 - - -, f 5;
 #X msg 737 216 set \$1;
 #X symbolatom 817 127 10 0 0 0 - - -, f 10;
@@ -257,6 +257,52 @@
 #X symbolatom 817 184 10 0 0 0 - - -, f 10;
 #X floatatom 896 184 5 0 0 0 - - -, f 5;
 #X obj 532 71 inlet line selector;
+#X msg 1178 193 set \$1;
+#X symbolatom 1182 146 10 0 0 0 - - -, f 10;
+#X floatatom 1287 143 5 0 0 0 - - -, f 5;
+#X obj 1211 250 spell;
+#X msg 1211 224 127;
+#X msg 1375 317 add2 \$1;
+#X msg 1298 317 addcomma;
+#X msg 1298 359;
+#X msg 1445 317 set;
+#X obj 1298 283 t b f;
+#X obj 1445 290 bng 15 250 50 0 empty \$0-reset empty 17 7 0 10 -258625
+-1 -1;
+#X obj 1136 222 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 1145 963 hradio 15 0 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X floatatom 1145 1016 5 0 0 0 - - -, f 5;
+#X obj 1145 987 * 17;
+#X obj 895 919 vradio 11 0 1 4 empty empty empty 32 5 1 10 -262144
+-1 -1 0;
+#X obj 55 898 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 55 917 240 \, 71 \, 127 \, 21 \, 122 \, 0 \, 1 \, \$1 \, 247
+;
+#X floatatom 895 1001 5 0 0 0 - - -, f 5;
+#X obj 55 1003 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 55 1022 240 \, 71 \, 127 \, 21 \, 124 \, 0 \, 1 \, \$1 \, 247
+;
+#X msg 895 1029 240 \, 71 \, 127 \, 21 \, \$1 \, 0 \, 0 \, 247;
+#X msg 1165 1044 240 \, 71 \, 127 \, 21 \, 26 \, 0 \, 6 \, \$1 \, 116
+\, 101 \, 115 \, 116 \, 101 \, 247;
+#X obj 895 972 + 28;
+#X text 55 979 Brightness;
+#X text 55 874 Contrast;
+#X text 1216 963 Write to blocks;
+#X text 917 919 Clear whole lines;
+#X obj 1195 1084 hradio 15 0 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X floatatom 1195 1137 5 0 0 0 - - -, f 5;
+#X msg 1177 1205 240 \, 71 \, 127 \, 21 \, 26 \, 0 \, 6 \, \$1 \, 116
+\, 101 \, 115 \, 116 \, 101 \, 247;
+#X obj 1195 1108 * 2;
+#X text 1326 1084 Write to subdivisions of blocks;
+#X floatatom 1145 1137 5 0 0 0 - - -, f 5;
+#X obj 1177 1175 +;
 #X connect 0 0 13 0;
 #X connect 1 0 77 0;
 #X connect 2 0 30 0;
@@ -343,6 +389,37 @@
 #X connect 80 0 77 0;
 #X connect 81 0 77 0;
 #X connect 82 0 10 0;
+#X connect 83 0 87 0;
+#X connect 83 0 94 0;
+#X connect 84 0 83 0;
+#X connect 85 0 83 0;
+#X connect 86 0 92 0;
+#X connect 87 0 86 0;
+#X connect 88 0 90 0;
+#X connect 89 0 90 0;
+#X connect 91 0 90 0;
+#X connect 92 0 89 0;
+#X connect 92 1 88 0;
+#X connect 93 0 91 0;
+#X connect 94 0 87 0;
+#X connect 95 0 97 0;
+#X connect 96 0 105 0;
+#X connect 96 0 116 0;
+#X connect 97 0 96 0;
+#X connect 98 0 106 0;
+#X connect 99 0 100 0;
+#X connect 100 0 72 0;
+#X connect 101 0 104 0;
+#X connect 102 0 103 0;
+#X connect 103 0 72 0;
+#X connect 104 0 72 0;
+#X connect 106 0 101 0;
+#X connect 111 0 114 0;
+#X connect 112 0 117 1;
+#X connect 113 0 72 0;
+#X connect 114 0 112 0;
+#X connect 116 0 117 0;
+#X connect 117 0 113 0;
 #X restore 610 309 pd pushsysex;
 #X floatatom 646 116 5 0 0 0 - - -, f 5;
 #X text 317 348 Note (Pad);
@@ -398,7 +475,7 @@
 -1 -1 5;
 #X obj 163 438 + 1;
 #X text 188 44 Lightshow!;
-#N canvas 1853 355 500 378 pushencoder 1;
+#N canvas 1853 355 500 378 pushencoder 0;
 #X obj 105 43 ctlin;
 #X msg 35 125 1;
 #X msg 70 125 2;
@@ -448,7 +525,7 @@
 #X connect 20 0 21 0;
 #X restore 610 89 pd pushencoder;
 #X obj 610 65 hradio 13 0 1 8 empty empty encoder\ bank 0 -8 1 8 -262144
--1 -1 6;
+-1 -1 0;
 #N canvas 1445 476 335 329 debounce 0;
 #X obj 49 72 inlet value;
 #X obj 202 72 inlet delay;
@@ -628,13 +705,11 @@ and this is only sending out values. For persistance, f 27;
 #X obj 626 439 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom 686 418 3 0 0 0 - - -, f 3;
-#N canvas 353 150 1269 869 pushbuttonlights 1;
+#N canvas 1288 163 1269 892 pushbuttonlights 0;
 #X obj 627 779 ctlout;
 #X msg 932 632 127 44 \, 127 45 \, 127 46 \, 127 47, f 9;
 #X obj 633 721 unpack f f;
 #X msg 1017 632 0 44 \, 0 45 \, 0 46 \, 0 47, f 6;
-#X msg 833 560 127 36 \, 127 37 \, 127 38 \, 127 39 \, 127 40 \, 127
-41 \, 127 42 \, 127 43 \,, f 9;
 #X text 938 598 arrows;
 #X text 836 532 divisions;
 #X text 427 557 play rec etc;
@@ -670,48 +745,50 @@ and this is only sending out values. For persistance, f 27;
 #X text 199 647 ableton mode;
 #X text 188 579 user mode, f 13;
 #X obj 237 69 inlet;
+#X msg 833 560 127 36 \, 127 37 \, 127 38 \, 127 39 \, 127 40 \, 127
+41 \, 127 42 \, 127 43 \,, f 9;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 2 1 0 1;
 #X connect 3 0 2 0;
-#X connect 4 0 2 0;
+#X connect 7 0 2 0;
 #X connect 8 0 2 0;
 #X connect 9 0 2 0;
-#X connect 10 0 2 0;
-#X connect 12 0 2 0;
-#X connect 15 0 2 0;
-#X connect 17 0 2 0;
-#X connect 19 0 0 2;
-#X connect 20 0 2 0;
-#X connect 23 0 2 0;
-#X connect 26 0 2 0;
-#X connect 27 0 26 0;
-#X connect 27 0 23 0;
-#X connect 27 0 20 0;
-#X connect 27 0 17 0;
-#X connect 27 0 15 0;
-#X connect 27 0 12 0;
-#X connect 27 0 10 0;
-#X connect 27 0 9 0;
-#X connect 27 0 8 0;
-#X connect 27 0 4 0;
-#X connect 27 0 1 0;
+#X connect 11 0 2 0;
+#X connect 14 0 2 0;
+#X connect 16 0 2 0;
+#X connect 18 0 0 2;
+#X connect 19 0 2 0;
+#X connect 22 0 2 0;
+#X connect 25 0 2 0;
+#X connect 26 0 25 0;
+#X connect 26 0 22 0;
+#X connect 26 0 19 0;
+#X connect 26 0 16 0;
+#X connect 26 0 14 0;
+#X connect 26 0 11 0;
+#X connect 26 0 9 0;
+#X connect 26 0 8 0;
+#X connect 26 0 7 0;
+#X connect 26 0 33 0;
+#X connect 26 0 1 0;
+#X connect 26 0 27 0;
 #X connect 27 0 28 0;
-#X connect 28 0 29 0;
-#X connect 30 0 29 0;
-#X connect 33 0 26 0;
-#X connect 33 0 23 0;
-#X connect 33 0 20 0;
-#X connect 33 0 17 0;
-#X connect 33 0 15 0;
-#X connect 33 0 12 0;
-#X connect 33 0 10 0;
-#X connect 33 0 9 0;
-#X connect 33 0 8 0;
-#X connect 33 0 4 0;
-#X connect 33 0 3 0;
-#X connect 33 0 1 0;
-#X connect 33 0 28 0;
+#X connect 29 0 28 0;
+#X connect 32 0 25 0;
+#X connect 32 0 22 0;
+#X connect 32 0 19 0;
+#X connect 32 0 16 0;
+#X connect 32 0 14 0;
+#X connect 32 0 11 0;
+#X connect 32 0 9 0;
+#X connect 32 0 8 0;
+#X connect 32 0 7 0;
+#X connect 32 0 33 0;
+#X connect 32 0 3 0;
+#X connect 32 0 1 0;
+#X connect 32 0 27 0;
+#X connect 33 0 2 0;
 #X restore 731 417 pd pushbuttonlights;
 #X obj 90 295 f;
 #X obj 128 295 + 1;
@@ -747,7 +824,6 @@ and this is only sending out values. For persistance, f 27;
 #X msg 292 183 0;
 #X obj 163 183 metro;
 #X floatatom 207 438 5 0 0 0 - - -, f 5;
-#X obj 879 260 print;
 #X connect 0 0 14 0;
 #X connect 1 0 14 1;
 #X connect 2 0 6 0;
@@ -773,7 +849,6 @@ and this is only sending out values. For persistance, f 27;
 #X connect 21 0 20 0;
 #X connect 22 0 8 0;
 #X connect 24 0 26 0;
-#X connect 24 0 62 0;
 #X connect 25 0 9 1;
 #X connect 28 0 43 0;
 #X connect 29 0 31 0;
