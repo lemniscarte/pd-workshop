@@ -1,5 +1,5 @@
-#N canvas 385 166 1070 792 12;
-#X obj 346 712 dac~;
+#N canvas 536 98 1070 792 12;
+#X obj 345 712 dac~;
 #X obj 345 325 *~;
 #X floatatom 363 152 5 0 0 0 - - -, f 5;
 #X obj 363 261 osc~;
@@ -11,8 +11,6 @@
 #X floatatom 363 453 5 0 10 0 - - -, f 5;
 #X floatatom 415 453 5 0 10 0 - - -, f 5;
 #X floatatom 363 524 5 0 0 0 - - -, f 5;
-#X text 503 487 Most objects \, like the + object \, will have a 'hot'
-inlet and other \, 'cold' inlets:, f 45;
 #X text 513 523 Data passed into the cold inlet will not forward the
 data along to the next place. Instead \, it will wait until something
 happens to the hot inlet.;
@@ -40,14 +38,16 @@ inlet to be always the leftmost inlet of an object.;
 #X text 504 252 Up above \, the osc~ object was given an 'initial argument'
 of 440 Down here \, we are 'passing' this argument from a number box.
 , f 67;
+#X text 503 487 Most objects \, like the / object \, will have a 'hot'
+inlet and other \, 'cold' inlets:, f 45;
 #X connect 1 0 8 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 1;
 #X connect 4 0 1 0;
 #X connect 8 0 0 0;
 #X connect 8 0 0 1;
-#X connect 9 0 22 0;
-#X connect 10 0 22 1;
-#X connect 11 0 24 0;
-#X connect 22 0 11 0;
-#X connect 24 0 8 1;
+#X connect 9 0 21 0;
+#X connect 10 0 21 1;
+#X connect 11 0 23 0;
+#X connect 21 0 11 0;
+#X connect 23 0 8 1;

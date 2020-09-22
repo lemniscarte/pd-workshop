@@ -5,13 +5,13 @@
 -66577 0;
 #X obj 641 184 cnv 15 294 120 empty empty empty 20 12 0 14 -262125
 -66577 0;
-#N canvas 1309 96 611 738 playkeys 0;
+#N canvas 1309 96 611 738 playkeys 1;
 #X obj 64 274 mtof;
 #X floatatom 64 222 5 20 127 0 - - -, f 5;
 #X obj 384 270 bng 15 50 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 64 577 *~;
-#N canvas 132 205 1011 700 qwerty 0;
+#N canvas 132 205 1011 700 qwerty 1;
 #X obj 152 162 cnv 15 72 270 empty empty empty 20 12 0 14 -260454 -66577
 0;
 #X obj 662 474 cnv 15 230 69 empty empty empty 20 12 0 14 -260454 -66577
@@ -24,7 +24,7 @@
 0;
 #X obj 63 183 list-find;
 #X obj 63 121 key;
-#X obj 123 90 loadbang;
+#X obj 123 85 loadbang;
 #X obj 483 206 * 12;
 #X obj 63 251 +;
 #X obj 63 294 + 60;
@@ -37,7 +37,7 @@
 50;
 #X obj 168 369 mtof;
 #X floatatom 168 398 5 0 0 0 - - -, f 5;
-#X obj 610 90 loadbang;
+#X obj 610 85 loadbang;
 #X obj 532 183 list-find;
 #X obj 532 251 +;
 #X floatatom 637 294 5 0 0 0 - - -, f 5;
@@ -61,6 +61,7 @@ it doesn't affect anything., f 41;
 patch \, we can explore it further. Now try and click into the'list-find'
 object and see how it's a bunch of nested sub-patches., f 65;
 #X floatatom 454 276 5 0 0 0 - - -, f 5;
+#X text 192 85 Can you guess what this is used for?;
 #X connect 5 0 9 0;
 #X connect 5 0 14 0;
 #X connect 6 0 5 0;
@@ -95,7 +96,7 @@ object and see how it's a bunch of nested sub-patches., f 65;
 #X obj 64 441 pack 0 12;
 #X obj 64 470 vline~;
 #X obj 64 83 hradio 15 0 1 5 empty empty select\ octave 83 6 0 10 -262144
--1 -1 2;
+-1 -1 4;
 #X obj 64 115 - 2;
 #X obj 124 385 vsl 11 38 1 50 0 1 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
@@ -133,7 +134,7 @@ object and see how it's a bunch of nested sub-patches., f 65;
 clean up our patch or solve the repetition of code (or both!): Sub-patches
 and Abstractions., f 73;
 #X obj 738 374 hradio 15 0 1 5 empty empty select\ octave 0 -9 0 10
--262144 -1 -1 2;
+-262144 -1 -1 4;
 #X obj 816 220 s intoSubPatch;
 #X obj 816 247 r fromSubPatch;
 #X floatatom 816 194 5 0 0 0 - - -, f 5;
@@ -201,9 +202,6 @@ on one and peek inside. We can right-click and select 'Open' as well.
 , f 75;
 #X text 601 391 ->;
 #X text 601 521 ->;
-#X text 734 514 If you make changes to a sub-patch \, it won't affect
-other instances., f 35;
-#X text 845 711 Changes to abstractions will!, f 18;
 #X text 601 721 ->;
 #X obj 678 667 14_b_abstraction;
 #X obj 678 777 14_b_abstraction;
@@ -212,20 +210,23 @@ via send and receive objects \, but it also throught another very neat
 feature: the inlet \, outlet \, inlet~ and outlet~ objects., f 73
 ;
 #X obj 738 441 dac~;
-#X connect 3 0 41 0;
-#X connect 3 0 41 1;
+#X text 734 514 If you make changes to a sub-patch \, it won't affect
+other instances..., f 35;
+#X text 845 711 ... but changes to abstractions will!, f 18;
+#X connect 3 0 39 0;
+#X connect 3 0 39 1;
 #X connect 5 0 3 0;
 #X connect 7 0 9 0;
 #X connect 8 0 6 0;
-#X connect 16 0 38 2;
-#X connect 21 0 38 0;
-#X connect 22 0 38 1;
-#X connect 25 0 39 2;
-#X connect 27 0 39 0;
-#X connect 28 0 39 1;
-#X connect 38 0 17 0;
-#X connect 38 0 17 1;
-#X connect 38 1 23 0;
-#X connect 39 0 26 0;
-#X connect 39 0 26 1;
-#X connect 39 1 29 0;
+#X connect 16 0 36 2;
+#X connect 21 0 36 0;
+#X connect 22 0 36 1;
+#X connect 25 0 37 2;
+#X connect 27 0 37 0;
+#X connect 28 0 37 1;
+#X connect 36 0 17 0;
+#X connect 36 0 17 1;
+#X connect 36 1 23 0;
+#X connect 37 0 26 0;
+#X connect 37 0 26 1;
+#X connect 37 1 29 0;

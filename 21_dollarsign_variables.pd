@@ -1,4 +1,4 @@
-#N canvas 172 70 1606 913 12;
+#N canvas 121 23 1606 913 12;
 #X obj 865 771 cnv 10 15 15 empty empty empty 20 12 0 14 -234869 -66577
 0;
 #X msg 193 302 \$3;
@@ -96,7 +96,7 @@ different selectors preceding them. That's how it tells one value from
 another. Whoa., f 89;
 #X text 904 509 Because PD sees 'milk' as the selector. It's like the
 object above is a milk object :), f 88;
-#N canvas 623 216 720 703 bonus 0;
+#N canvas 593 145 720 726 bonus 0;
 #X floatatom 223 104 5 0 0 0 - - -, f 5;
 #X obj 223 132 value myVariable;
 #X obj 363 132 value myVariable;
@@ -159,7 +159,6 @@ we write in our expression:, f 75;
 f 67;
 #X text 190 630 Here \, I mock a MIDI note message.;
 #X text 190 650 MIDI is coming up next.;
-#X obj 450 819 utils/adsr;
 #X text 199 776 Contrived example:;
 #X text 429 776 Real life example:;
 #X text 904 679 There's no need to put 'list' on a list that is made
@@ -169,6 +168,7 @@ well., f 88;
 in front of them \, the word 'list'. If you want to do the same variable
 extraction we did at item 1 \, but your list is made up of words \,
 this might surprise you., f 91;
+#X obj 450 819 abs/adsr;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X connect 2 0 23 0;

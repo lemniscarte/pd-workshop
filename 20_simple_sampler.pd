@@ -1,4 +1,4 @@
-#N canvas 145 201 1665 626 12;
+#N canvas 139 182 1665 626 12;
 #X obj 928 490 cnv 15 42 24 empty empty empty 20 12 0 14 -261697 -66577
 0;
 #X obj 1370 224 cnv 15 42 43 empty empty empty 20 12 0 14 -261697 -66577
@@ -24,9 +24,6 @@ the wild. Outputs the file length., f 52;
 #X obj 1004 222 soundfiler;
 #X obj 1004 166 openpanel;
 #X floatatom 1004 255 11 0 0 0 - - -, f 11;
-#X floatatom 1004 310 11 0 0 0 - - -, f 11;
-#X obj 1004 282 / 44.1;
-#X text 1089 310 Duration in ms;
 #X obj 1465 144 tgl 15 1 empty empty loop 18 6 1 10 -262144 -1 -1 0
 1;
 #X obj 1426 183 spigot;
@@ -35,16 +32,14 @@ the wild. Outputs the file length., f 52;
 #X msg 1380 183 stop;
 #X obj 1305 316 *~;
 #X obj 1526 144 vsl 17 103 0 0.7 0 1 empty empty volume 22 5 1 10 -262144
--1 -1 8450 1;
+-1 -1 7150 1;
 #X obj 1305 235 tabplay~ sample;
 #X obj 1380 144 bng 15 250 50 0 empty empty stop 18 6 1 10 -262144
 -1 -1;
 #X msg 1004 194 read -resize \$1 sample;
 #X obj 1305 365 dac~;
-#X text 1089 255 Duration in samples;
+#X text 1109 255 Duration in samples;
 #X msg 1423 305 \; sample normalize 1;
-#X obj 1004 337 / 1000;
-#X floatatom 1004 365 11 0 0 0 - - -, f 11;
 #X text 112 66 Sampling in Pure Data is pure joy! Some artists won't
 even touch the synthesis part of PD \, favoring live sampling and processing
 of recorded material., f 80;
@@ -52,9 +47,6 @@ of recorded material., f 80;
 0;
 #X text 1122 451 What's up with the dollarsign-number thing??;
 #X obj 924 194 print;
-#X text 247 289 Because we want to go pick our samples in our file
-system \, without having to hardcode it. Outputs the filepath., f
-59;
 #X text 798 220 Check the console after selecting the file., f 23
 ;
 #X obj 162 394 tabplay~;
@@ -65,9 +57,8 @@ is trivial:, f 65;
 #X obj 162 170 writesf~;
 #X text 247 169 Writes to disk \, when you're ready to record your
 jam :);
-#X text 1089 365 Duration in seconds;
+#X text 1109 398 Duration in seconds;
 #X obj 162 354 tabwrite~;
-#X text 247 354 Will put a signal straight into an array., f 59;
 #X obj 142 123 cnv 4 8 73 empty empty empty 20 12 0 14 -261150 -66577
 0;
 #X obj 142 231 cnv 4 8 91 empty empty empty 20 12 0 14 -261150 -66577
@@ -83,24 +74,36 @@ jam :);
 #X obj 142 445 cnv 4 8 38 empty empty empty 20 12 0 14 -261150 -66577
 0;
 #X text 1422 347 Good trick to guarantee good levels., f 22;
+#X obj 1022 312 samplerate~;
+#X floatatom 1022 341 7 0 0 0 - - -, f 7;
+#X obj 1022 283 loadbang;
+#X obj 1004 369 /;
+#X floatatom 1004 398 12 0 0 0 - - -, f 12;
+#X text 1109 305 Get samplerate from computer, f 15;
+#X text 247 289 Because we'll want to go pick our samples in our file
+system without having to hardcode it. Outputs the filepath., f 61
+;
+#X text 247 354 Will write a signal straight into an array., f 59
+;
 #X connect 9 0 12 0;
 #X connect 11 0 13 0;
-#X connect 12 0 25 0;
-#X connect 12 0 34 0;
-#X connect 13 0 15 0;
-#X connect 14 0 29 0;
-#X connect 15 0 14 0;
-#X connect 17 0 18 1;
+#X connect 12 0 22 0;
+#X connect 12 0 29 0;
+#X connect 13 0 50 0;
+#X connect 14 0 15 1;
+#X connect 15 0 20 0;
+#X connect 16 0 20 0;
+#X connect 17 0 20 0;
 #X connect 18 0 23 0;
-#X connect 19 0 23 0;
-#X connect 20 0 23 0;
-#X connect 21 0 26 0;
-#X connect 21 0 26 1;
-#X connect 22 0 21 1;
-#X connect 23 0 21 0;
-#X connect 23 1 18 0;
-#X connect 24 0 20 0;
-#X connect 25 0 11 0;
-#X connect 29 0 30 0;
-#X connect 49 0 48 0;
-#X connect 50 0 48 0;
+#X connect 18 0 23 1;
+#X connect 19 0 18 1;
+#X connect 20 0 18 0;
+#X connect 20 1 15 0;
+#X connect 21 0 17 0;
+#X connect 22 0 11 0;
+#X connect 42 0 41 0;
+#X connect 43 0 41 0;
+#X connect 47 0 48 0;
+#X connect 48 0 50 1;
+#X connect 49 0 47 0;
+#X connect 50 0 51 0;

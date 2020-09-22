@@ -49,11 +49,8 @@ the toggle. The bang has no related object in other languages (AFAIK).
 , f 63;
 #X text 958 232 <- There's 0 stored in the float \, for starters.;
 #X obj 894 488 hradio 24 0 0 16 empty empty empty 0 -8 0 10 -262144
--261569 -1 6;
+-261569 -1 8;
 #X floatatom 933 378 5 0 0 0 - - -, f 5;
-#X text 978 282 which gets a 1 added to it and is output right away.
-It is also stored in the float object \, awaiting another bang., f
-64;
 #X text 958 130 (You'll see this particular structure over and over
 in PD), f 59;
 #X text 853 49 We've seen metro and it's use as an emitter of evenly
@@ -65,6 +62,10 @@ its entry and at its outlet \, you'll get the same \, consistent variations.
 #X text 823 539 Do you see the begginings of a simple sequencer here?
 Changing the value on the modulo's right inlet will change the sequence
 length to taste \, on the fly., f 79;
+#X text 978 282 which gets a 1 added to it and is passed along right
+away., f 61;
+#X text 978 300 It is also stored in the float object \, awaiting another
+bang., f 61;
 #X connect 3 0 6 0;
 #X connect 5 0 3 0;
 #X connect 7 0 15 0;

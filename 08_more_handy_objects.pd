@@ -64,19 +64,12 @@ note how this is a buggy multiplication!, f 45;
 ;
 #X text 360 290 Similar \, but uses first item as an indicator \, and
 will strip that indicator as it passes the message along., f 45;
-#X text 360 487 More useful than you might think at first. Note the
-hot/cold inlet system at work here. The 'f' stands for float (number).
-, f 44;
 #X text 360 684 Pack's evil twin.;
 #X text 360 704 The 's' stands for symbol.;
 #X text 1090 81 Alters a value over time \, like drawing a line between
 two points., f 38;
 #X text 1090 244 It cannot be underestimated - the trigger object allows
 for essential logic flow in Pure Data., f 45;
-#X text 1090 296 It takes its input and send it out its oulets in a
-RIGHT-TO-LEFT order., f 45;
-#X text 1090 332 Also \, it will convert a number \, for example \,
-into a bang as it spews it out., f 45;
 #X floatatom 859 666 5 1 100 0 - - -, f 5;
 #X obj 859 694 swap 1;
 #X obj 859 723 /;
@@ -88,6 +81,13 @@ into a bang as it spews it out., f 45;
 \, you can get away with using the 'swap' object., f 47;
 #X text 1090 117 There are signal (~) variations \, for a more seamless
 movement., f 40;
+#X text 360 487 Packs separate data into lists. More useful than you
+might think at first. Note the hot/cold inlet system at work here.
+The 'f' stands for float (number)., f 53;
+#X text 1090 296 It takes its input and sends it out its oulets in
+a RIGHT-TO-LEFT order., f 45;
+#X text 1090 332 Also \, it may convert a number \, for example \,
+into a bang as it spews it out., f 45;
 #X connect 0 0 5 0;
 #X connect 5 0 1 0;
 #X connect 5 1 2 0;
@@ -128,11 +128,11 @@ movement., f 40;
 #X connect 43 0 42 0;
 #X connect 44 0 40 0;
 #X connect 44 0 41 0;
-#X connect 57 0 58 0;
-#X connect 57 0 63 0;
+#X connect 54 0 55 0;
+#X connect 54 0 60 0;
+#X connect 55 0 56 0;
+#X connect 55 1 56 1;
+#X connect 56 0 57 0;
 #X connect 58 0 59 0;
-#X connect 58 1 59 1;
-#X connect 59 0 60 0;
-#X connect 61 0 62 0;
-#X connect 63 0 61 0;
-#X connect 63 1 61 1;
+#X connect 60 0 58 0;
+#X connect 60 1 58 1;

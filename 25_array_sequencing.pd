@@ -1,4 +1,4 @@
-#N canvas 404 133 936 867 12;
+#N canvas 405 101 936 867 12;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array seq 16 float 23 #9bffc4 #00b134;
 #A 0 71.25 65.625 53.125 60 70.625 60 53.75 63.75 45.625 46.25 47.5
@@ -93,7 +93,7 @@ mscale will lock your MIDI pitches to a given scale. Happy accidents
 abound!;
 #X obj 726 712 *~;
 #X obj 744 686 hsl 65 17 0 1 0 1 empty empty empty -2 -8 0 10 -3344
--1 -1 1000 1;
+-1 -1 2200 1;
 #X text 313 680 (A dash of delay never hurt nobody);
 #X obj 687 798 delwrite~ seq 1000;
 #X obj 742 638 catch~ delline;
@@ -105,10 +105,10 @@ abound!;
 10 -208879 -1 -1 2900 1;
 #X obj 169 349 *~;
 #X obj 303 122 hsl 79 20 0 0.9 0 1 empty empty feedback 14 -8 0 10
--135145 -1 -1 5600 1;
+-135145 -1 -1 1400 1;
 #X obj 72 349 *~;
 #X obj 303 88 hsl 79 20 0 0.9 0 1 empty empty delay\ mix 10 -8 0 10
--159730 -1 -1 4200 1;
+-159730 -1 -1 4450 1;
 #X obj 72 305 +~;
 #X obj 72 379 throw~ delline;
 #X obj 222 404 outlet~;
@@ -152,7 +152,7 @@ abound!;
 #X obj 372 491 *~;
 #X obj 433 491 *~;
 #X obj 170 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 300 1;
+-1 -1 150 1;
 #X obj 241 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
 -1 -1 1700 1;
 #X floatatom 177 315 5 0 0 0 - - -, f 5;
@@ -160,7 +160,7 @@ abound!;
 #X obj 311 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
 -1 -1 1400 1;
 #X obj 390 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 850 1;
+-1 -1 950 1;
 #X obj 451 448 vsl 15 24 0 0.7 0 1 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 293 360 *~ -1;
@@ -169,22 +169,22 @@ abound!;
 0 8 -262144 -1 -1 750 1;
 #X obj 433 392 pink~;
 #X obj 262 315 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
--1 -1 350 1;
+-1 -1 250 1;
 #X obj 223 43 inlet;
 #X obj 521 389 vsl 15 24 0 0.7 0 1 empty empty sine 0 -9 0 10 -262144
--1 -1 300 1;
+-1 -1 150 1;
 #X obj 571 389 vsl 15 24 0 0.7 0 1 empty empty saw 0 -9 0 10 -262144
 -1 -1 1700 1;
 #X obj 621 389 vsl 15 24 0 0.7 0 1 empty empty saw 0 -9 0 10 -262144
 -1 -1 1400 1;
 #X obj 671 389 vsl 15 24 0 0.7 0 1 empty empty square 0 -9 0 10 -262144
--1 -1 850 1;
+-1 -1 950 1;
 #X obj 721 389 vsl 15 24 0 0.7 0 1 empty empty noise 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 696 212 vsl 17 22 0.1 0.9 0 1 empty empty pwm 0 -9 0 8 -262144
 -1 -1 750 1;
 #X obj 596 212 vsl 17 22 0 3 0 1 empty empty detune 0 -9 0 8 -262144
--1 -1 350 1;
+-1 -1 250 1;
 #X obj 646 212 vsl 17 22 0.5 16 0 1 empty empty mult 0 -9 0 8 -262144
 -1 -1 0 1;
 #X floatatom 596 248 3 0 0 0 - - -, f 3;
@@ -201,7 +201,7 @@ abound!;
 #X obj 223 100 mtof;
 #X obj 397 179 line;
 #X obj 567 58 hsl 128 15 0 250 0 1 empty empty portamento -56 6 1 10
--262144 -1 -1 650 1;
+-262144 -1 -1 1250 1;
 #X floatatom 325 98 4 0 0 0 - - -, f 4;
 #X obj 397 150 pack 0 0;
 #X obj 223 150 pack 0 0;
@@ -270,14 +270,14 @@ abound!;
 #X obj 726 561 - 12;
 #X text 239 159 We start with a subpatch containing a bpm-to-ms calculator
 and counter as before.;
-#X text 239 365 Colors aside \, what we need to do is set the length
-of the array \, but also make sure that the range of values is something
-sensible. I picked a narrower range of values this time - 30 to 100
-\, instead of the 0 to 127 we used before.;
 #X text 239 443 If we input numbers into a tabread object \, we're
 giving it indexes from which to pull a value. Just mouse the number
 box up and down for now and see it spew out the values we have on the
 array above.;
+#X text 239 365 Colors aside \, what we need to do is set the length
+of the array \, but also make sure that the range of values is something
+sensible. I picked a narrower range of values this time \, 30 to 100
+\, instead of the 0 to 127 we used before.;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 1 0;
