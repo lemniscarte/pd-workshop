@@ -7,7 +7,7 @@
 #X obj 64 310 spigot;
 #X obj 121 310 spigot;
 #X msg 103 123 1;
-#X msg 142 123 0;
+#X msg 143 124 0;
 #X obj 64 153 spigot;
 #X obj 103 90 sel \$1;
 #X obj 64 440 ctlout;
@@ -19,12 +19,13 @@
 #X obj 197 437 outlet;
 #X msg 197 375 0;
 #X msg 251 375 1;
-#X obj 210 250 r initGate;
-#X obj 210 279 route \$1;
-#X obj 290 221 f \$1;
-#X obj 290 250 - 102;
+#X obj 210 142 r initGate;
+#X obj 210 169 route \$1;
+#X obj 290 111 f \$1;
+#X obj 290 140 - 102;
 #X obj 210 308 sel 0 1;
-#X obj 290 192 loadbang;
+#X obj 290 82 loadbang;
+#X obj 140 220 == 1;
 #X connect 0 0 9 0;
 #X connect 0 1 10 0;
 #X connect 1 0 2 0;
@@ -53,8 +54,10 @@
 #X connect 19 0 17 0;
 #X connect 20 0 21 0;
 #X connect 21 0 24 0;
+#X connect 21 0 26 0;
 #X connect 22 0 23 0;
 #X connect 23 0 21 1;
 #X connect 24 0 16 0;
 #X connect 24 1 13 0;
 #X connect 25 0 22 0;
+#X connect 26 0 3 1;
