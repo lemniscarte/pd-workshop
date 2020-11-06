@@ -1,15 +1,15 @@
-#N canvas 474 66 2051 1161 12;
+#N canvas 251 125 2051 1161 12;
 #X obj 950 396 hsl 139 15 36 100 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 1350 1;
+-1 -1 5450 1;
 #X obj 950 426 hsl 139 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 500 1;
 #X obj 258 200 + 1;
 #X obj 165 138 sel 0;
 #X obj 220 234 mod 64;
 #X text 1104 392 Note (Pad);
 #X text 1104 422 Velocity (Color);
 #X text 1104 452 Channel (Animation);
-#N canvas 1179 448 522 352 pushpadcontrol 0;
+#N canvas 1594 446 1027 375 pushpadcontrol 0;
 #X obj 343 58 inlet pad;
 #X obj 343 85 inlet color;
 #X obj 343 112 inlet led anim;
@@ -635,7 +635,7 @@
 #X floatatom 909 448 5 0 0 0 - - -, f 5;
 #X msg 871 312 60;
 #X obj 1338 721 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X msg 1258 686 1;
 #X msg 1316 686 0;
 #X msg 1297 263 1;
@@ -919,8 +919,8 @@
 #X obj 636 309 loadbang;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array seq 8 float 23 black black;
-#A 0 0.803117 0.826883 0.433117 0.48039 0.842597 0.677273 0.645844
-0.763766;
+#A 0 0.440912 0.653655 0.433117 0.582752 0.763857 0.551289 0.645844
+0.440931;
 #X coords 0 1 8 0 200 140 1;
 #X restore 877 58 graph;
 #X obj 878 326 tabread seq;
@@ -948,22 +948,22 @@
 #X obj 687 469 loadbang;
 #X msg 1125 215 \; seq 0 \$1;
 #X obj 1145 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 3759 1;
+-1 -1 3395 1;
 #X obj 1225 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 4608 1;
+-1 -1 5033 1;
 #X obj 1205 86 r seqVal-1;
 #X obj 1305 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
 -1 -1 3881 1;
 #X obj 1385 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 3880 1;
+-1 -1 4487 1;
 #X obj 1465 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 4244 1;
+-1 -1 5882 1;
 #X obj 1545 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 2789 1;
+-1 -1 4245 1;
 #X obj 1625 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
 -1 -1 4668 1;
 #X obj 1705 119 vsl 16 78 0 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 6124 1;
+-1 -1 3395 1;
 #X obj 1125 86 r seqVal-0;
 #X obj 1285 86 r seqVal-2;
 #X obj 1365 86 r seqVal-3;
@@ -981,7 +981,7 @@
 #X msg 674 338 20;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array gate 8 float 23 black black;
-#A 0 0 1 1 1 0 1 1 1;
+#A 0 1 1 1 1 1 1 1 1;
 #X coords 0 1 8 0 200 14 1;
 #X restore 877 212 graph;
 #X msg 1125 405 \; gate 0 \$1;
@@ -993,7 +993,7 @@
 #X msg 1605 405 \; gate 6 \$1;
 #X msg 1685 405 \; gate 7 \$1;
 #X obj 1125 378 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1205 378 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
 1 1;
 #X obj 1285 378 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
@@ -1001,7 +1001,7 @@
 #X obj 1365 378 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
 1 1;
 #X obj 1445 378 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1525 378 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
 1 1;
 #X obj 1605 378 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1
@@ -1020,7 +1020,7 @@
 #X floatatom 229 834 5 0 0 0 - - -, f 5;
 #X obj 229 862 bng 15 50 20 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 279 836 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 279 836 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 559 700 5 0 0 0 - - -, f 5;
 #X obj 559 649 hsl 128 15 0 25 0 1 empty empty empty -2 -8 0 10 -262144
@@ -1044,14 +1044,14 @@
 -1 -1 0;
 #N canvas 0 22 450 300 (subpatch) 0;
 #X array tie 8 float 23 black black;
-#A 0 0 0.571426 0 0 0.285716 0 0.0714305 0;
+#A 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 8 0 200 14 1;
 #X restore 877 245 graph;
 #X floatatom 831 728 5 0 0 0 - - -, f 5;
 #X obj 831 756 bng 15 50 20 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 881 730 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-0.571426;
+0.357141;
 #X obj 831 699 tabread tie;
 #X obj 875 813 s readingTieTab;
 #X obj 56 806 t f f;
@@ -1258,7 +1258,7 @@
 #X obj 1797 661 ctlout;
 #X obj 1338 781 s run;
 #X obj 220 200 f;
-#X obj 165 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 165 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 76 273 5 0 0 0 - - -, f 5;
 #X obj 95 326 s othercounter;
@@ -1336,7 +1336,7 @@
 #X obj 1814 408 clip 0 127;
 #X obj 1814 437 outlet;
 #X obj 1866 375 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 7300 1;
+-1 -1 2700 1;
 #X obj 1814 278 ctlin 71;
 #X obj 259 1081 s gateVal-1;
 #X obj 259 1051 zz_ableton_push_lowerbuttons 103;
@@ -1344,21 +1344,21 @@
 #X msg 76 74 0;
 #X obj 1317 583 f 1;
 #X obj 56 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 1855 1;
+-1 -1 1675 1;
 #X obj 244 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 2274 1;
+-1 -1 2484 1;
 #X obj 432 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
 -1 -1 1915 1;
 #X obj 620 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 1915 1;
+-1 -1 2214 1;
 #X obj 808 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 2094 1;
+-1 -1 2903 1;
 #X obj 996 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 1376 1;
+-1 -1 2095 1;
 #X obj 1184 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
 -1 -1 2304 1;
 #X obj 1372 949 hsl 39 17 0 127 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 3022 1;
+-1 -1 1676 1;
 #X obj 410 361 hsl 128 15 0 1 0 1 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X floatatom 390 447 5 0 0 0 - - -, f 5;
@@ -1491,7 +1491,7 @@
 #X connect 15 0 7 0;
 #X connect 16 0 10 0;
 #X connect 17 0 6 1;
-#X restore 450 565 pd pushpadcontrol;
+#X restore 523 563 pd pushpadcontrol;
 #X floatatom 921 286 5 0 0 0 - - -, f 5;
 #X floatatom 667 342 5 0 0 0 - - -, f 5;
 #X msg 729 257 32;
@@ -1499,7 +1499,7 @@
 #X msg 729 296 0;
 #X msg 768 296 4;
 #X text 732 224 corners;
-#X floatatom 529 482 5 0 0 0 - - -, f 5;
+#X floatatom 602 480 5 0 0 0 - - -, f 5;
 #N canvas 456 308 516 714 ledHandler 0;
 #X obj 203 176 metro, f 9;
 #X obj 203 109 tgl 15 0 empty empty empty 17 7 0 10 -260129 -1 -1 0
@@ -1572,9 +1572,9 @@
 #X floatatom 76 459 5 0 0 0 - - -, f 5;
 #X floatatom 164 459 5 0 0 0 - - -, f 5;
 #X obj 163 518 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 10716 1;
+-1 -1 1587 1;
 #X obj 24 560 hsl 128 15 36 99 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 10886 1;
+-1 -1 1613 1;
 #N canvas 115 299 516 737 ledHandler 0;
 #X obj 203 176 metro, f 9;
 #X obj 203 109 tgl 15 0 empty empty empty 17 7 0 10 -260129 -1 -1 0
@@ -1646,12 +1646,14 @@
 #X restore 358 521 pd ledHandler;
 #X floatatom 358 550 5 0 0 0 - - -, f 5;
 #X obj 342 598 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9800 1;
+-1 -1 4000 1;
 #X floatatom 180 561 5 0 0 0 - - -, f 5;
 #X obj 180 589 hsl 115 15 36 99 0 1 empty empty empty -2 -8 0 10 -262144
--1 -1 9771 1;
+-1 -1 1448 1;
 #X obj 180 604 hradio 15 0 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
+#X floatatom 569 527 5 0 0 0 - - -, f 5;
+#X connect 0 0 8 4;
 #X connect 1 0 8 3;
 #X connect 1 0 55 0;
 #X connect 2 0 74 1;
@@ -1820,7 +1822,6 @@
 #X connect 168 0 169 2;
 #X connect 169 0 166 0;
 #X connect 170 0 171 0;
-#X connect 171 0 172 4;
 #X connect 173 0 1 0;
 #X connect 174 0 170 1;
 #X connect 175 0 174 0;
@@ -1832,7 +1833,9 @@
 #X connect 181 0 189 0;
 #X connect 181 1 183 0;
 #X connect 182 0 185 0;
+#X connect 182 0 172 4;
 #X connect 183 0 184 0;
 #X connect 186 0 187 0;
 #X connect 187 0 188 0;
 #X connect 189 0 190 0;
+#X connect 192 0 172 2;
