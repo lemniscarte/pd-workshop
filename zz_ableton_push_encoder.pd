@@ -1,4 +1,6 @@
-#N canvas 54 416 371 307 12;
+#N canvas 405 313 539 307 12;
+#X obj 167 20 cnv 15 154 164 empty empty empty 20 12 0 14 -233017 -66577
+0;
 #X obj 63 187 +;
 #X obj 63 121 moses 64;
 #X obj 116 150 - 128;
@@ -12,17 +14,21 @@
 #X obj 176 94 r initSeq;
 #X obj 256 92 - 71;
 #X obj 176 150 * 127;
-#X connect 0 0 3 0;
-#X connect 1 0 0 0;
-#X connect 1 1 2 0;
-#X connect 2 0 0 0;
-#X connect 3 0 6 0;
-#X connect 3 0 4 0;
-#X connect 5 0 1 0;
-#X connect 6 0 0 1;
-#X connect 7 0 12 0;
-#X connect 8 0 11 0;
-#X connect 9 0 8 0;
-#X connect 10 0 7 0;
-#X connect 11 0 7 1;
-#X connect 12 0 6 0;
+#X obj 374 146 inlet state;
+#X text 327 64 move this out \, so that the initial state can be selected
+from different sources, f 25;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
+#X connect 7 0 1 1;
+#X connect 8 0 13 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 1;
+#X connect 13 0 7 0;
+#X connect 14 0 7 0;
